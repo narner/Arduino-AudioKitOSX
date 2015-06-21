@@ -131,7 +131,6 @@
 				E45516DB1B35F0BB00558CF8 /* AudioKit.swift */,
 				E45516AA1B35ED4F00558CF8 /* AppDelegate.swift */,
 				E45516AC1B35ED4F00558CF8 /* ViewController.swift */,
-				E45516AE1B35ED4F00558CF8 /* Images.xcassets */,
 				E45516B01B35ED4F00558CF8 /* Main.storyboard */,
 				E45516A81B35ED4F00558CF8 /* Supporting Files */,
 			);
@@ -141,6 +140,7 @@
 		E45516A81B35ED4F00558CF8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E45516AE1B35ED4F00558CF8 /* Images.xcassets */,
 				E45516A91B35ED4F00558CF8 /* Info.plist */,
 				E4CBBB0E1B35F3E00029FC24 /* Bridging-Header.h */,
 			);

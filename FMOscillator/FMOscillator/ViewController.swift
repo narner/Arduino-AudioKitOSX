@@ -8,24 +8,23 @@
 
 import Cocoa
 
-
 class ViewController: NSViewController {
-
+    
+    // STEP 1 : Set up an instance variable for the instrument
+    let instrument = AKInstrument()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
         
-        AKManager.sharedManager().isLogging = true
-
-        // Do any additional setup after loading the view.
+        // STEP 2 : Define the instrument as a simple oscillator
+        let oscillator = AKOscillator()
+        instrument.connect(oscillator)
+        instrument.connect(AKAudioOutput(audioSource: oscillator))
         
+        // STEP 3 : Add the instrument to the orchestra and start the orchestra
+        AKOrchestra.addInstrument(instrument)
+        AKOrchestra.start()
+        instrument.play()
     }
-
-    override var representedObject: AnyObject? {
-        didSet {
-        // Update the view, if already loaded.
-        }
-    }
-
-
 }
-
