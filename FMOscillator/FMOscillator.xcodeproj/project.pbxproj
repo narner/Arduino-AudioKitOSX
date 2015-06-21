@@ -14,7 +14,7 @@
 		E45516BE1B35ED4F00558CF8 /* FMOscillatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45516BD1B35ED4F00558CF8 /* FMOscillatorTests.swift */; };
 		E45516D51B35EDDA00558CF8 /* libAudioKit OS X.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E45516D21B35EDB200558CF8 /* libAudioKit OS X.a */; };
 		E45516D71B35EEA500558CF8 /* CsoundLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E45516D61B35EEA500558CF8 /* CsoundLib.framework */; };
-		E45516D91B35EF3D00558CF8 /* CsoundLib.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = E45516D61B35EEA500558CF8 /* CsoundLib.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		E45516D91B35EF3D00558CF8 /* CsoundLib.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = E45516D61B35EEA500558CF8 /* CsoundLib.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E45516DC1B35F0BB00558CF8 /* AudioKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45516DB1B35F0BB00558CF8 /* AudioKit.swift */; };
 /* End PBXBuildFile section */
 
@@ -222,7 +222,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0700;
-				LastUpgradeCheck = 0640;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Nicholas Arner";
 				TargetAttributes = {
 					E45516A41B35ED4F00558CF8 = {
@@ -385,6 +385,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -457,6 +458,7 @@
 				INFOPLIST_FILE = FMOscillator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = "nfa.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/FMOscillator/Bridging-Header.h";
 				USER_HEADER_SEARCH_PATHS = "../../../H4Y/AudioKit/AudioKit/**";
@@ -476,6 +478,7 @@
 				INFOPLIST_FILE = FMOscillator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = "nfa.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/FMOscillator/Bridging-Header.h";
 				USER_HEADER_SEARCH_PATHS = "../../../H4Y/AudioKit/AudioKit/**";
@@ -497,6 +500,7 @@
 				);
 				INFOPLIST_FILE = FMOscillatorTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "nfa.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FMOscillator.app/Contents/MacOS/FMOscillator";
 			};
@@ -513,6 +517,7 @@
 				);
 				INFOPLIST_FILE = FMOscillatorTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "nfa.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FMOscillator.app/Contents/MacOS/FMOscillator";
 			};
