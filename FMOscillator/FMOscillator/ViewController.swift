@@ -8,12 +8,16 @@
 
 import Cocoa
 
+
 class ViewController: NSViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        AKManager.sharedManager().isLogging = true
 
         // Do any additional setup after loading the view.
+        
     }
 
     override var representedObject: AnyObject? {
