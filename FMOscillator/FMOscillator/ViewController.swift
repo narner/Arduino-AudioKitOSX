@@ -27,4 +27,15 @@ class ViewController: NSViewController {
         AKOrchestra.start()
         instrument.play()
     }
+    
+    
+    @IBAction func startSound(sender: NSButton) {
+        if !(sender.title == "Stop") {
+            instrument.play()
+            sender.title = "Stop"
+        } else {
+            instrument.stop()
+            sender.title = "Play Sound"
+        }
+    }
 }

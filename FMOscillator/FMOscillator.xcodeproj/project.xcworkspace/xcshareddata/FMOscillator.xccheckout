@@ -7,7 +7,7 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>8787B8C6-FFEE-4E56-9F99-F4EA2F2E745C</string>
 	<key>IDESourceControlProjectName</key>
-	<string>FMOscillator</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>5D7AE6F26A6D7E393D8CA002FDE5D0D8ABCDAE62</key>
@@ -16,7 +16,7 @@
 		<string>https://github.com/narner/Arduino-AudioKitOSX.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>FMOscillator/FMOscillator.xcodeproj</string>
+	<string>FMOscillator/FMOscillator.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>5D7AE6F26A6D7E393D8CA002FDE5D0D8ABCDAE62</key>
