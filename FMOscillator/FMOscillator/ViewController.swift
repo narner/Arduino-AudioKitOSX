@@ -25,7 +25,6 @@ class ViewController: NSViewController {
         // STEP 3 : Add the instrument to the orchestra and start the orchestra
         AKOrchestra.addInstrument(instrument)
         AKOrchestra.start()
-        instrument.play()
     }
     
     
