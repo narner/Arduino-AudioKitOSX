@@ -17,6 +17,8 @@ class ViewController: NSViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        popen("echo hello world > /dev/cu.usbmodem1411", "r");
+        
         // STEP 2 : Define the instrument as a simple oscillator
         let oscillator = AKOscillator()
         instrument.connect(oscillator)

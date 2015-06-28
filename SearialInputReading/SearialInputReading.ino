@@ -14,7 +14,7 @@ int lastButtonState = 0;     // previous state of the button
 
 void setup() {
   // initialize serial communication at 9600 bits per second:
-  Serial.begin(9600);
+//  Serial.begin(9600);
     
   // initialize the button pin as a input:
   pinMode(buttonPin, INPUT);
