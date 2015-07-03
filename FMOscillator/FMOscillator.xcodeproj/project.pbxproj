@@ -16,6 +16,7 @@
 		E4857C731B40BDCF00FBECAB /* libAudioKit OS X.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4857C701B40BDB900FBECAB /* libAudioKit OS X.a */; };
 		E4857C751B40BE5300FBECAB /* CsoundLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4857C741B40BE5300FBECAB /* CsoundLib.framework */; };
 		E4857C761B40BE6300FBECAB /* CsoundLib.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = E4857C741B40BE5300FBECAB /* CsoundLib.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		E4C510D61B460BC30011570B /* ORSSerial.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4C510D51B460BA30011570B /* ORSSerial.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,13 @@
 			remoteGlobalIDString = EA8E96581AD3C6FC0057E979;
 			remoteInfo = "AudioKit OS X";
 		};
+		E4C510D41B460BA30011570B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E4C510CE1B460BA30011570B /* ORSSerialPort.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9DCA89121A2BB106009285EB;
+			remoteInfo = ORSSerial;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -82,6 +90,7 @@
 		E45516DB1B35F0BB00558CF8 /* AudioKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioKit.swift; sourceTree = "<group>"; };
 		E4857C651B40BDB800FBECAB /* AudioKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AudioKit.xcodeproj; path = "../../../AudioKit Projects/AudioKit/AudioKit.xcodeproj"; sourceTree = "<group>"; };
 		E4857C741B40BE5300FBECAB /* CsoundLib.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CsoundLib.framework; sourceTree = "<group>"; };
+		E4C510CE1B460BA30011570B /* ORSSerialPort.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ORSSerialPort.xcodeproj; path = "../../../../DevelopmentTools/ORSSerialPort/Framework Project/ORSSerialPort.xcodeproj"; sourceTree = "<group>"; };
 		E4CBBB0E1B35F3E00029FC24 /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -90,6 +99,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4C510D61B460BC30011570B /* ORSSerial.framework in Frameworks */,
 				E4857C751B40BE5300FBECAB /* CsoundLib.framework in Frameworks */,
 				E4857C731B40BDCF00FBECAB /* libAudioKit OS X.a in Frameworks */,
 			);
@@ -108,6 +118,7 @@
 		E455169C1B35ED4F00558CF8 = {
 			isa = PBXGroup;
 			children = (
+				E4C510CE1B460BA30011570B /* ORSSerialPort.xcodeproj */,
 				E4857C651B40BDB800FBECAB /* AudioKit.xcodeproj */,
 				E45516A71B35ED4F00558CF8 /* FMOscillator */,
 				E45516BA1B35ED4F00558CF8 /* FMOscillatorTests */,
@@ -170,6 +181,14 @@
 				E4857C6C1B40BDB900FBECAB /* libAudioKit iOS Static.a */,
 				E4857C6E1B40BDB900FBECAB /* libAudioKit iOS Dynamic.a */,
 				E4857C701B40BDB900FBECAB /* libAudioKit OS X.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E4C510CF1B460BA30011570B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E4C510D51B460BA30011570B /* ORSSerial.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -250,6 +269,10 @@
 					ProductGroup = E4857C661B40BDB800FBECAB /* Products */;
 					ProjectRef = E4857C651B40BDB800FBECAB /* AudioKit.xcodeproj */;
 				},
+				{
+					ProductGroup = E4C510CF1B460BA30011570B /* Products */;
+					ProjectRef = E4C510CE1B460BA30011570B /* ORSSerialPort.xcodeproj */;
+				},
 			);
 			projectRoot = "";
 			targets = (
@@ -279,6 +302,13 @@
 			fileType = archive.ar;
 			path = "libAudioKit OS X.a";
 			remoteRef = E4857C6F1B40BDB900FBECAB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		E4C510D51B460BA30011570B /* ORSSerial.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = ORSSerial.framework;
+			remoteRef = E4C510D41B460BA30011570B /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */

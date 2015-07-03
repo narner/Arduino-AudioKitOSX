@@ -7,18 +7,22 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>8787B8C6-FFEE-4E56-9F99-F4EA2F2E745C</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>FMOscillator</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
+		<key>5A811E91F5DFF59170683E14D2C5755F19DE18CB</key>
+		<string>https://github.com/armadsen/ORSSerialPort.git</string>
 		<key>5D7AE6F26A6D7E393D8CA002FDE5D0D8ABCDAE62</key>
 		<string>https://github.com/narner/AudioKit.git</string>
 		<key>D592CEA054C028F097EA3D3D8401D2A67A7962FD</key>
 		<string>https://github.com/narner/Arduino-AudioKitOSX.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>FMOscillator/FMOscillator.xcodeproj/project.xcworkspace</string>
+	<string>FMOscillator/FMOscillator.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
+		<key>5A811E91F5DFF59170683E14D2C5755F19DE18CB</key>
+		<string>../../../../../../DevelopmentTools/ORSSerialPort</string>
 		<key>5D7AE6F26A6D7E393D8CA002FDE5D0D8ABCDAE62</key>
 		<string>../../../../../H4Y/AudioKit</string>
 		<key>D592CEA054C028F097EA3D3D8401D2A67A7962FD</key>
@@ -47,6 +51,14 @@
 			<string>5D7AE6F26A6D7E393D8CA002FDE5D0D8ABCDAE62</string>
 			<key>IDESourceControlWCCName</key>
 			<string>AudioKit</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>5A811E91F5DFF59170683E14D2C5755F19DE18CB</string>
+			<key>IDESourceControlWCCName</key>
+			<string>ORSSerialPort</string>
 		</dict>
 	</array>
 </dict>
