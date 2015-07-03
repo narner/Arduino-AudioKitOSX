@@ -686,6 +686,7 @@
                     </view>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <customObject id="WZ4-jQ-8IM" customClass="ViewController" customModule="FMOscillator" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="75" y="655"/>
         </scene>
