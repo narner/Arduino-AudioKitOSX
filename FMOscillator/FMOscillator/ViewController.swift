@@ -33,7 +33,9 @@ class ViewController: NSViewController, ORSSerialPortDelegate {
         serialPort?.open()
         
         /*Code below will be used for some sort of UI that will allow 
-        the user to select what serial port they want to use as input
+        the user to select what serial port they want to use as input.
+        This should be added after we've establsihed proof of concept 
+        communication between the Arduino and the app.
         
         let availablePorts = ORSSerialPortManager.sharedSerialPortManager().availablePorts as! [ORSSerialPort]
         if availablePorts.count == 0 {
@@ -79,6 +81,10 @@ class ViewController: NSViewController, ORSSerialPortDelegate {
     
     func serialPortWasOpened(serialPort: ORSSerialPort) {
         print("SerialPort \(serialPort) was opened")
+    }
+    
+    func serialPort(serialPort: ORSSerialPort, didReceiveData data: NSData) {
+        print("we received some data")
     }
     
     func serialPortWasClosed(serialPort: ORSSerialPort) {
