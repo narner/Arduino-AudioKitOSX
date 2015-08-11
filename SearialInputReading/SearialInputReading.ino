@@ -5,62 +5,54 @@
    //http://www.nickarner.com
    //http://www.audiokitio
  
-#include "Packetizer.h"
 
-Packetizer slicer;
+const int  buttonPin = 2;    // the pin that the push-button is attached to
 
-const int  buttonPin = 2;    // the pin that the pushbutton is attached to
+int buttonState = 0;         // current state of the push-button
+int lastButtonState = 0;     // previous state of the push-button
 
-int buttonState = 0;         // current state of the button
-int lastButtonState = 0;     // previous state of the button
-
+float lastPotentiometerOneValue = 0;
+float lastPotentiometerTwoValue = 0;
 
 void setup() {
-  // initialize serial communication at 9600 bits per second:
-  Serial.begin(9600);
+  // initialize serial communication at 57600 bits per second:
+  Serial.begin(57600);
     
-  configurePacketizer();
-
   // initialize the button pin as a input:
   pinMode(buttonPin, INPUT);
  }
-  
-void configurePacketizer() {
-  slicer.init(128);
-  slicer.setStartCondition("?");
-  slicer.setEndCondition(";");
-  slicer.onPacket(serialPacketWasReceived);  
-}
-  
  
 void loop() {
     
-  readSerialData();
+  readAndSendPotentiometerDataIfChanged();
+  readAndSendButtonDataIfChanged();
 }
 
-void readSerialData() {
-  while (Serial.available()) {
-    int inputByte = Serial.read();    
-    if (inputByte < 0) continue;
-    
-    slicer.appendData((uint8_t)inputByte);
-  }
+void readAndSendPotentiometerDataIfChanged(void) {
+
+  //Potentiometer One
+  float newPotentiometerOneValue = analogRead(A0) 
+  float newPotentiometerOneValue = newPotentiometerOneValue * (1.0 / 1023.0);
+  if (newPotentiometerOneValue == lastPotentiometerOneValue) return;
+
+  Serial.print("!pos");
+  Serial.print(newPotentiometerOneValue);
+  Serial.print(";");
+  lastPotentiometerOneValue = newPotentiometerOneValue;
+
+  //Potentiometer Two
+  float newPotentiometerTwoValue = analogRead(A1) 
+  float newPotentiometerTwoValue = newPotentiometerOneValue * (1.0 / 1023.0);
+  if (newPotentiometerTwoValue == lastPotentiometerTwoValue) return;
+
+  Serial.print("!pos");
+  Serial.print(newPotentiometerTwoValue);
+  Serial.print(";");
+  lastPotentiometerTwoValue = newPotentiometerTwoValue;
 }
 
-void serialPacketWasReceived(byte* inputData, unsigned int inputSize) {
-    if  (!memcmp(inputData, "all", 3)) {
-    sendPushButtonState();
-    return;
-  } else if  (!memcmp(inputData, "light", 5)) {
-    sendPotentiometerOneReading();
-    return;
-  } else if  (!memcmp(inputData, "slider", 6)) {
-    sendPotentiometerTwoReading();
-    return;
-  }
-}
 
-void sendPushButtonState() {
+void readAndSendButtonDataIfChanged(void) {
   // read the pushbutton input pin:
   buttonState = digitalRead(buttonPin);
 
@@ -70,12 +62,15 @@ void sendPushButtonState() {
     if (buttonState == HIGH) {
     // if the current state is HIGH then the button
     // went from off to on:
-    Serial.println("on");
-  }
-  else {
-    // if the current state is LOW then the button
-    // went from on to off:
-    Serial.println("off");
+  Serial.print("!pos");
+  Serial.print("on");
+  Serial.print(";");
+  } else {
+  // if the current state is LOW then the button
+  // went from on to off:
+  Serial.print("!pos");
+  Serial.print("off");
+  Serial.print(";");
   }
   // Delay a little bit to avoid bouncing
   delay(50);  
@@ -85,18 +80,3 @@ void sendPushButtonState() {
   lastButtonState = buttonState;
 }
 
-void sendPotentiometerOneReading() {
-  // read the input for the first potentiometer
-  int potentiometerOneValue = analogRead(A0);
-  // Convert the analog reading (which goes from 0 - 1023) to a range between 0 and 1
-  float voltageOne = potentiometerOneValue * (1.0 / 1023.0);
-  //  Serial.println(voltageOne);
-}
-
-void sendPotentiometerTwoReading() {
-  // read the input for the first potentiometer
-  int potentiometerOneValue = analogRead(A0);
-  // Convert the analog reading (which goes from 0 - 1023) to a range between 0 and 1
-  float voltageOne = potentiometerOneValue * (1.0 / 1023.0);
-  //  Serial.println(voltageOne);
-}
