@@ -9,28 +9,18 @@
 import Cocoa
 import ORSSerial 
 
-class ViewController: NSViewController, ORSSerialPortDelegate {
+
+class ViewController: NSViewController {
     
     let serialPortManager = ORSSerialPortManager.sharedSerialPortManager()
+    let serialCommunicator = SerialCommunicator()
 
-    var serialPort: ORSSerialPort? {
-        didSet {
-            oldValue?.close()
-            oldValue?.delegate = nil
-            serialPort?.delegate = self
-        }
-    }
-    
 
     let instrument = AKInstrument()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-
-        self.serialPort = ORSSerialPort(path: "/dev/cu.usbmodem1421")
-        serialPort?.baudRate = 4800
-        serialPort?.open()
         
         /*Code below will be used for some sort of UI that will allow 
         the user to select what serial port they want to use as input.
@@ -52,19 +42,21 @@ class ViewController: NSViewController, ORSSerialPortDelegate {
 
         */
         
-
         
-        //AK
+        /* Oscillator creation
+        TO-DO: change to FMOscillator, with frequency and amplitude controlled by the
+        received data from the potentiometers */
         let oscillator = AKOscillator()
         instrument.connect(oscillator)
         instrument.connect(AKAudioOutput(audioSource: oscillator))
         
-        //AK
         AKOrchestra.addInstrument(instrument)
         AKOrchestra.start()
     }
     
     
+    /* TO-DO: this will be controlled by the received true/false 
+    value from the push-button */
     @IBAction func startSound(sender: NSButton) {
         if !(sender.title == "Stop") {
             instrument.play()
@@ -75,34 +67,8 @@ class ViewController: NSViewController, ORSSerialPortDelegate {
         }
     }
     
-    
-    
-    // MARK: - ORSSerialPortDelegate
-    
-    func serialPortWasOpened(serialPort: ORSSerialPort) {
-        print("SerialPort \(serialPort) was opened")
-    }
-    
-    func serialPort(serialPort: ORSSerialPort, didReceiveData data: NSData) {
-        print("we received some data")
-    }
-    
-    func serialPortWasClosed(serialPort: ORSSerialPort) {
-        print("SerialPort \(serialPort) was closed")
-    }
-    
-    func serialPortWasRemovedFromSystem(serialPort: ORSSerialPort) {
-        self.serialPort = nil
-        print("SerialPort \(serialPort) was removed from system")
-    }
-    
-    func serialPort(serialPort: ORSSerialPort, didEncounterError error: NSError) {
-        print("SerialPort \(serialPort) encountered an error: \(error)")
-    }
-    
-    
+
     override func viewDidDisappear() {
         super.viewDidDisappear()
-        serialPort?.close()
     }
 }
