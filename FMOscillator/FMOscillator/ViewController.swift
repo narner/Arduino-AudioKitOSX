@@ -22,10 +22,10 @@ class ViewController: NSViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        /*Code below will be used for some sort of UI that will allow 
-        the user to select what serial port they want to use as input.
-        This should be added after we've establsihed proof of concept 
-        communication between the Arduino and the app.
+        //Code below will be used for some sort of UI that will allow
+        //the user to select what serial port they want to use as input.
+        //This should be added after we've establsihed proof of concept
+        //communication between the Arduino and the app.
         
         let availablePorts = ORSSerialPortManager.sharedSerialPortManager().availablePorts as! [ORSSerialPort]
         if availablePorts.count == 0 {
@@ -33,14 +33,17 @@ class ViewController: NSViewController {
             exit(EXIT_SUCCESS)
         }
         
-        println("\nPlease select a serial port: \n")
-        let availablePorts = ORSSerialPortManager.sharedSerialPortManager().availablePorts as! [ORSSerialPort]
-        var i = 0
-        for port in availablePorts {
-            println("\(i++). \(port.name)")
-        }
+        let serialPort = ORSSerialPort(path: "/dev/tty.usbmodem1411")
+        serialCommunicator.serialPort = serialPort
+        
+        
+//        println("\nPlease select a serial port: \n")
+//        let availablePorts = ORSSerialPortManager.sharedSerialPortManager().availablePorts as! [ORSSerialPort]
+//        var i = 0
+//        for port in availablePorts {
+//            println("\(i++). \(port.name)")
+//        }
 
-        */
         
         
         /* Oscillator creation

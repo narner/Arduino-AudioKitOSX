@@ -11,8 +11,8 @@ const int  buttonPin = 2;    // the pin that the push-button is attached to
 int buttonState = 0;         // current state of the push-button
 int lastButtonState = 0;     // previous state of the push-button
 
-float lastPotentiometerOneValue = 0;
-float lastPotentiometerTwoValue = 0;
+int lastPotentiometerOneValue = 0;
+int lastPotentiometerTwoValue = 0;
 
 void setup() {
   // initialize serial communication at 57600 bits per second:
@@ -31,21 +31,21 @@ void loop() {
 void readAndSendPotentiometerDataIfChanged(void) {
 
   //Potentiometer One
-  float newPotentiometerOneValue = analogRead(A0) 
-  float newPotentiometerOneValue = newPotentiometerOneValue * (1.0 / 1023.0);
+  int newPotentiometerOneValue = analogRead(A0); 
+  newPotentiometerOneValue = newPotentiometerOneValue / 10;
   if (newPotentiometerOneValue == lastPotentiometerOneValue) return;
 
-  Serial.print("!pos");
+  Serial.print("!pos1");
   Serial.print(newPotentiometerOneValue);
   Serial.print(";");
   lastPotentiometerOneValue = newPotentiometerOneValue;
 
   //Potentiometer Two
-  float newPotentiometerTwoValue = analogRead(A1) 
-  float newPotentiometerTwoValue = newPotentiometerOneValue * (1.0 / 1023.0);
+  int newPotentiometerTwoValue = analogRead(A1); 
+  newPotentiometerTwoValue = newPotentiometerOneValue / 10;
   if (newPotentiometerTwoValue == lastPotentiometerTwoValue) return;
 
-  Serial.print("!pos");
+  Serial.print("!pos2");
   Serial.print(newPotentiometerTwoValue);
   Serial.print(";");
   lastPotentiometerTwoValue = newPotentiometerTwoValue;
@@ -62,14 +62,14 @@ void readAndSendButtonDataIfChanged(void) {
     if (buttonState == HIGH) {
     // if the current state is HIGH then the button
     // went from off to on:
-  Serial.print("!pos");
-  Serial.print("on");
+  Serial.print("state");
+  Serial.print("1");
   Serial.print(";");
   } else {
   // if the current state is LOW then the button
   // went from on to off:
-  Serial.print("!pos");
-  Serial.print("off");
+  Serial.print("state");
+  Serial.print("0");
   Serial.print(";");
   }
   // Delay a little bit to avoid bouncing
