@@ -25,10 +25,8 @@ class SerialCommunicator: NSObject, ORSSerialPortDelegate {
     
     // MARK - ORSSerialPortDelegate
     
-    
-    
     func serialPortWasRemovedFromSystem(serialPort: ORSSerialPort) {
-        self.serialPort = nil
+    self.serialPort = nil
     }
     
     func serialPort(serialPort: ORSSerialPort, didEncounterError error: NSError) {
@@ -62,9 +60,6 @@ class SerialCommunicator: NSObject, ORSSerialPortDelegate {
     
     
     func serialPort(serialPort: ORSSerialPort, didReceivePacket packetData: NSData, matchingDescriptor descriptor: ORSSerialPacketDescriptor) {
-//        if let dataAsString = NSString(data: packetData, encoding: NSASCIIStringEncoding) {
-//            let valueString = dataAsString.substringWithRange(NSRange(location: 4, length: dataAsString.length-5))
-//            self.potentiometerOneValue = valueString.toInt()!
         let packetType = SerialPortPacketType(rawValue: descriptor.userInfo as! Int)!
         switch packetType {
         case .PotentiometerOne:
@@ -85,9 +80,7 @@ class SerialCommunicator: NSObject, ORSSerialPortDelegate {
     dynamic private(set) var potentiometerOneValue: Int = 0
     dynamic private(set) var potentiometerTwoValue: Int = 0
     dynamic private(set) var switchState: Bool = true
-    
-    
-    
+        
     dynamic var serialPort: ORSSerialPort? {
         willSet {
             if let port = serialPort {

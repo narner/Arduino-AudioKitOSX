@@ -1,11 +1,10 @@
- /*This Arduino sketch will read teh values of two potentiometers and a 
+ /*This Arduino sketch will read the values of two potentiometers and a 
    toggle switch, which will be used to control the parameters of an oscillator 
    made with Audio Kit */
    
    //http://www.nickarner.com
    //http://www.audiokitio
  
-
 const int  buttonPin = 2;    // the pin that the push-button is attached to
 
 int buttonState = 0;         // current state of the push-button
