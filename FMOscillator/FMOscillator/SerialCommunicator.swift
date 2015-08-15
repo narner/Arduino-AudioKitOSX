@@ -34,8 +34,8 @@ class SerialCommunicator: NSObject, ORSSerialPortDelegate {
     }
     
     func serialPortWasOpened(serialPort: ORSSerialPort) {
-        let descriptorPotOne = ORSSerialPacketDescriptor(prefixString: "!pos1", suffixString: ";", userInfo: SerialPortPacketType.PotentiometerOne.rawValue)
-        let descriptorPotTwo = ORSSerialPacketDescriptor(prefixString: "!pos2", suffixString: ";", userInfo: SerialPortPacketType.PotentiometerTwo.rawValue)
+        let descriptorPotOne = ORSSerialPacketDescriptor(prefixString: "!pot1", suffixString: ";", userInfo: SerialPortPacketType.PotentiometerOne.rawValue)
+        let descriptorPotTwo = ORSSerialPacketDescriptor(prefixString: "!pot2", suffixString: ";", userInfo: SerialPortPacketType.PotentiometerTwo.rawValue)
         let descriptorState = ORSSerialPacketDescriptor(prefixString: "!state", suffixString: ";", userInfo: SerialPortPacketType.State.rawValue)
 
         serialPort.startListeningForPacketsMatchingDescriptor(descriptorPotOne)

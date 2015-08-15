@@ -30,24 +30,25 @@ void loop() {
 void readAndSendPotentiometerDataIfChanged(void) {
 
   //Potentiometer One
-  int newPotentiometerOneValue = analogRead(A0); 
-  newPotentiometerOneValue = newPotentiometerOneValue / 10;
-  if (newPotentiometerOneValue == lastPotentiometerOneValue) return;
+  // read the input on analog pin 0:
+  int potentiometerOneValue = analogRead(A0);
+  // Convert the analog reading (which goes from 0 - 1023) to a voltage (0 - 5V):
+  float potOneVoltageValue = potentiometerOneValue * (1.0 / 1023.0);
 
-  Serial.print("!pos1");
-  Serial.print(newPotentiometerOneValue);
+  Serial.print("!pot1");
+  Serial.print(potOneVoltageValue);
   Serial.print(";");
-  lastPotentiometerOneValue = newPotentiometerOneValue;
+
 
   //Potentiometer Two
-  int newPotentiometerTwoValue = analogRead(A1); 
-  newPotentiometerTwoValue = newPotentiometerOneValue / 10;
-  if (newPotentiometerTwoValue == lastPotentiometerTwoValue) return;
+  // read the input on analog pin 1:
+  int potentiometerTwoValue = analogRead(A1);
+  // Convert the analog reading (which goes from 0 - 1023) to a voltage (0 - 5V):
+  float potTwoVoltageValue = potentiometerTwoValue * (1.0 / 1023.0);
 
-  Serial.print("!pos2");
-  Serial.print(newPotentiometerTwoValue);
+  Serial.print("!pot2");
+  Serial.print(potTwoVoltageValue);
   Serial.print(";");
-  lastPotentiometerTwoValue = newPotentiometerTwoValue;
 }
 
 
@@ -61,9 +62,9 @@ void readAndSendButtonDataIfChanged(void) {
     if (buttonState == HIGH) {
     // if the current state is HIGH then the button
     // went from off to on:
-  Serial.print("state");
-  Serial.print("1");
-  Serial.print(";");
+    Serial.print("state");
+    Serial.print("1");
+    Serial.print(";");
   } else {
   // if the current state is LOW then the button
   // went from on to off:
