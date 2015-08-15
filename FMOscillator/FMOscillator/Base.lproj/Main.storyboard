@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="8121.17" systemVersion="14D131" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D131" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="8121.17"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="7702"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -672,8 +672,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ec9-My-6XN">
-                                <rect key="frame" x="106" y="195" width="288" height="56"/>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ec9-My-6XN">
+                                <rect key="frame" x="96" y="195" width="288" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="54" id="4o5-k5-gHQ"/>
+                                </constraints>
                                 <buttonCell key="cell" type="smallSquare" title="Play Sound" bezelStyle="smallSquare" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="kPT-x6-TlL">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="systemBold"/>
@@ -682,7 +685,44 @@
                                     <action selector="startSound:" target="XfG-lQ-9wD" id="KgV-Lx-MHx"/>
                                 </connections>
                             </button>
+                            <slider horizontalHuggingPriority="750" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="KG8-v5-FuC">
+                                <rect key="frame" x="123" y="143" width="28" height="30"/>
+                                <sliderCell key="cell" alignment="left" maxValue="1" doubleValue="0.5" tickMarkPosition="above" allowsTickMarkValuesOnly="YES" sliderType="circular" id="Z9D-yx-Cdd"/>
+                            </slider>
+                            <slider horizontalHuggingPriority="750" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="hvu-4S-0Cy">
+                                <rect key="frame" x="332" y="143" width="28" height="30"/>
+                                <sliderCell key="cell" alignment="left" maxValue="1" doubleValue="0.5" tickMarkPosition="above" allowsTickMarkValuesOnly="YES" sliderType="circular" id="THj-zG-Quy"/>
+                            </slider>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Pif-QE-5qJ">
+                                <rect key="frame" x="109" y="108" width="56" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Param 1" id="qlP-8D-95F">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="A7v-Nn-sF6">
+                                <rect key="frame" x="318" y="108" width="56" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Param 2" id="O5c-Mu-KWv">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
                         </subviews>
+                        <constraints>
+                            <constraint firstItem="Pif-QE-5qJ" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="111" id="2Gb-kS-Kjm"/>
+                            <constraint firstAttribute="trailing" secondItem="A7v-Nn-sF6" secondAttribute="trailing" constant="108" id="7iU-PM-3Q1"/>
+                            <constraint firstItem="KG8-v5-FuC" firstAttribute="top" secondItem="hvu-4S-0Cy" secondAttribute="top" id="I2l-IT-Jzi"/>
+                            <constraint firstItem="Pif-QE-5qJ" firstAttribute="top" secondItem="KG8-v5-FuC" secondAttribute="bottom" constant="21" id="NCN-DB-bDf"/>
+                            <constraint firstItem="ec9-My-6XN" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" symbolic="YES" id="V8G-4O-vsg"/>
+                            <constraint firstItem="ec9-My-6XN" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="Y51-tZ-zQd"/>
+                            <constraint firstItem="Pif-QE-5qJ" firstAttribute="centerX" secondItem="KG8-v5-FuC" secondAttribute="centerX" id="Yli-pv-w3Z"/>
+                            <constraint firstItem="KG8-v5-FuC" firstAttribute="top" secondItem="ec9-My-6XN" secondAttribute="bottom" constant="26" id="ce6-ga-2kZ"/>
+                            <constraint firstItem="Pif-QE-5qJ" firstAttribute="baseline" secondItem="A7v-Nn-sF6" secondAttribute="baseline" id="dKy-RN-VfE"/>
+                            <constraint firstItem="ec9-My-6XN" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="96" id="eDD-tT-flQ"/>
+                            <constraint firstItem="A7v-Nn-sF6" firstAttribute="centerX" secondItem="hvu-4S-0Cy" secondAttribute="centerX" id="hv4-mh-efh"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
