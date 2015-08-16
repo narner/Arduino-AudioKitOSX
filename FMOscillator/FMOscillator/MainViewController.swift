@@ -22,11 +22,6 @@ class MainViewController: NSViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        //Code below will be used for some sort of UI that will allow
-        //the user to select what serial port they want to use as input.
-        //This should be added after we've establsihed proof of concept
-        //communication between the Arduino and the app.
-        
         let availablePorts = ORSSerialPortManager.sharedSerialPortManager().availablePorts as! [ORSSerialPort]
         if availablePorts.count == 0 {
             println("No connected serial ports found. Please connect your Arduino or turn on Bluetooth..\n")
@@ -35,16 +30,6 @@ class MainViewController: NSViewController {
         
         let serialPort = ORSSerialPort(path: "/dev/tty.usbmodem1411")
         serialCommunicator.serialPort = serialPort
-        
-        
-//        println("\nPlease select a serial port: \n")
-//        let availablePorts = ORSSerialPortManager.sharedSerialPortManager().availablePorts as! [ORSSerialPort]
-//        var i = 0
-//        for port in availablePorts {
-//            println("\(i++). \(port.name)")
-//        }
-
-        
         
         /* Oscillator creation
         TO-DO: change to FMOscillator, with frequency and amplitude controlled by the

@@ -148,11 +148,9 @@
 		E45516A71B35ED4F00558CF8 /* FMOscillator */ = {
 			isa = PBXGroup;
 			children = (
-				E47E9E441B7AC5C000F2C853 /* AudioKit.swift */,
 				E47E9E461B7AC73100F2C853 /* SerialCommunicator.swift */,
 				E45516AC1B35ED4F00558CF8 /* MainViewController.swift */,
 				E45516B01B35ED4F00558CF8 /* Main.storyboard */,
-				E45516AA1B35ED4F00558CF8 /* AppDelegate.swift */,
 				E45516A81B35ED4F00558CF8 /* Supporting Files */,
 			);
 			path = FMOscillator;
@@ -161,6 +159,8 @@
 		E45516A81B35ED4F00558CF8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E45516AA1B35ED4F00558CF8 /* AppDelegate.swift */,
+				E47E9E441B7AC5C000F2C853 /* AudioKit.swift */,
 				E45516AE1B35ED4F00558CF8 /* Images.xcassets */,
 				E45516A91B35ED4F00558CF8 /* Info.plist */,
 				E4CBBB0E1B35F3E00029FC24 /* Bridging-Header.h */,
