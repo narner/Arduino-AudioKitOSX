@@ -19,7 +19,7 @@ int potentiometerOneValue = analogRead(A0);
 
 Then, the raw value from the potentiometer (the Arduino reads analog input as values to between 0 and 1023) to be a voltage value between 0 and 1:
 
-`float potOneVoltageValue = potentiometerOneValue * (1.0 / 1023.0);`
+`int potOneVoltageValue = potentiometerOneValue * (1.0 / 1023.0);`
 
 Next, the value of the potentiometer is printed through the serial output. The format below is used so that the `SerialCommunicator` can correctly parse the values from the serial bus. 
 
