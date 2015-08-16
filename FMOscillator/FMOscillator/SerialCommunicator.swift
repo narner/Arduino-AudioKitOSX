@@ -3,8 +3,10 @@
 //  FMOscillator
 //
 //  Created by Nicholas Arner on 8/11/15.
-//  Copyright (c) 2015 Nicholas Arner. All rights reserved.
-//
+
+//  Based off of the `Request Response Demo` example in
+//  the ORSSerialPort library from Andrew Madsen 
+//  (https://github.com/armadsen/ORSSerialPort/tree/master/Examples/RequestResponseDemo)
 
 import Foundation
 
