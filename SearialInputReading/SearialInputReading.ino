@@ -29,10 +29,10 @@ void loop() {
 
 void readAndSendPotentiometerDataIfChanged(void) {
 
-  //Potentiometer One
-  // read the input on analog pin 0:
+  ///Potentiometer One
+  // Read the input on analog pin 0:
   int potentiometerOneValue = analogRead(A0);
-  // Convert the analog reading (which goes from 0 - 1023) to a voltage (0 - 5V):
+  // Convert the analog reading (which goes from 0 - 1023) to a voltage value between (0 - 5V):
   float potOneVoltageValue = potentiometerOneValue * (1.0 / 1023.0);
 
   Serial.print("!pot1");
@@ -40,10 +40,8 @@ void readAndSendPotentiometerDataIfChanged(void) {
   Serial.print(";");
 
 
-  //Potentiometer Two
-  // read the input on analog pin 1:
+  ///Potentiometer Two
   int potentiometerTwoValue = analogRead(A1);
-  // Convert the analog reading (which goes from 0 - 1023) to a voltage (0 - 5V):
   float potTwoVoltageValue = potentiometerTwoValue * (1.0 / 1023.0);
 
   Serial.print("!pot2");
@@ -53,21 +51,19 @@ void readAndSendPotentiometerDataIfChanged(void) {
 
 
 void readAndSendButtonDataIfChanged(void) {
-  // read the pushbutton input pin:
+  // Read the pushbutton input pin:
   buttonState = digitalRead(buttonPin);
 
-  // compare the buttonState to its previous state
+  // Compare the buttonState to its previous state
   if (buttonState != lastButtonState) {
-  // if the state has changed, increment the counter
+  // If the state has changed, increment the counter
     if (buttonState == HIGH) {
-    // if the current state is HIGH then the button
-    // went from off to on:
+    // If the current state is HIGH then the button went from off to on:
     Serial.print("state");
     Serial.print("1");
     Serial.print(";");
   } else {
-  // if the current state is LOW then the button
-  // went from on to off:
+  // If the current state is LOW, then the button went from on to off 
   Serial.print("state");
   Serial.print("0");
   Serial.print(";");
@@ -75,8 +71,7 @@ void readAndSendButtonDataIfChanged(void) {
   // Delay a little bit to avoid bouncing
   delay(50);  
   }
-  // save the current state as the last state,
-  //for next time through the loop
+  //Save the current state as the last state, for next time through the loop 
   lastButtonState = buttonState;
 }
 
