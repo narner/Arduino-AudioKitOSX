@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MainViewController.swift
 //  FMOscillator
 //
 //  Created by Nicholas Arner on 6/20/15.
@@ -10,7 +10,7 @@ import Cocoa
 import ORSSerial 
 
 
-class ViewController: NSViewController {
+class MainViewController: NSViewController {
     
     let serialPortManager = ORSSerialPortManager.sharedSerialPortManager()
     let serialCommunicator = SerialCommunicator()

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D131" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D131" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="7702"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="7706"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -664,10 +664,10 @@
             </objects>
             <point key="canvasLocation" x="75" y="250"/>
         </scene>
-        <!--View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="FMOscillator" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="XfG-lQ-9wD" customClass="MainViewController" customModule="FMOscillator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -686,15 +686,15 @@
                                 </connections>
                             </button>
                             <slider horizontalHuggingPriority="750" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="KG8-v5-FuC">
-                                <rect key="frame" x="123" y="143" width="28" height="30"/>
+                                <rect key="frame" x="122" y="87" width="28" height="30"/>
                                 <sliderCell key="cell" alignment="left" maxValue="1" doubleValue="0.5" tickMarkPosition="above" allowsTickMarkValuesOnly="YES" sliderType="circular" id="Z9D-yx-Cdd"/>
                             </slider>
                             <slider horizontalHuggingPriority="750" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="hvu-4S-0Cy">
-                                <rect key="frame" x="332" y="143" width="28" height="30"/>
+                                <rect key="frame" x="331" y="87" width="28" height="30"/>
                                 <sliderCell key="cell" alignment="left" maxValue="1" doubleValue="0.5" tickMarkPosition="above" allowsTickMarkValuesOnly="YES" sliderType="circular" id="THj-zG-Quy"/>
                             </slider>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Pif-QE-5qJ">
-                                <rect key="frame" x="109" y="108" width="56" height="17"/>
+                                <rect key="frame" x="108" y="52" width="56" height="17"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Param 1" id="qlP-8D-95F">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -702,8 +702,35 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="A7v-Nn-sF6">
-                                <rect key="frame" x="318" y="108" width="56" height="17"/>
+                                <rect key="frame" x="317" y="52" width="56" height="17"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Param 2" id="O5c-Mu-KWv">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Tiw-eo-hFJ">
+                                <rect key="frame" x="242" y="147" width="132" height="26"/>
+                                <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="aT3-J1-CyM" id="ajo-vk-YQZ">
+                                    <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="menu"/>
+                                    <menu key="menu" id="ESw-bh-lNF">
+                                        <items>
+                                            <menuItem title="Item 1" state="on" id="aT3-J1-CyM"/>
+                                            <menuItem title="Item 2" id="vPS-Sa-W8y"/>
+                                            <menuItem title="Item 3" id="mt2-AT-z5G"/>
+                                        </items>
+                                    </menu>
+                                </popUpButtonCell>
+                                <connections>
+                                    <binding destination="XfG-lQ-9wD" name="content" keyPath="serialPortManager.availablePorts" id="NsK-r8-g9e"/>
+                                    <binding destination="XfG-lQ-9wD" name="contentValues" keyPath="serialPortManager.availablePorts.name" previousBinding="NsK-r8-g9e" id="WoN-UB-IO8"/>
+                                    <binding destination="XfG-lQ-9wD" name="selectedObject" keyPath="serialCommunicator.serialPort" previousBinding="WoN-UB-IO8" id="opl-xi-RBQ"/>
+                                </connections>
+                            </popUpButton>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ruG-gz-4gG">
+                                <rect key="frame" x="76" y="152" width="120" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Select a serial port" id="vup-TU-DIg">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -711,22 +738,25 @@
                             </textField>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="Pif-QE-5qJ" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="111" id="2Gb-kS-Kjm"/>
-                            <constraint firstAttribute="trailing" secondItem="A7v-Nn-sF6" secondAttribute="trailing" constant="108" id="7iU-PM-3Q1"/>
+                            <constraint firstItem="Pif-QE-5qJ" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="110" id="2Gb-kS-Kjm"/>
+                            <constraint firstAttribute="trailing" secondItem="A7v-Nn-sF6" secondAttribute="trailing" constant="109" id="7iU-PM-3Q1"/>
+                            <constraint firstItem="Tiw-eo-hFJ" firstAttribute="top" secondItem="ec9-My-6XN" secondAttribute="bottom" constant="25" id="8Jb-Ga-X0I"/>
                             <constraint firstItem="KG8-v5-FuC" firstAttribute="top" secondItem="hvu-4S-0Cy" secondAttribute="top" id="I2l-IT-Jzi"/>
                             <constraint firstItem="Pif-QE-5qJ" firstAttribute="top" secondItem="KG8-v5-FuC" secondAttribute="bottom" constant="21" id="NCN-DB-bDf"/>
+                            <constraint firstItem="Tiw-eo-hFJ" firstAttribute="centerX" secondItem="ec9-My-6XN" secondAttribute="centerX" constant="67.5" id="Sab-n6-ctx"/>
                             <constraint firstItem="ec9-My-6XN" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" symbolic="YES" id="V8G-4O-vsg"/>
                             <constraint firstItem="ec9-My-6XN" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="Y51-tZ-zQd"/>
                             <constraint firstItem="Pif-QE-5qJ" firstAttribute="centerX" secondItem="KG8-v5-FuC" secondAttribute="centerX" id="Yli-pv-w3Z"/>
-                            <constraint firstItem="KG8-v5-FuC" firstAttribute="top" secondItem="ec9-My-6XN" secondAttribute="bottom" constant="26" id="ce6-ga-2kZ"/>
+                            <constraint firstItem="KG8-v5-FuC" firstAttribute="top" secondItem="ec9-My-6XN" secondAttribute="bottom" constant="82" id="ce6-ga-2kZ"/>
                             <constraint firstItem="Pif-QE-5qJ" firstAttribute="baseline" secondItem="A7v-Nn-sF6" secondAttribute="baseline" id="dKy-RN-VfE"/>
                             <constraint firstItem="ec9-My-6XN" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="96" id="eDD-tT-flQ"/>
+                            <constraint firstItem="Tiw-eo-hFJ" firstAttribute="leading" secondItem="KG8-v5-FuC" secondAttribute="trailing" constant="96" id="ewf-NE-b7s"/>
                             <constraint firstItem="A7v-Nn-sF6" firstAttribute="centerX" secondItem="hvu-4S-0Cy" secondAttribute="centerX" id="hv4-mh-efh"/>
                         </constraints>
                     </view>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-                <customObject id="WZ4-jQ-8IM" customClass="ViewController" customModule="FMOscillator" customModuleProvider="target"/>
+                <userDefaultsController representsSharedInstance="YES" id="QE7-Dj-50f"/>
             </objects>
             <point key="canvasLocation" x="75" y="655"/>
         </scene>

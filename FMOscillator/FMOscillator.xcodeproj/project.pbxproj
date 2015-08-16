@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E45516AB1B35ED4F00558CF8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45516AA1B35ED4F00558CF8 /* AppDelegate.swift */; };
-		E45516AD1B35ED4F00558CF8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45516AC1B35ED4F00558CF8 /* ViewController.swift */; };
+		E45516AD1B35ED4F00558CF8 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45516AC1B35ED4F00558CF8 /* MainViewController.swift */; };
 		E45516AF1B35ED4F00558CF8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E45516AE1B35ED4F00558CF8 /* Images.xcassets */; };
 		E45516B21B35ED4F00558CF8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E45516B01B35ED4F00558CF8 /* Main.storyboard */; };
 		E45516BE1B35ED4F00558CF8 /* FMOscillatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45516BD1B35ED4F00558CF8 /* FMOscillatorTests.swift */; };
@@ -89,7 +89,7 @@
 		E45516A51B35ED4F00558CF8 /* FMOscillator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FMOscillator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E45516A91B35ED4F00558CF8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E45516AA1B35ED4F00558CF8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E45516AC1B35ED4F00558CF8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E45516AC1B35ED4F00558CF8 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		E45516AE1B35ED4F00558CF8 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		E45516B11B35ED4F00558CF8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E45516B71B35ED4F00558CF8 /* FMOscillatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FMOscillatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -150,7 +150,7 @@
 			children = (
 				E47E9E441B7AC5C000F2C853 /* AudioKit.swift */,
 				E47E9E461B7AC73100F2C853 /* SerialCommunicator.swift */,
-				E45516AC1B35ED4F00558CF8 /* ViewController.swift */,
+				E45516AC1B35ED4F00558CF8 /* MainViewController.swift */,
 				E45516B01B35ED4F00558CF8 /* Main.storyboard */,
 				E45516AA1B35ED4F00558CF8 /* AppDelegate.swift */,
 				E45516A81B35ED4F00558CF8 /* Supporting Files */,
@@ -373,7 +373,7 @@
 			files = (
 				E47E9E471B7AC73100F2C853 /* SerialCommunicator.swift in Sources */,
 				E47E9E451B7AC5C000F2C853 /* AudioKit.swift in Sources */,
-				E45516AD1B35ED4F00558CF8 /* ViewController.swift in Sources */,
+				E45516AD1B35ED4F00558CF8 /* MainViewController.swift in Sources */,
 				E45516AB1B35ED4F00558CF8 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
