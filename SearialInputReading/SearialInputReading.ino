@@ -32,7 +32,7 @@ void readAndSendPotentiometerDataIfChanged(void) {
   ///Potentiometer One
   // Read the input on analog pin 0:
   int potentiometerOneValue = analogRead(A0);
-  // Convert the analog reading (which goes from 0 - 1023) to a voltage value between (0 - 5V):
+  // Convert the analog reading (which goes from 0 - 1023) to a voltage value between (0 - 1V):
   float potOneVoltageValue = potentiometerOneValue * (1.0 / 1023.0);
 
   Serial.print("!pot1");
