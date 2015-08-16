@@ -28,13 +28,18 @@ class MainViewController: NSViewController {
             exit(EXIT_SUCCESS)
         }
         
+        /* Used for testing, we should now set the correct 
+        serial port based on the value we get from the pop-up button.
+
         let serialPort = ORSSerialPort(path: "/dev/tty.usbmodem1411")
         serialCommunicator.serialPort = serialPort
+        */
+        
         
         /* Oscillator creation
         TO-DO: change to FMOscillator, with frequency and amplitude controlled by the
         received data from the potentiometers */
-        let oscillator = AKOscillator()
+        let oscillator = AKFMOscillator()
         instrument.connect(oscillator)
         instrument.connect(AKAudioOutput(audioSource: oscillator))
         
