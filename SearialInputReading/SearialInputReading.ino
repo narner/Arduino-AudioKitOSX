@@ -1,10 +1,11 @@
- /*This Arduino sketch will read the values of two potentiometers and a 
+ /*This Arduino sketch will read teh values of two potentiometers and a 
    toggle switch, which will be used to control the parameters of an oscillator 
    made with Audio Kit */
    
    //http://www.nickarner.com
    //http://www.audiokitio
  
+
 const int  buttonPin = 2;    // the pin that the push-button is attached to
 
 int buttonState = 0;         // current state of the push-button
@@ -29,41 +30,44 @@ void loop() {
 
 void readAndSendPotentiometerDataIfChanged(void) {
 
-  ///Potentiometer One
-  // Read the input on analog pin 0:
-  int potentiometerOneValue = analogRead(A0);
-  // Convert the analog reading (which goes from 0 - 1023) to a voltage value between (0 - 1V):
-  int potOneVoltageValue = potentiometerOneValue * (1.0 / 1023.0);
+  //Potentiometer One
+  int newPotentiometerOneValue = analogRead(A0); 
+  newPotentiometerOneValue = newPotentiometerOneValue / 10;
+  if (newPotentiometerOneValue == lastPotentiometerOneValue) return;
 
-  Serial.print("!pot1");
-  Serial.print(potOneVoltageValue);
+  Serial.print("!pos1");
+  Serial.print(newPotentiometerOneValue);
   Serial.print(";");
+  lastPotentiometerOneValue = newPotentiometerOneValue;
 
+  //Potentiometer Two
+  int newPotentiometerTwoValue = analogRead(A1); 
+  newPotentiometerTwoValue = newPotentiometerOneValue / 10;
+  if (newPotentiometerTwoValue == lastPotentiometerTwoValue) return;
 
-  ///Potentiometer Two
-  int potentiometerTwoValue = analogRead(A1);
-  int potTwoVoltageValue = potentiometerTwoValue * (1.0 / 1023.0);
-
-  Serial.print("!pot2");
-  Serial.print(potTwoVoltageValue);
+  Serial.print("!pos2");
+  Serial.print(newPotentiometerTwoValue);
   Serial.print(";");
+  lastPotentiometerTwoValue = newPotentiometerTwoValue;
 }
 
 
 void readAndSendButtonDataIfChanged(void) {
-  // Read the pushbutton input pin:
+  // read the pushbutton input pin:
   buttonState = digitalRead(buttonPin);
 
-  // Compare the buttonState to its previous state
+  // compare the buttonState to its previous state
   if (buttonState != lastButtonState) {
-  // If the state has changed, increment the counter
+  // if the state has changed, increment the counter
     if (buttonState == HIGH) {
-    // If the current state is HIGH then the button went from off to on:
-    Serial.print("state");
-    Serial.print("1");
-    Serial.print(";");
+    // if the current state is HIGH then the button
+    // went from off to on:
+  Serial.print("state");
+  Serial.print("1");
+  Serial.print(";");
   } else {
-  // If the current state is LOW, then the button went from on to off 
+  // if the current state is LOW then the button
+  // went from on to off:
   Serial.print("state");
   Serial.print("0");
   Serial.print(";");
@@ -71,7 +75,8 @@ void readAndSendButtonDataIfChanged(void) {
   // Delay a little bit to avoid bouncing
   delay(50);  
   }
-  //Save the current state as the last state, for next time through the loop 
+  // save the current state as the last state,
+  //for next time through the loop
   lastButtonState = buttonState;
 }
 

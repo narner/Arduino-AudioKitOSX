@@ -7,20 +7,25 @@
 //
 
 import Cocoa
-import ORSSerial 
+import ORSSerial
 
 
-class MainViewController: NSViewController {
+class ViewController: NSViewController {
     
     let serialPortManager = ORSSerialPortManager.sharedSerialPortManager()
     let serialCommunicator = SerialCommunicator()
-
-
+    
+    
     let instrument = AKInstrument()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        //Code below will be used for some sort of UI that will allow
+        //the user to select what serial port they want to use as input.
+        //This should be added after we've establsihed proof of concept
+        //communication between the Arduino and the app.
         
         let availablePorts = ORSSerialPortManager.sharedSerialPortManager().availablePorts as! [ORSSerialPort]
         if availablePorts.count == 0 {
@@ -28,18 +33,23 @@ class MainViewController: NSViewController {
             exit(EXIT_SUCCESS)
         }
         
-        /* Used for testing, we should now set the correct 
-        serial port based on the value we get from the pop-up button.
-
         let serialPort = ORSSerialPort(path: "/dev/tty.usbmodem1411")
         serialCommunicator.serialPort = serialPort
-        */
+        
+        
+        //        println("\nPlease select a serial port: \n")
+        //        let availablePorts = ORSSerialPortManager.sharedSerialPortManager().availablePorts as! [ORSSerialPort]
+        //        var i = 0
+        //        for port in availablePorts {
+        //            println("\(i++). \(port.name)")
+        //        }
+        
         
         
         /* Oscillator creation
         TO-DO: change to FMOscillator, with frequency and amplitude controlled by the
         received data from the potentiometers */
-        let oscillator = AKFMOscillator()
+        let oscillator = AKOscillator()
         instrument.connect(oscillator)
         instrument.connect(AKAudioOutput(audioSource: oscillator))
         
@@ -48,7 +58,7 @@ class MainViewController: NSViewController {
     }
     
     
-    /* TO-DO: this will be controlled by the received true/false 
+    /* TO-DO: this will be controlled by the received true/false
     value from the push-button */
     @IBAction func startSound(sender: NSButton) {
         if !(sender.title == "Stop") {
@@ -60,7 +70,7 @@ class MainViewController: NSViewController {
         }
     }
     
-
+    
     override func viewDidDisappear() {
         super.viewDidDisappear()
     }

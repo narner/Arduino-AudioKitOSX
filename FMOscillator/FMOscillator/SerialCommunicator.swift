@@ -27,8 +27,10 @@ class SerialCommunicator: NSObject, ORSSerialPortDelegate {
     
     // MARK - ORSSerialPortDelegate
     
+    
+    
     func serialPortWasRemovedFromSystem(serialPort: ORSSerialPort) {
-    self.serialPort = nil
+        self.serialPort = nil
     }
     
     func serialPort(serialPort: ORSSerialPort, didEncounterError error: NSError) {
@@ -36,10 +38,10 @@ class SerialCommunicator: NSObject, ORSSerialPortDelegate {
     }
     
     func serialPortWasOpened(serialPort: ORSSerialPort) {
-        let descriptorPotOne = ORSSerialPacketDescriptor(prefixString: "!pot1", suffixString: ";", userInfo: SerialPortPacketType.PotentiometerOne.rawValue)
-        let descriptorPotTwo = ORSSerialPacketDescriptor(prefixString: "!pot2", suffixString: ";", userInfo: SerialPortPacketType.PotentiometerTwo.rawValue)
+        let descriptorPotOne = ORSSerialPacketDescriptor(prefixString: "!pos1", suffixString: ";", userInfo: SerialPortPacketType.PotentiometerOne.rawValue)
+        let descriptorPotTwo = ORSSerialPacketDescriptor(prefixString: "!pos2", suffixString: ";", userInfo: SerialPortPacketType.PotentiometerTwo.rawValue)
         let descriptorState = ORSSerialPacketDescriptor(prefixString: "!state", suffixString: ";", userInfo: SerialPortPacketType.State.rawValue)
-
+        
         serialPort.startListeningForPacketsMatchingDescriptor(descriptorPotOne)
         serialPort.startListeningForPacketsMatchingDescriptor(descriptorPotTwo)
         serialPort.startListeningForPacketsMatchingDescriptor(descriptorState)
@@ -62,6 +64,9 @@ class SerialCommunicator: NSObject, ORSSerialPortDelegate {
     
     
     func serialPort(serialPort: ORSSerialPort, didReceivePacket packetData: NSData, matchingDescriptor descriptor: ORSSerialPacketDescriptor) {
+        //        if let dataAsString = NSString(data: packetData, encoding: NSASCIIStringEncoding) {
+        //            let valueString = dataAsString.substringWithRange(NSRange(location: 4, length: dataAsString.length-5))
+        //            self.potentiometerOneValue = valueString.toInt()!
         let packetType = SerialPortPacketType(rawValue: descriptor.userInfo as! Int)!
         switch packetType {
         case .PotentiometerOne:
@@ -82,7 +87,9 @@ class SerialCommunicator: NSObject, ORSSerialPortDelegate {
     dynamic private(set) var potentiometerOneValue: Int = 0
     dynamic private(set) var potentiometerTwoValue: Int = 0
     dynamic private(set) var switchState: Bool = true
-        
+    
+    
+    
     dynamic var serialPort: ORSSerialPort? {
         willSet {
             if let port = serialPort {
