@@ -32,7 +32,8 @@ void readAndSendPotentiometerDataIfChanged(void) {
 
   //Potentiometer One
   int newPotentiometerOneValue = analogRead(A0); 
-  newPotentiometerOneValue = newPotentiometerOneValue / 10;
+  newPotentiometerOneValue = newPotentiometerOneValue; 
+  
   if (newPotentiometerOneValue == lastPotentiometerOneValue) return;
 
   Serial.print("!pos1");
@@ -61,14 +62,14 @@ void readAndSendButtonDataIfChanged(void) {
   // If the state has changed, increment the counter
     if (buttonState == HIGH) {
     // If the current state is HIGH then the button went from off to on:
-  Serial.print("state");
-  Serial.print("1");
-  Serial.print(";");
+        Serial.print("state");
+        Serial.print("1");
+        Serial.print(";");
   } else {
   // If the current state is LOW, then the button went from on to off 
-  Serial.print("state");
-  Serial.print("0");
-  Serial.print(";");
+    Serial.print("state");
+    Serial.print("0");
+    Serial.print(";");
   }
   // Delay a little bit to avoid bouncing
   delay(50);  

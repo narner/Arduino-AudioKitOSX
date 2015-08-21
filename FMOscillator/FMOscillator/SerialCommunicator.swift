@@ -64,9 +64,6 @@ class SerialCommunicator: NSObject, ORSSerialPortDelegate {
     
     
     func serialPort(serialPort: ORSSerialPort, didReceivePacket packetData: NSData, matchingDescriptor descriptor: ORSSerialPacketDescriptor) {
-        //        if let dataAsString = NSString(data: packetData, encoding: NSASCIIStringEncoding) {
-        //            let valueString = dataAsString.substringWithRange(NSRange(location: 4, length: dataAsString.length-5))
-        //            self.potentiometerOneValue = valueString.toInt()!
         let packetType = SerialPortPacketType(rawValue: descriptor.userInfo as! Int)!
         switch packetType {
         case .PotentiometerOne:
@@ -74,10 +71,10 @@ class SerialCommunicator: NSObject, ORSSerialPortDelegate {
             println(self.potentiometerOneValue)
         case .PotentiometerTwo:
             self.potentiometerTwoValue = self.potentiometerFromResponsePacket(packetData)
-            println(self.potentiometerTwoValue)
+//            println(self.potentiometerTwoValue)
         case .State:
             self.switchState = self.switchStateFromResponsePacket(packetData)
-            println(self.switchState)
+//            println(self.switchState)
         }
     }
     
