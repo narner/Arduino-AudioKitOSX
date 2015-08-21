@@ -56,18 +56,16 @@ void readAndSendButtonDataIfChanged(void) {
   // read the pushbutton input pin:
   buttonState = digitalRead(buttonPin);
 
-  // compare the buttonState to its previous state
+  // Read the pushbutton input pin:
   if (buttonState != lastButtonState) {
-  // if the state has changed, increment the counter
+  // If the state has changed, increment the counter
     if (buttonState == HIGH) {
-    // if the current state is HIGH then the button
-    // went from off to on:
+    // If the current state is HIGH then the button went from off to on:
   Serial.print("state");
   Serial.print("1");
   Serial.print(";");
   } else {
-  // if the current state is LOW then the button
-  // went from on to off:
+  // If the current state is LOW, then the button went from on to off 
   Serial.print("state");
   Serial.print("0");
   Serial.print(";");
@@ -75,8 +73,7 @@ void readAndSendButtonDataIfChanged(void) {
   // Delay a little bit to avoid bouncing
   delay(50);  
   }
-  // save the current state as the last state,
-  //for next time through the loop
+  //Save the current state as the last state, for next time through the loop 
   lastButtonState = buttonState;
 }
 
