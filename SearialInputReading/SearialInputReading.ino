@@ -42,7 +42,7 @@ void readAndSendPotentiometerDataIfChanged(void) {
 
   //Potentiometer Two
   int newPotentiometerTwoValue = analogRead(A1); 
-  newPotentiometerTwoValue = newPotentiometerOneValue / 10;
+  newPotentiometerTwoValue = newPotentiometerTwoValue / 10;
   if (newPotentiometerTwoValue == lastPotentiometerTwoValue) return;
 
   Serial.print("!pos2");
