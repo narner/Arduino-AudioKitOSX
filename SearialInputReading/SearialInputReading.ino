@@ -23,7 +23,7 @@ void setup() {
  }
  
 void loop() {
-    
+  delay(10);
   readAndSendPotentiometerDataIfChanged();
   readAndSendButtonDataIfChanged();
 }
@@ -31,9 +31,7 @@ void loop() {
 void readAndSendPotentiometerDataIfChanged(void) {
 
   //Potentiometer One
-  int newPotentiometerOneValue = analogRead(A0); 
-  newPotentiometerOneValue = newPotentiometerOneValue; 
-  
+  int newPotentiometerOneValue = analogRead(A0) / 10.2;   
   if (newPotentiometerOneValue == lastPotentiometerOneValue) return;
 
   Serial.print("!pos1");
@@ -42,8 +40,7 @@ void readAndSendPotentiometerDataIfChanged(void) {
   lastPotentiometerOneValue = newPotentiometerOneValue;
 
   //Potentiometer Two
-  int newPotentiometerTwoValue = analogRead(A1); 
-  newPotentiometerTwoValue = newPotentiometerTwoValue / 10;
+  int newPotentiometerTwoValue = analogRead(A1) / 10; 
   if (newPotentiometerTwoValue == lastPotentiometerTwoValue) return;
 
   Serial.print("!pos2");
