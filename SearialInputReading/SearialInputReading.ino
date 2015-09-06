@@ -59,12 +59,12 @@ void readAndSendButtonDataIfChanged(void) {
   // If the state has changed, increment the counter
     if (buttonState == HIGH) {
     // If the current state is HIGH then the button went from off to on:
-        Serial.print("state");
+        Serial.print("!state");
         Serial.print("1");
         Serial.print(";");
   } else {
   // If the current state is LOW, then the button went from on to off 
-    Serial.print("state");
+    Serial.print("!state");
     Serial.print("0");
     Serial.print(";");
   }
