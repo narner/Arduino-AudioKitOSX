@@ -33,7 +33,7 @@ class ViewController: NSViewController {
             exit(EXIT_SUCCESS)
         }
         
-        let serialPort = ORSSerialPort(path: "/dev/tty.usbmodem1411")
+        let serialPort = ORSSerialPort(path: "/dev/tty.usbmodem14421")
         serialCommunicator.serialPort = serialPort
         
         
