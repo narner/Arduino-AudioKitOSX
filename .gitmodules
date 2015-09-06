@@ -1,3 +1,6 @@
 [submodule "FMOscillator/Frameworks/ORSSerialPort"]
 	path = FMOscillator/Frameworks/ORSSerialPort
 	url = https://github.com/armadsen/ORSSerialPort.git
+[submodule "FMOscillator/Frameworks/AudioKit"]
+	path =  FMOscillator/Frameworks/AudioKit
+	url = https://github.com/audiokit/AudioKit.git
