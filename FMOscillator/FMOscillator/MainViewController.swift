@@ -50,7 +50,6 @@ class ViewController: NSViewController {
         TO-DO: change to FMOscillator, with frequency and amplitude controlled by the
         received data from the potentiometers */
         let oscillator = AKOscillator()
-        instrument.connect(oscillator)
         instrument.connect(AKAudioOutput(audioSource: oscillator))
         
         AKOrchestra.addInstrument(instrument)
