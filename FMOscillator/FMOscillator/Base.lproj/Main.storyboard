@@ -684,6 +684,9 @@
                             </button>
                         </subviews>
                     </view>
+                    <connections>
+                        <outlet property="onOffSwitch" destination="ec9-My-6XN" id="Kia-MW-fwb"/>
+                    </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
                 <customObject id="WZ4-jQ-8IM" customClass="ViewController" customModule="FMOscillator" customModuleProvider="target"/>

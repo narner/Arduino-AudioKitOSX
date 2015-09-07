@@ -25,9 +25,13 @@ class SerialCommunicator: NSObject, ORSSerialPortDelegate {
 		case State = 3;
 	}
 	
+    // MARK: - Properties
+    
+    dynamic private(set) var potentiometerOneValue: Int = 0
+    dynamic private(set) var potentiometerTwoValue: Int = 0
+    dynamic private(set) var switchState: Bool = false
+
 	// MARK - ORSSerialPortDelegate
-	
-	
 	
 	func serialPortWasRemovedFromSystem(serialPort: ORSSerialPort) {
 		self.serialPort = nil
@@ -76,24 +80,19 @@ class SerialCommunicator: NSObject, ORSSerialPortDelegate {
 		switch packetType {
 		case .PotentiometerOne:
 			self.potentiometerOneValue = self.potentiometerFromResponsePacket(packetData)
-			println(self.potentiometerOneValue)
+//			println(self.potentiometerOneValue)
+            NSNotificationCenter.defaultCenter().postNotificationName("PotentiometerOneChanged", object: self.potentiometerOneValue)
 		case .PotentiometerTwo:
 			self.potentiometerTwoValue = self.potentiometerFromResponsePacket(packetData)
-			//            println(self.potentiometerTwoValue)
+//            println(self.potentiometerTwoValue)
+            NSNotificationCenter.defaultCenter().postNotificationName("PotentiometerTwoChanged", object: self.potentiometerTwoValue)
 		case .State:
 			self.switchState = self.switchStateFromResponsePacket(packetData)
-			println(self.switchState)
+            NSNotificationCenter.defaultCenter().postNotificationName("SwitchStateChanged", object: self.switchState)
 		}
 	}
 	
-	
-	// MARK: - Properties
-	
-	dynamic private(set) var potentiometerOneValue: Int = 0
-	dynamic private(set) var potentiometerTwoValue: Int = 0
-	dynamic private(set) var switchState: Bool = false
     
-	
 	dynamic var serialPort: ORSSerialPort? {
 		willSet {
 			if let port = serialPort {

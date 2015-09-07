@@ -15,6 +15,7 @@ class ViewController: NSViewController {
     let serialPortManager = ORSSerialPortManager.sharedSerialPortManager()
     let serialCommunicator = SerialCommunicator()
     
+    @IBOutlet var onOffSwitch: NSButton!
     
     let instrument = AKInstrument()
     
@@ -49,16 +50,44 @@ class ViewController: NSViewController {
         /* Oscillator creation
         TO-DO: change to FMOscillator, with frequency and amplitude controlled by the
         received data from the potentiometers */
-        let oscillator = AKOscillator()
+        let oscillator = AKFMOscillator()
+//        oscillator.baseFrequency = // pot one
+//        oscillator.amplitude = // pot two
         instrument.connect(AKAudioOutput(audioSource: oscillator))
         
         AKOrchestra.addInstrument(instrument)
         AKOrchestra.start()
+        
+        
+        //Receive notifications
+        
+//        NSNotificationCenter.defaultCenter().addObserver(self, selector: "potOneValueChanged:", name:"PotentiometerOneChanged", object: nil)
+//
+//        NSNotificationCenter.defaultCenter().addObserver(self, selector: "potTwoValueChanged:", name:"PotentiometerTwoChanged", object: nil)
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "switchStateChanged:", name:"SwitchStateChanged", object: nil)
     }
     
+//    func potOneValueChanged(notification: NSNotification){
+//        println(serialCommunicator.potentiometerOneValue)
+//    }
+//    
+//    func potTwoValueChanged(notification: NSNotification){
+//        println(serialCommunicator.potentiometerTwoValue)
+//    }
     
-    /* TO-DO: this will be controlled by the received true/false
-    value from the push-button */
+    func switchStateChanged(notification: NSNotification){
+        println(serialCommunicator.switchState)
+        
+        if serialCommunicator.switchState == true {
+            instrument.play()
+            self.onOffSwitch.title = "Stop"
+        } else {
+            instrument.stop()
+            self.onOffSwitch.title = "Play Sound"
+        }
+    }
+    
     @IBAction func startSound(sender: NSButton) {
         if !(sender.title == "Stop") {
             instrument.play()
@@ -69,6 +98,11 @@ class ViewController: NSViewController {
         }
     }
     
+    override func viewWillDisappear() {
+        super.viewWillDisappear()
+        
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
     
     override func viewDidDisappear() {
         super.viewDidDisappear()
