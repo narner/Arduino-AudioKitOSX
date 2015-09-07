@@ -18,7 +18,8 @@ class ViewController: NSViewController {
     @IBOutlet var statusLabel: NSTextField!
     
     let instrument = AKInstrument()
-    
+    let oscillator = AKFMOscillator()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -50,9 +51,8 @@ class ViewController: NSViewController {
         /* Oscillator creation
         TO-DO: change to FMOscillator, with frequency and amplitude controlled by the
         received data from the potentiometers */
-        let oscillator = AKFMOscillator()
-//        oscillator.baseFrequency = // pot one
-//        oscillator.amplitude = // pot two
+//        oscillator.baseFrequency = serialCommunicator.potentiometerOneValue
+//        oscillator.amplitude = serialCommunicator.potentiometerTwoValue
         instrument.connect(AKAudioOutput(audioSource: oscillator))
         
         AKOrchestra.addInstrument(instrument)
@@ -61,20 +61,20 @@ class ViewController: NSViewController {
         
         //Receive notifications
         
-//        NSNotificationCenter.defaultCenter().addObserver(self, selector: "potOneValueChanged:", name:"PotentiometerOneChanged", object: nil)
-//
-//        NSNotificationCenter.defaultCenter().addObserver(self, selector: "potTwoValueChanged:", name:"PotentiometerTwoChanged", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "potOneValueChanged:", name:"PotentiometerOneChanged", object: nil)
+
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "potTwoValueChanged:", name:"PotentiometerTwoChanged", object: nil)
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "switchStateChanged:", name:"SwitchStateChanged", object: nil)
     }
     
-//    func potOneValueChanged(notification: NSNotification){
-//        println(serialCommunicator.potentiometerOneValue)
-//    }
-//    
-//    func potTwoValueChanged(notification: NSNotification){
-//        println(serialCommunicator.potentiometerTwoValue)
-//    }
+    func potOneValueChanged(notification: NSNotification){
+        println(serialCommunicator.potentiometerOneValue)
+    }
+    
+    func potTwoValueChanged(notification: NSNotification){
+        println(serialCommunicator.potentiometerTwoValue)
+    }
     
     func switchStateChanged(notification: NSNotification){
         println(serialCommunicator.switchState)
