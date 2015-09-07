@@ -91,9 +91,8 @@ class SerialCommunicator: NSObject, ORSSerialPortDelegate {
 	
 	dynamic private(set) var potentiometerOneValue: Int = 0
 	dynamic private(set) var potentiometerTwoValue: Int = 0
-	dynamic private(set) var switchState: Bool = true
-	
-	
+	dynamic private(set) var switchState: Bool = false
+    
 	
 	dynamic var serialPort: ORSSerialPort? {
 		willSet {
