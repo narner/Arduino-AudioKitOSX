@@ -27,28 +27,27 @@ void loop() {
   readAndSendPotentiometerDataIfChanged();
   readAndSendButtonDataIfChanged();
 }
-
+  
 void readAndSendPotentiometerDataIfChanged(void) {
 
   //Potentiometer One
   int newPotentiometerOneValue = analogRead(A0) / 10.2;   
-  if (newPotentiometerOneValue == lastPotentiometerOneValue) return;
-
-  Serial.print("!pos1");
-  Serial.print(newPotentiometerOneValue);
-  Serial.print(";");
-  lastPotentiometerOneValue = newPotentiometerOneValue;
+  if (newPotentiometerOneValue != lastPotentiometerOneValue) {
+      Serial.print("!pos1");
+      Serial.print(newPotentiometerOneValue);
+      Serial.print(";");
+      lastPotentiometerOneValue = newPotentiometerOneValue;
+  }
 
   //Potentiometer Two
-  int newPotentiometerTwoValue = analogRead(A1) / 10; 
-  if (newPotentiometerTwoValue == lastPotentiometerTwoValue) return;
-
-  Serial.print("!pos2");
-  Serial.print(newPotentiometerTwoValue);
-  Serial.print(";");
-  lastPotentiometerTwoValue = newPotentiometerTwoValue;
+  int newPotentiometerTwoValue = analogRead(A1) / 10.2; 
+  if (newPotentiometerTwoValue != lastPotentiometerTwoValue) {
+      Serial.print("!pos2");
+      Serial.print(newPotentiometerTwoValue);
+      Serial.print(";");
+      lastPotentiometerTwoValue = newPotentiometerTwoValue;
+  }
 }
-
 
 void readAndSendButtonDataIfChanged(void) {
   // read the pushbutton input pin:
