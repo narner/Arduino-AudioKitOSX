@@ -672,20 +672,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ec9-My-6XN">
-                                <rect key="frame" x="106" y="195" width="288" height="56"/>
-                                <buttonCell key="cell" type="smallSquare" title="Play Sound" bezelStyle="smallSquare" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="kPT-x6-TlL">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="systemBold"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="startSound:" target="XfG-lQ-9wD" id="KgV-Lx-MHx"/>
-                                </connections>
-                            </button>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="zt2-Ta-2MG">
+                                <rect key="frame" x="203" y="209" width="75" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Play Sound" placeholderString="" id="pXU-Oj-hCR">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
                         </subviews>
+                        <constraints>
+                            <constraint firstItem="zt2-Ta-2MG" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="44" id="FEu-NG-AbS"/>
+                            <constraint firstItem="zt2-Ta-2MG" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="Vri-E1-2al"/>
+                        </constraints>
                     </view>
                     <connections>
-                        <outlet property="onOffSwitch" destination="ec9-My-6XN" id="Kia-MW-fwb"/>
+                        <outlet property="statusLabel" destination="zt2-Ta-2MG" id="IEs-cn-NAR"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>

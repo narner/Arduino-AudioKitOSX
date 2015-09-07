@@ -15,7 +15,7 @@ class ViewController: NSViewController {
     let serialPortManager = ORSSerialPortManager.sharedSerialPortManager()
     let serialCommunicator = SerialCommunicator()
     
-    @IBOutlet var onOffSwitch: NSButton!
+    @IBOutlet var statusLabel: NSTextField!
     
     let instrument = AKInstrument()
     
@@ -81,20 +81,10 @@ class ViewController: NSViewController {
         
         if serialCommunicator.switchState == true {
             instrument.play()
-            self.onOffSwitch.title = "Stop"
+            self.statusLabel.stringValue = "Stop"
         } else {
             instrument.stop()
-            self.onOffSwitch.title = "Play Sound"
-        }
-    }
-    
-    @IBAction func startSound(sender: NSButton) {
-        if !(sender.title == "Stop") {
-            instrument.play()
-            sender.title = "Stop"
-        } else {
-            instrument.stop()
-            sender.title = "Play Sound"
+            self.statusLabel.stringValue = "Play Sound"
         }
     }
     
