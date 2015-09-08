@@ -41,6 +41,7 @@ class SerialCommunicator: NSObject, ORSSerialPortDelegate {
 		print("Serial port \(serialPort) encountered an error: \(error)")
 	}
 	
+    //When the serial port is opened, listen for the correct descriptors 
 	func serialPortWasOpened(serialPort: ORSSerialPort) {
 		let descriptorPotOne = ORSSerialPacketDescriptor(prefixString: "!pos1",
 			suffixString: ";",
@@ -60,21 +61,19 @@ class SerialCommunicator: NSObject, ORSSerialPortDelegate {
 		serialPort.startListeningForPacketsMatchingDescriptor(descriptorState)
 	}
 	
-	
 	private func potentiometerFromResponsePacket(data: NSData) -> Int {
 		let dataAsString = NSString(data: data, encoding: NSASCIIStringEncoding)!
 		let potentiometerString = dataAsString.substringWithRange(NSRange(location: 5, length: dataAsString.length-6))
 		return potentiometerString.toInt()!
 	}
 	
-	
 	private func switchStateFromResponsePacket(data: NSData) -> Bool {
 		let dataAsString = NSString(data: data, encoding: NSASCIIStringEncoding)!
-		
 		let switchState = dataAsString.substringWithRange(NSRange(location: 6, length: dataAsString.length-7))
 		return switchState.toInt()! != 0
 	}
 	
+    //Post a notification whenever the potentiometer values or switch state changes
 	func serialPort(serialPort: ORSSerialPort, didReceivePacket packetData: NSData, matchingDescriptor descriptor: ORSSerialPacketDescriptor) {
 		let packetType = SerialPortPacketType(rawValue: descriptor.userInfo as! Int)!
 		switch packetType {

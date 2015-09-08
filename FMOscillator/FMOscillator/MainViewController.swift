@@ -53,7 +53,7 @@ class ViewController: NSViewController {
         AKOrchestra.start()
         
         
-        //Receive notifications
+        //Receive notifications, and update potentiometer values and switch state
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "potOneValueChanged:", name:"PotentiometerOneChanged", object: nil)
 
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "potTwoValueChanged:", name:"PotentiometerTwoChanged", object: nil)
@@ -86,6 +86,7 @@ class ViewController: NSViewController {
     override func viewWillDisappear() {
         super.viewWillDisappear()
         
+        //Get rid of notification observers
         NSNotificationCenter.defaultCenter().removeObserver(self)
     }
     
