@@ -80,11 +80,9 @@ class SerialCommunicator: NSObject, ORSSerialPortDelegate {
 		switch packetType {
 		case .PotentiometerOne:
 			self.potentiometerOneValue = self.potentiometerFromResponsePacket(packetData)
-//			println(self.potentiometerOneValue)
             NSNotificationCenter.defaultCenter().postNotificationName("PotentiometerOneChanged", object: self.potentiometerOneValue)
 		case .PotentiometerTwo:
 			self.potentiometerTwoValue = self.potentiometerFromResponsePacket(packetData)
-//            println(self.potentiometerTwoValue)
             NSNotificationCenter.defaultCenter().postNotificationName("PotentiometerTwoChanged", object: self.potentiometerTwoValue)
 		case .State:
 			self.switchState = self.switchStateFromResponsePacket(packetData)

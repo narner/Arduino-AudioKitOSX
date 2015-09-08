@@ -6,10 +6,10 @@
    //http://www.audiokitio
  
 
-const int  buttonPin = 2;    // the pin that the push-button is attached to
+const int  switchPin = 2;    // the pin that the push-button is attached to
 
-int buttonState = 0;         // current state of the push-button
-int lastButtonState = 0;     // previous state of the push-button
+int switchState = 0;         // current state of the push-button
+int lastSwitchState = 0;     // previous state of the push-button
 
 int lastPotentiometerOneValue = 0;
 int lastPotentiometerTwoValue = 0;
@@ -18,14 +18,14 @@ void setup() {
   // initialize serial communication at 57600 bits per second:
   Serial.begin(57600);
     
-  // initialize the button pin as a input:
-  pinMode(buttonPin, INPUT);
+  // initialize the switch pin as a input:
+  pinMode(switchPin, INPUT);
  }
  
 void loop() {
   delay(10);
   readAndSendPotentiometerDataIfChanged();
-  readAndSendButtonDataIfChanged();
+  readAndSendSwitchDataIfChanged();
 }
   
 void readAndSendPotentiometerDataIfChanged(void) {
@@ -49,20 +49,20 @@ void readAndSendPotentiometerDataIfChanged(void) {
   }
 }
 
-void readAndSendButtonDataIfChanged(void) {
-  // read the pushbutton input pin:
-  buttonState = digitalRead(buttonPin);
+void readAndSendSwitchDataIfChanged(void) {
+  // read the switch input pin:
+  switchState = digitalRead(switchPin);
 
-  // Read the pushbutton input pin:
-  if (buttonState != lastButtonState) {
+  // Read the switch input pin:
+  if (switchState != lastSwitchState) {
   // If the state has changed, increment the counter
-    if (buttonState == HIGH) {
-    // If the current state is HIGH then the button went from off to on:
+    if (switchState == HIGH) {
+    // If the current state is HIGH then the switch went from off to on:
         Serial.print("!state");
         Serial.print("1");
         Serial.print(";");
   } else {
-  // If the current state is LOW, then the button went from on to off 
+  // If the current state is LOW, then the switch went from on to off 
     Serial.print("!state");
     Serial.print("0");
     Serial.print(";");
@@ -71,6 +71,6 @@ void readAndSendButtonDataIfChanged(void) {
   delay(50);  
   }
   //Save the current state as the last state, for next time through the loop 
-  lastButtonState = buttonState;
+  lastSwitchState = switchState;
 }
 
