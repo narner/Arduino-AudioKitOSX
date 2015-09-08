@@ -17,8 +17,9 @@ class ViewController: NSViewController {
     
     @IBOutlet var statusLabel: NSTextField!
     
-    let instrument = AKInstrument()
-    let oscillator = AKFMOscillator()
+    let instrument = AKFMOscillatorInstrument()
+    let note = AKFMOscillatorNote()
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,21 +47,11 @@ class ViewController: NSViewController {
         //            println("\(i++). \(port.name)")
         //        }
         
-        
-        
-        /* Oscillator creation
-        TO-DO: change to FMOscillator, with frequency and amplitude controlled by the
-        received data from the potentiometers */
-//        oscillator.baseFrequency = serialCommunicator.potentiometerOneValue
-//        oscillator.amplitude = serialCommunicator.potentiometerTwoValue
-        instrument.connect(AKAudioOutput(audioSource: oscillator))
-        
         AKOrchestra.addInstrument(instrument)
         AKOrchestra.start()
         
         
         //Receive notifications
-        
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "potOneValueChanged:", name:"PotentiometerOneChanged", object: nil)
 
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "potTwoValueChanged:", name:"PotentiometerTwoChanged", object: nil)
@@ -70,9 +61,11 @@ class ViewController: NSViewController {
     
     func potOneValueChanged(notification: NSNotification){
         println(serialCommunicator.potentiometerOneValue)
+        note.frequency.setValue(Float(serialCommunicator.potentiometerOneValue * 4), afterDelay: Float(0))
     }
     
     func potTwoValueChanged(notification: NSNotification){
+        note.modulationIndex.setValue(Float(serialCommunicator.potentiometerTwoValue / 4), afterDelay: Float(0))
         println(serialCommunicator.potentiometerTwoValue)
     }
     
@@ -80,7 +73,7 @@ class ViewController: NSViewController {
         println(serialCommunicator.switchState)
         
         if serialCommunicator.switchState == true {
-            instrument.play()
+            instrument.playNote(note)
             self.statusLabel.stringValue = "Stop"
         } else {
             instrument.stop()
