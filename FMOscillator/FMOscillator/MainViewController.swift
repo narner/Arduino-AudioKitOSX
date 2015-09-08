@@ -27,31 +27,19 @@ class ViewController: NSViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        //Code below will be used for some sort of UI that will allow
-        //the user to select what serial port they want to use as input.
-        //This should be added after we've establsihed proof of concept
-        //communication between the Arduino and the app.
-        
         let availablePorts = ORSSerialPortManager.sharedSerialPortManager().availablePorts as! [ORSSerialPort]
         if availablePorts.count == 0 {
             println("No connected serial ports found. Please connect your Arduino or turn on Bluetooth..\n")
             exit(EXIT_SUCCESS)
         }
         
+        //NOTE: Update your own serial port value here
         let serialPort = ORSSerialPort(path: "/dev/tty.usbmodem1411")
         serialCommunicator.serialPort = serialPort
         
-        
-        //        println("\nPlease select a serial port: \n")
-        //        let availablePorts = ORSSerialPortManager.sharedSerialPortManager().availablePorts as! [ORSSerialPort]
-        //        var i = 0
-        //        for port in availablePorts {
-        //            println("\(i++). \(port.name)")
-        //        }
-        
+        //Adding the AudioKit instrument
         AKOrchestra.addInstrument(instrument)
         AKOrchestra.start()
-        
         
         //Receive notifications, and update potentiometer values and switch state
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "potOneValueChanged:", name:"PotentiometerOneChanged", object: nil)
@@ -72,8 +60,6 @@ class ViewController: NSViewController {
     }
     
     func switchStateChanged(notification: NSNotification){
-        println(serialCommunicator.switchState)
-        
         if serialCommunicator.switchState == true {
             instrument.playNote(note)
             self.statusLabel.stringValue = "Stop"
