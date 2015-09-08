@@ -680,13 +680,55 @@
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="HLT-WA-fZa">
+                                <rect key="frame" x="344" y="168" width="111" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Modulation Index" id="UGu-c8-I8X">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="b8J-me-QJo" customClass="AKPropertyLabel">
+                                <rect key="frame" x="51" y="119" width="38" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" id="zY3-VM-t9g">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="cNZ-6w-qGs" customClass="AKPropertyLabel">
+                                <rect key="frame" x="380" y="119" width="38" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" id="q8T-1Y-xiA">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="DlJ-Pg-I4b">
+                                <rect key="frame" x="37" y="168" width="69" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Frequency" id="DpY-uO-ehc">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="DlJ-Pg-I4b" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="85" id="1xb-bt-aty"/>
+                            <constraint firstItem="b8J-me-QJo" firstAttribute="baseline" secondItem="cNZ-6w-qGs" secondAttribute="baseline" id="81v-sw-Q9y"/>
+                            <constraint firstItem="DlJ-Pg-I4b" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="39" id="9hV-yP-yJs"/>
                             <constraint firstItem="zt2-Ta-2MG" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="44" id="FEu-NG-AbS"/>
+                            <constraint firstItem="b8J-me-QJo" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="53" id="Mfr-gr-2LJ"/>
                             <constraint firstItem="zt2-Ta-2MG" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="Vri-E1-2al"/>
+                            <constraint firstItem="b8J-me-QJo" firstAttribute="top" secondItem="DlJ-Pg-I4b" secondAttribute="bottom" constant="32" id="nIb-DF-Lqb"/>
+                            <constraint firstAttribute="trailing" secondItem="HLT-WA-fZa" secondAttribute="trailing" constant="27" id="oDM-Ls-X44"/>
+                            <constraint firstItem="HLT-WA-fZa" firstAttribute="centerX" secondItem="cNZ-6w-qGs" secondAttribute="centerX" id="pyX-Mb-uVl"/>
+                            <constraint firstItem="HLT-WA-fZa" firstAttribute="baseline" secondItem="DlJ-Pg-I4b" secondAttribute="baseline" id="zl7-4M-cRS"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="frequencyLabel" destination="b8J-me-QJo" id="dJQ-5E-hK7"/>
+                        <outlet property="modulationIndexLabel" destination="cNZ-6w-qGs" id="f5n-Wa-r5n"/>
                         <outlet property="statusLabel" destination="zt2-Ta-2MG" id="IEs-cn-NAR"/>
                     </connections>
                 </viewController>

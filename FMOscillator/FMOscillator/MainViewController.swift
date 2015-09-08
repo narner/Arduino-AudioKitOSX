@@ -16,6 +16,8 @@ class ViewController: NSViewController {
     let serialCommunicator = SerialCommunicator()
     
     @IBOutlet var statusLabel: NSTextField!
+    @IBOutlet var frequencyLabel: AKPropertyLabel!
+    @IBOutlet var modulationIndexLabel: AKPropertyLabel!
     
     let instrument = AKFMOscillatorInstrument()
     let note = AKFMOscillatorNote()
@@ -60,13 +62,13 @@ class ViewController: NSViewController {
     }
     
     func potOneValueChanged(notification: NSNotification){
-        println(serialCommunicator.potentiometerOneValue)
+        self.frequencyLabel.property = note.frequency
         note.frequency.setValue(Float(serialCommunicator.potentiometerOneValue * 4), afterDelay: Float(0))
     }
     
     func potTwoValueChanged(notification: NSNotification){
+        self.modulationIndexLabel.property = note.modulationIndex
         note.modulationIndex.setValue(Float(serialCommunicator.potentiometerTwoValue / 4), afterDelay: Float(0))
-        println(serialCommunicator.potentiometerTwoValue)
     }
     
     func switchStateChanged(notification: NSNotification){
