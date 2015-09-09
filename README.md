@@ -70,20 +70,19 @@ let serialPort = ORSSerialPort(path: "/dev/tty.usbmodem1411")
 serialCommunicator.serialPort = serialPort
 ```
 
-and, for creating the oscillator. An instrument and note are created as global variables:
+and, for creating the oscillator. An instance of `FMSynth` is created:
 
 ```
-let instrument = AKFMOscillatorInstrument()
-let note = AKFMOscillatorNote()
+let fmSynth = FMSynth()
 ```
 
-The `instrument` is an instance of `AKFMOscillatorInstrument`. This instrument has five properties that can be modified:
+The `instrument` is an instance of `AKFMOscillator`. This oscillator has five properties that can be modified:
 
 * frequency
+* amplitude
 * carrierMultiplier
 * modulationMultiplier
 * modulationIndex
-* amplitude
 
 For this project though, we're just going to control the `frequency` and `modulation index` properties. Inside our `viewDidLoad` method, we add the instrument to the orchestra and then start it:
 
@@ -91,8 +90,6 @@ For this project though, we're just going to control the `frequency` and `modula
 AKOrchestra.addInstrument(instrument)
 AKOrchestra.start()
 ```
-
-That's all that's needed to set up a simple oscillator in AudioKit!
 
 The `Serial Communicator` calss conforms to the `ORSSerialPortDelegate`. When `serialPortWasOpened` is called, three instances of`ORSSerialPacketDescriptor` are created: one descriptor for each potentiometer, and one descriptor for the switch state. These descriptors specify that we should be listening for a packet that starts with the string values we logged in our Arduino sketch:
 
@@ -148,13 +145,13 @@ Whenever a notification is received for a potentiometer value change, one of the
 
 ```
 func potOneValueChanged(notification: NSNotification){
-  self.frequencyLabel.property = note.frequency
-  note.frequency.setValue(Float(serialCommunicator.potentiometerOneValue * 4), afterDelay: Float(0))
+  self.frequencyLabel.property = fmSynth.frequency
+  fmSynth.frequency.setValue(Float(serialCommunicator.potentiometerOneValue * 4))
 }
  
 func potTwoValueChanged(notification: NSNotification){
-  self.modulationIndexLabel.property = note.modulationIndex
-  note.modulationIndex.setValue(Float(serialCommunicator.potentiometerTwoValue / 4), afterDelay: Float(0))
+  self.modulationIndexLabel.property = fmSynth.modulationIndex
+  fmSynth.modulationIndex.setValue(Float(serialCommunicator.potentiometerTwoValue / 4))
 }
 ```
 
@@ -165,10 +162,10 @@ If a notification is received that the switch-state has changed, the method belo
 ```
 func switchStateChanged(notification: NSNotification){
   if serialCommunicator.switchState == true {
-  instrument.playNote(note)
+  fmSynth.play()
   self.statusLabel.stringValue = "Stop"
 } else {
-  instrument.stop()
+  fmSynth.stop()
   self.statusLabel.stringValue = "Play Sound"
   }
 }
