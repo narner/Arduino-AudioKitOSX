@@ -19,10 +19,11 @@ class ViewController: NSViewController {
     @IBOutlet var frequencyLabel: AKPropertyLabel!
     @IBOutlet var modulationIndexLabel: AKPropertyLabel!
     
-    let instrument = AKFMOscillatorInstrument()
-    let note = AKFMOscillatorNote()
-
-
+    @IBOutlet var frequencySlider: AKPropertySlider!
+    @IBOutlet var modulationIndexSlider: AKPropertySlider!
+    
+    let fmSynth = FMSynth()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -38,33 +39,34 @@ class ViewController: NSViewController {
         serialCommunicator.serialPort = serialPort
         
         //Adding the AudioKit instrument
-        AKOrchestra.addInstrument(instrument)
-        AKOrchestra.start()
+        AKOrchestra.addInstrument(fmSynth)
         
         //Receive notifications, and update potentiometer values and switch state
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "potOneValueChanged:", name:"PotentiometerOneChanged", object: nil)
-
+        
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "potTwoValueChanged:", name:"PotentiometerTwoChanged", object: nil)
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "switchStateChanged:", name:"SwitchStateChanged", object: nil)
     }
     
     func potOneValueChanged(notification: NSNotification){
-        self.frequencyLabel.property = note.frequency
-        note.frequency.setValue(Float(serialCommunicator.potentiometerOneValue * 4), afterDelay: Float(0))
+        fmSynth.frequency.setValue(Float(serialCommunicator.potentiometerOneValue * 4))
+        self.frequencyLabel.property = fmSynth.frequency
+        self.frequencySlider.property = fmSynth.frequency
     }
     
     func potTwoValueChanged(notification: NSNotification){
-        self.modulationIndexLabel.property = note.modulationIndex
-        note.modulationIndex.setValue(Float(serialCommunicator.potentiometerTwoValue / 4), afterDelay: Float(0))
+        fmSynth.modulationIndex.setValue(Float(serialCommunicator.potentiometerTwoValue / 4))
+        self.modulationIndexLabel.property = fmSynth.modulationIndex
+        self.modulationIndexSlider.property = fmSynth.modulationIndex
     }
     
     func switchStateChanged(notification: NSNotification){
         if serialCommunicator.switchState == true {
-            instrument.playNote(note)
+            fmSynth.play()
             self.statusLabel.stringValue = "Stop"
         } else {
-            instrument.stop()
+            fmSynth.stop()
             self.statusLabel.stringValue = "Play Sound"
         }
     }

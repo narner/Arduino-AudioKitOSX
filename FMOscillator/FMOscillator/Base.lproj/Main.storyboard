@@ -689,16 +689,11 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="b8J-me-QJo" customClass="AKPropertyLabel">
-                                <rect key="frame" x="51" y="119" width="38" height="17"/>
+                                <rect key="frame" x="52" y="85" width="38" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="34" id="5mO-xE-2Pk"/>
+                                </constraints>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" id="zY3-VM-t9g">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="cNZ-6w-qGs" customClass="AKPropertyLabel">
-                                <rect key="frame" x="380" y="119" width="38" height="17"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" id="q8T-1Y-xiA">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -712,23 +707,46 @@
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
+                            <slider horizontalHuggingPriority="750" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="V6b-Gc-2jV" customClass="AKPropertySlider">
+                                <rect key="frame" x="54" y="120" width="28" height="30"/>
+                                <sliderCell key="cell" alignment="left" minValue="4" maxValue="296" doubleValue="4" tickMarkPosition="left" allowsTickMarkValuesOnly="YES" sliderType="circular" id="Nrq-bc-Pfh"/>
+                            </slider>
+                            <slider horizontalHuggingPriority="750" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Cxv-jh-PiR" customClass="AKPropertySlider">
+                                <rect key="frame" x="383" y="120" width="28" height="30"/>
+                                <sliderCell key="cell" alignment="left" maxValue="24" doubleValue="24" tickMarkPosition="left" allowsTickMarkValuesOnly="YES" sliderType="circular" id="ITU-gl-qIA"/>
+                            </slider>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="cNZ-6w-qGs" customClass="AKPropertyLabel">
+                                <rect key="frame" x="378" y="85" width="38" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" id="q8T-1Y-xiA">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
                         </subviews>
                         <constraints>
                             <constraint firstItem="DlJ-Pg-I4b" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="85" id="1xb-bt-aty"/>
-                            <constraint firstItem="b8J-me-QJo" firstAttribute="baseline" secondItem="cNZ-6w-qGs" secondAttribute="baseline" id="81v-sw-Q9y"/>
+                            <constraint firstItem="b8J-me-QJo" firstAttribute="baseline" secondItem="cNZ-6w-qGs" secondAttribute="baseline" id="4CA-Dv-xgI"/>
+                            <constraint firstItem="cNZ-6w-qGs" firstAttribute="centerX" secondItem="HLT-WA-fZa" secondAttribute="centerX" constant="-2.5" id="7uQ-CH-9cI"/>
                             <constraint firstItem="DlJ-Pg-I4b" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="39" id="9hV-yP-yJs"/>
                             <constraint firstItem="zt2-Ta-2MG" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="44" id="FEu-NG-AbS"/>
-                            <constraint firstItem="b8J-me-QJo" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="53" id="Mfr-gr-2LJ"/>
+                            <constraint firstItem="V6b-Gc-2jV" firstAttribute="centerY" secondItem="m2S-Jp-Qdl" secondAttribute="centerY" id="HVt-m3-Mh2"/>
+                            <constraint firstAttribute="trailing" secondItem="cNZ-6w-qGs" secondAttribute="trailing" constant="66" id="IZ3-6w-grk"/>
                             <constraint firstItem="zt2-Ta-2MG" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="Vri-E1-2al"/>
-                            <constraint firstItem="b8J-me-QJo" firstAttribute="top" secondItem="DlJ-Pg-I4b" secondAttribute="bottom" constant="32" id="nIb-DF-Lqb"/>
+                            <constraint firstItem="V6b-Gc-2jV" firstAttribute="centerX" secondItem="b8J-me-QJo" secondAttribute="centerX" constant="-3" id="fv4-L3-HU0"/>
+                            <constraint firstItem="b8J-me-QJo" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="54" id="lcx-xg-W6k"/>
                             <constraint firstAttribute="trailing" secondItem="HLT-WA-fZa" secondAttribute="trailing" constant="27" id="oDM-Ls-X44"/>
-                            <constraint firstItem="HLT-WA-fZa" firstAttribute="centerX" secondItem="cNZ-6w-qGs" secondAttribute="centerX" id="pyX-Mb-uVl"/>
+                            <constraint firstItem="Cxv-jh-PiR" firstAttribute="top" secondItem="V6b-Gc-2jV" secondAttribute="top" id="t2z-ly-SLT"/>
+                            <constraint firstItem="b8J-me-QJo" firstAttribute="top" secondItem="DlJ-Pg-I4b" secondAttribute="bottom" constant="66" id="uCx-VD-TeW"/>
+                            <constraint firstItem="Cxv-jh-PiR" firstAttribute="centerX" secondItem="cNZ-6w-qGs" secondAttribute="centerX" id="yhL-IL-NS9"/>
                             <constraint firstItem="HLT-WA-fZa" firstAttribute="baseline" secondItem="DlJ-Pg-I4b" secondAttribute="baseline" id="zl7-4M-cRS"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="frequencyLabel" destination="b8J-me-QJo" id="dJQ-5E-hK7"/>
+                        <outlet property="frequencySlider" destination="V6b-Gc-2jV" id="wzH-4D-neE"/>
                         <outlet property="modulationIndexLabel" destination="cNZ-6w-qGs" id="f5n-Wa-r5n"/>
+                        <outlet property="modulationIndexSlider" destination="Cxv-jh-PiR" id="BaH-H0-Sx1"/>
                         <outlet property="statusLabel" destination="zt2-Ta-2MG" id="IEs-cn-NAR"/>
                     </connections>
                 </viewController>
