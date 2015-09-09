@@ -63,33 +63,60 @@ Finally, at the end of the method, we save the `lastSwitchState` value as that o
 
 **Xcode Project**
 
-There are two classes in the Xcode project, the `Serial Communicator`, and the `View Controller`. The `View Controller` is responsible both for opening the serial port so communication can occur: 
+There are three classes in the Xcode project, the `Serial Communicator`, `FMSynth`, and the `View Controller`. The `View Controller` is responsible both for opening the serial port so communication can occur: 
 
 ```
 let serialPort = ORSSerialPort(path: "/dev/tty.usbmodem1411")
 serialCommunicator.serialPort = serialPort
 ```
 
-and, for creating the oscillator. An instance of `FMSynth` is created:
+and, for creating an instance of `FMSynth`:
 
 ```
 let fmSynth = FMSynth()
 ```
+The `FMSynth` class specifies the values of the properties that we want to use for our oscillator `AKFMOscillator`has five properties that can be modified:
 
-The `instrument` is an instance of `AKFMOscillator`. This oscillator has five properties that can be modified:
+```
+var frequency            = AKInstrumentProperty(value: 40, minimum: 20, maximum: 400)
+var amplitude            = AKInstrumentProperty(value: 0.2, minimum: 0,  maximum: 1)
+var carrierMultiplier    = AKInstrumentProperty(value: 1,   minimum: 0,  maximum: 3)
+var modulatingMultiplier = AKInstrumentProperty(value: 1,   minimum: 0,  maximum: 3)
+var modulationIndex      = AKInstrumentProperty(value: 15,  minimum: 0,  maximum: 30)
+```
 
-* frequency
-* amplitude
-* carrierMultiplier
-* modulationMultiplier
-* modulationIndex
+These properties are then added to our instrument, and assigned to the instance variables of `AKFMOscillator`:
 
-For this project though, we're just going to control the `frequency` and `modulation index` properties. Inside our `viewDidLoad` method, we add the instrument to the orchestra and then start it:
+```
+override init() {
+     super.init()
+        
+     addProperty(frequency)
+     addProperty(amplitude)
+     addProperty(carrierMultiplier)
+     addProperty(modulatingMultiplier)
+     addProperty(modulationIndex)
+        
+     let fmOscillator = AKFMOscillator(
+         waveform: AKTable.standardSineWave(),
+         baseFrequency: frequency,
+         carrierMultiplier: carrierMultiplier,
+         modulatingMultiplier: modulatingMultiplier,
+         modulationIndex: modulationIndex,
+         amplitude: amplitude
+     )
+     setAudioOutput(fmOscillator)
+}
+```
+
+For this project though, we're just going to control the `frequency` and `modulationIndex` properties. Inside our `viewDidLoad` method of our `ViewController` class, we add the instrument to the orchestra and then start it:
 
 ```
 AKOrchestra.addInstrument(instrument)
 AKOrchestra.start()
 ```
+
+The `FYSynth` class 
 
 The `Serial Communicator` calss conforms to the `ORSSerialPortDelegate`. When `serialPortWasOpened` is called, three instances of`ORSSerialPacketDescriptor` are created: one descriptor for each potentiometer, and one descriptor for the switch state. These descriptors specify that we should be listening for a packet that starts with the string values we logged in our Arduino sketch:
 
