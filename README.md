@@ -200,6 +200,11 @@ func switchStateChanged(notification: NSNotification){
 
 If the switch is in an "On" state, then the oscillator's note is played, and text is updated in another label. If the switch is in an "Off" state, then the note is stopped, and the label is updated appropriately. 
 
+The UI is shown below:
+
+![Alt Text](https://github.com/narner/Arduino-AudioKitOSX/raw/master/AppUI.png)
+
+
 **Attribution**
 The sound synthesis is implemented through <a href="http://audiokit.io">AudioKit</a>, an open-source audio analysis, synthesis, and processing library for iOS and OS X. This project uses AudioKit's <a href="https://github.com/audiokit/AudioKit/tree/develop">develop branch</a>. 
 
