@@ -8,6 +8,10 @@ The schematic below shows the two potentiometers and SPDT switch used to control
 
 ![Alt Text](https://github.com/narner/Arduino-AudioKitOSX/raw/master/Schematic Files/InputCircuit.png)
 
+The assembled circuit:
+
+![Alt Text](https://github.com/narner/Arduino-AudioKitOSX/raw/master/Schematic Files/AssembledCircuit.png)
+
 The Arduino sketch is found in the `SerialInputReading` folder. The data from the potentiometers and the SPDT switch is read by the `readAndSendPotentiometerDataIfChanged` method. This method is called in the `void loop()`, so that the method is exectued as long as the Arduino sketch is running. 
 
 First, a variable is created that reads the the input value for the analog pin that the potentiometer is connected to. The first potentiometer's data is read on Analog Input 0 (A0), and the second potentiometer's data is read on Analog Input 1 (A1). 
