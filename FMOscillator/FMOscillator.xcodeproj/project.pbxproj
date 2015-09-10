@@ -535,7 +535,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "nfa.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/FMOscillator/Bridging-Header.h";
-				USER_HEADER_SEARCH_PATHS = "\"../../../AKProjects/AudioKit/AudioKit\"/**";
+				USER_HEADER_SEARCH_PATHS = "\"../../../AudioKit/AudioKit\"/**";
 			};
 			name = Debug;
 		};
@@ -553,7 +553,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "nfa.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/FMOscillator/Bridging-Header.h";
-				USER_HEADER_SEARCH_PATHS = "\"../../../AKProjects/AudioKit/AudioKit\"/**";
+				USER_HEADER_SEARCH_PATHS = "\"../../../AudioKit/AudioKit\"/**";
 			};
 			name = Release;
 		};
