@@ -28,9 +28,9 @@ class ViewController: NSViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        let availablePorts = ORSSerialPortManager.sharedSerialPortManager().availablePorts as! [ORSSerialPort]
+        let availablePorts = ORSSerialPortManager.sharedSerialPortManager().availablePorts
         if availablePorts.count == 0 {
-            println("No connected serial ports found. Please connect your Arduino or turn on Bluetooth..\n")
+            print("No connected serial ports found. Please connect your Arduino or turn on Bluetooth..\n")
             exit(EXIT_SUCCESS)
         }
         
@@ -50,13 +50,13 @@ class ViewController: NSViewController {
     }
     
     func potOneValueChanged(notification: NSNotification){
-        fmSynth.frequency.setValue(Float(serialCommunicator.potentiometerOneValue * 4))
+        fmSynth.frequency.value = (Float(serialCommunicator.potentiometerOneValue * 4))
         self.frequencyLabel.property = fmSynth.frequency
         self.frequencySlider.property = fmSynth.frequency
     }
     
     func potTwoValueChanged(notification: NSNotification){
-        fmSynth.modulationIndex.setValue(Float(serialCommunicator.potentiometerTwoValue / 4))
+        fmSynth.modulationIndex.value = (Float(serialCommunicator.potentiometerTwoValue / 4))
         self.modulationIndexLabel.property = fmSynth.modulationIndex
         self.modulationIndexSlider.property = fmSynth.modulationIndex
     }

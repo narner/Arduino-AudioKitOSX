@@ -64,13 +64,13 @@ class SerialCommunicator: NSObject, ORSSerialPortDelegate {
 	private func potentiometerFromResponsePacket(data: NSData) -> Int {
 		let dataAsString = NSString(data: data, encoding: NSASCIIStringEncoding)!
 		let potentiometerString = dataAsString.substringWithRange(NSRange(location: 5, length: dataAsString.length-6))
-		return potentiometerString.toInt()!
+		return Int(potentiometerString)!
 	}
 	
 	private func switchStateFromResponsePacket(data: NSData) -> Bool {
 		let dataAsString = NSString(data: data, encoding: NSASCIIStringEncoding)!
 		let switchState = dataAsString.substringWithRange(NSRange(location: 6, length: dataAsString.length-7))
-		return switchState.toInt()! != 0
+		return Int(switchState)! != 0
 	}
 	
     //Post a notification whenever the potentiometer values or switch state changes
