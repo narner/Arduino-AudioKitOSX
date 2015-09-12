@@ -12,22 +12,14 @@
 		E45516AD1B35ED4F00558CF8 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45516AC1B35ED4F00558CF8 /* MainViewController.swift */; };
 		E45516AF1B35ED4F00558CF8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E45516AE1B35ED4F00558CF8 /* Images.xcassets */; };
 		E45516B21B35ED4F00558CF8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E45516B01B35ED4F00558CF8 /* Main.storyboard */; };
-		E45516BE1B35ED4F00558CF8 /* FMOscillatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45516BD1B35ED4F00558CF8 /* FMOscillatorTests.swift */; };
 		E47E9E471B7AC73100F2C853 /* SerialCommunicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47E9E461B7AC73100F2C853 /* SerialCommunicator.swift */; };
 		E4C74EBB1B9FBFCD0080DCE3 /* FMSynth.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C74EBA1B9FBFCD0080DCE3 /* FMSynth.swift */; };
 		EA8CECCB1BA3BE1B00DD53F6 /* libAudioKit OS X.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EA8CECC81BA3BDF300DD53F6 /* libAudioKit OS X.a */; };
-		EA8CECCD1BA3BE3E00DD53F6 /* CsoundLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA8CECCC1BA3BE3E00DD53F6 /* CsoundLib.framework */; settings = {ASSET_TAGS = (); }; };
+		EA8CECCD1BA3BE3E00DD53F6 /* CsoundLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA8CECCC1BA3BE3E00DD53F6 /* CsoundLib.framework */; };
 		EA8CECCE1BA3BF9F00DD53F6 /* CsoundLib.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = EA8CECCC1BA3BE3E00DD53F6 /* CsoundLib.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		E45516B81B35ED4F00558CF8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = E455169D1B35ED4F00558CF8 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = E45516A41B35ED4F00558CF8;
-			remoteInfo = FMOscillator;
-		};
 		EA8CECC31BA3BDF300DD53F6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = EA8CECBD1BA3BDF300DD53F6 /* AudioKit.xcodeproj */;
@@ -79,7 +71,6 @@
 		E45516AC1B35ED4F00558CF8 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		E45516AE1B35ED4F00558CF8 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		E45516B11B35ED4F00558CF8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		E45516B71B35ED4F00558CF8 /* FMOscillatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FMOscillatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E45516BC1B35ED4F00558CF8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E45516BD1B35ED4F00558CF8 /* FMOscillatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMOscillatorTests.swift; sourceTree = "<group>"; };
 		E47E9E461B7AC73100F2C853 /* SerialCommunicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SerialCommunicator.swift; sourceTree = "<group>"; };
@@ -96,13 +87,6 @@
 			files = (
 				EA8CECCD1BA3BE3E00DD53F6 /* CsoundLib.framework in Frameworks */,
 				EA8CECCB1BA3BE1B00DD53F6 /* libAudioKit OS X.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E45516B41B35ED4F00558CF8 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,7 +116,6 @@
 			isa = PBXGroup;
 			children = (
 				E45516A51B35ED4F00558CF8 /* FMOscillator.app */,
-				E45516B71B35ED4F00558CF8 /* FMOscillatorTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -211,24 +194,6 @@
 			productReference = E45516A51B35ED4F00558CF8 /* FMOscillator.app */;
 			productType = "com.apple.product-type.application";
 		};
-		E45516B61B35ED4F00558CF8 /* FMOscillatorTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = E45516C41B35ED4F00558CF8 /* Build configuration list for PBXNativeTarget "FMOscillatorTests" */;
-			buildPhases = (
-				E45516B31B35ED4F00558CF8 /* Sources */,
-				E45516B41B35ED4F00558CF8 /* Frameworks */,
-				E45516B51B35ED4F00558CF8 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				E45516B91B35ED4F00558CF8 /* PBXTargetDependency */,
-			);
-			name = FMOscillatorTests;
-			productName = FMOscillatorTests;
-			productReference = E45516B71B35ED4F00558CF8 /* FMOscillatorTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -241,10 +206,6 @@
 				TargetAttributes = {
 					E45516A41B35ED4F00558CF8 = {
 						CreatedOnToolsVersion = 6.4;
-					};
-					E45516B61B35ED4F00558CF8 = {
-						CreatedOnToolsVersion = 6.4;
-						TestTargetID = E45516A41B35ED4F00558CF8;
 					};
 				};
 			};
@@ -268,7 +229,6 @@
 			projectRoot = "";
 			targets = (
 				E45516A41B35ED4F00558CF8 /* FMOscillator */,
-				E45516B61B35ED4F00558CF8 /* FMOscillatorTests */,
 			);
 		};
 /* End PBXProject section */
@@ -307,13 +267,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E45516B51B35ED4F00558CF8 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
@@ -328,7 +281,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/bash;
-			shellScript = "\"${SRCROOT}/../ThirdParty/AudioKit/AudioKit/Platforms/OSX/run-script.sh\"";
+			shellScript = "\"${SRCROOT}/ThirdParty/AudioKit/AudioKit/Platforms/OSX/run-script.sh\"";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -345,22 +298,9 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E45516B31B35ED4F00558CF8 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E45516BE1B35ED4F00558CF8 /* FMOscillatorTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		E45516B91B35ED4F00558CF8 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = E45516A41B35ED4F00558CF8 /* FMOscillator */;
-			targetProxy = E45516B81B35ED4F00558CF8 /* PBXContainerItemProxy */;
-		};
 		EA8CECCA1BA3BE0F00DD53F6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "AudioKit OS X";
@@ -497,48 +437,6 @@
 			};
 			name = Release;
 		};
-		E45516C51B35ED4F00558CF8 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = FMOscillatorTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = "nfa.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/FMOscillator/Bridging-Header.h";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FMOscillator.app/Contents/MacOS/FMOscillator";
-			};
-			name = Debug;
-		};
-		E45516C61B35ED4F00558CF8 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = FMOscillatorTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = "nfa.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/FMOscillator/Bridging-Header.h";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FMOscillator.app/Contents/MacOS/FMOscillator";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -556,15 +454,6 @@
 			buildConfigurations = (
 				E45516C21B35ED4F00558CF8 /* Debug */,
 				E45516C31B35ED4F00558CF8 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		E45516C41B35ED4F00558CF8 /* Build configuration list for PBXNativeTarget "FMOscillatorTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				E45516C51B35ED4F00558CF8 /* Debug */,
-				E45516C61B35ED4F00558CF8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
