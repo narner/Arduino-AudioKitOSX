@@ -1,6 +1,8 @@
+#Arduino-AudioKitOSX Demo Project
+
 ============================
 
-**Overview**
+##Overview
 This project demonstrates how an OSX oscillator app created with <a href="https://github.com/audiokit/AudioKit">AudioKit</a> can be controlled by an Arduino via serial communication. A demo video <a href="https://vimeo.com/139079751">shows the project in action </a>.
 
 NOTE: Because this project uses `ORSSerialPort` and `AudioKit` as sub-modules, you'll need to recursively-clone the repository. Currently, `ORSSerialPort` is pointing to the "2.0" branch, and `AudioKit` is pointing to the "develop" branch. 
@@ -9,7 +11,7 @@ NOTE: Because this project uses `ORSSerialPort` and `AudioKit` as sub-modules, y
 git clone --recursive https://github.com/narner/Arduino-AudioKitOSX
 ```
 
-**Arduino Sketch**
+##Arduino Sketch
 The schematic below shows the two potentiometers and SPDT switch used to control the OSX app:
 
 ![Alt Text](https://github.com/narner/Arduino-AudioKitOSX/raw/master/Schematic Files/InputCircuit.png)
@@ -67,7 +69,7 @@ A delay of 50 milliseconds is added to prevent bouncing. Effectively we're check
 
 Finally, at the end of the method, we save the `lastSwitchState` value as that of the current `switchState`. 
 
-**Xcode Project**
+##Xcode Project
 
 There are three classes in the Xcode project, the `Serial Communicator`, `FMSynth`, and the `View Controller`. The `View Controller` is responsible both for opening the serial port so communication can occur: 
 
@@ -211,18 +213,21 @@ The UI is shown below:
 ![Alt Text](https://github.com/narner/Arduino-AudioKitOSX/raw/master/AppUI.png)
 
 
-**Attribution**
+##Attribution##
 The sound synthesis is implemented through <a href="http://audiokit.io">AudioKit</a>, an open-source audio analysis, synthesis, and processing library for iOS and OS X. This project uses AudioKit's <a href="https://github.com/audiokit/AudioKit/tree/develop">develop branch</a>. 
 
 The OS X app makes use of the <a href="https://github.com/armadsen/ORSSerialPort">ORSSerialPort library</a>.
 
 Thanks to <a href="http://blog.andrewmadsen.com/">Andrew Madsen</a> for answering questions regarding the library. 
 
+This project is licensed under the MIT License. 
 
-**Contact**
+##Contact
 
 Email: nicholasarner (at) gmail.com
 
 Website: www.nickarner.com
 
-Twitter: @nickarner
+Twitter: <a href="https://twitter.com/nickarner">@nickarner</a>
+
+
