@@ -1,7 +1,5 @@
 #Arduino-AudioKitOSX Demo Project
 
-============================
-
 ##Overview
 This project demonstrates how an OSX oscillator app created with <a href="https://github.com/audiokit/AudioKit">AudioKit</a> can be controlled by an Arduino via serial communication. A demo video <a href="https://vimeo.com/139079751">shows the project in action </a>.
 
