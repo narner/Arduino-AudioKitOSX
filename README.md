@@ -10,7 +10,7 @@ git clone --recursive https://github.com/narner/Arduino-AudioKitOSX
 ```
 
 ##Arduino Sketch
-The schematic below shows the two potentiometers and SPDT switch used to control the OSX app:
+The schematic below shows the two potentiometers and SPDT (single pole - double throw) switch used to control the OSX app:
 
 ![Alt Text](https://github.com/narner/Arduino-AudioKitOSX/raw/master/Schematic Files/InputCircuit.png)
 
@@ -122,8 +122,6 @@ AKOrchestra.addInstrument(instrument)
 AKOrchestra.start()
 ```
 
-The `FYSynth` class 
-
 The `Serial Communicator` calss conforms to the `ORSSerialPortDelegate`. When `serialPortWasOpened` is called, three instances of`ORSSerialPacketDescriptor` are created: one descriptor for each potentiometer, and one descriptor for the switch state. These descriptors specify that we should be listening for a packet that starts with the string values we logged in our Arduino sketch:
 
 ```
@@ -140,7 +138,7 @@ let descriptorState = ORSSerialPacketDescriptor(prefixString: "!state",
 	maximumPacketLength:9,
   userInfo: SerialPortPacketType.State.rawValue)
 ```
-The app then begins "listening" for each packets that match the correct description:
+The app then begins "listening" for packets that match the correct description:
 ```
 serialPort.startListeningForPacketsMatchingDescriptor(descriptorPotOne)
 serialPort.startListeningForPacketsMatchingDescriptor(descriptorPotTwo)
@@ -220,7 +218,7 @@ Thanks to <a href="http://blog.andrewmadsen.com/">Andrew Madsen</a> for answerin
 
 This project is licensed under the MIT License. 
 
-##Contact
+##Contact Info
 
 Email: nicholasarner (at) gmail.com
 
