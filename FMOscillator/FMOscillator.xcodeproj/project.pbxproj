@@ -15,9 +15,6 @@
 		E45516B21B35ED4F00558CF8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E45516B01B35ED4F00558CF8 /* Main.storyboard */; };
 		E47E9E471B7AC73100F2C853 /* SerialCommunicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47E9E461B7AC73100F2C853 /* SerialCommunicator.swift */; };
 		E4C74EBB1B9FBFCD0080DCE3 /* FMSynth.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C74EBA1B9FBFCD0080DCE3 /* FMSynth.swift */; };
-		EA8CECCB1BA3BE1B00DD53F6 /* libAudioKit OS X.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EA8CECC81BA3BDF300DD53F6 /* libAudioKit OS X.a */; };
-		EA8CECCD1BA3BE3E00DD53F6 /* CsoundLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA8CECCC1BA3BE3E00DD53F6 /* CsoundLib.framework */; };
-		EA8CECCE1BA3BF9F00DD53F6 /* CsoundLib.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = EA8CECCC1BA3BE3E00DD53F6 /* CsoundLib.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,27 +39,7 @@
 			remoteGlobalIDString = EA8E96591AD3C6FC0057E979;
 			remoteInfo = "AudioKit OS X";
 		};
-		EA8CECC91BA3BE0F00DD53F6 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = EA8CECBD1BA3BDF300DD53F6 /* AudioKit.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = EA8E96581AD3C6FC0057E979;
-			remoteInfo = "AudioKit OS X";
-		};
 /* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		E45516D81B35EF2E00558CF8 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				EA8CECCE1BA3BF9F00DD53F6 /* CsoundLib.framework in CopyFiles */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		43D917E7BA1759D0A6B013A6 /* Pods-FMOscillator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FMOscillator.release.xcconfig"; path = "Pods/Target Support Files/Pods-FMOscillator/Pods-FMOscillator.release.xcconfig"; sourceTree = "<group>"; };
@@ -89,8 +66,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EA8CECCD1BA3BE3E00DD53F6 /* CsoundLib.framework in Frameworks */,
-				EA8CECCB1BA3BE1B00DD53F6 /* libAudioKit OS X.a in Frameworks */,
 				C79F4E4238E4B316CB015EC0 /* Pods_FMOscillator.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -198,7 +173,6 @@
 				E45516A11B35ED4F00558CF8 /* Sources */,
 				E45516A21B35ED4F00558CF8 /* Frameworks */,
 				E45516A31B35ED4F00558CF8 /* Resources */,
-				E45516D81B35EF2E00558CF8 /* CopyFiles */,
 				E45516DA1B35EF5F00558CF8 /* ShellScript */,
 				DD3C19F926F71C75A15C2457 /* Embed Pods Frameworks */,
 				A6CC849609E83B26E5822F25 /* Copy Pods Resources */,
@@ -206,7 +180,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				EA8CECCA1BA3BE0F00DD53F6 /* PBXTargetDependency */,
 			);
 			name = FMOscillator;
 			productName = FMOscillator;
@@ -330,8 +303,7 @@
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/bash;
-			shellScript = "\"${SRCROOT}/ThirdParty/AudioKit/AudioKit/Platforms/OSX/run-script.sh\"";
+			shellScript = "";
 		};
 		E993A66E6173314008CDFC06 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -364,14 +336,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		EA8CECCA1BA3BE0F00DD53F6 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "AudioKit OS X";
-			targetProxy = EA8CECC91BA3BE0F00DD53F6 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		E45516B01B35ED4F00558CF8 /* Main.storyboard */ = {
@@ -477,6 +441,7 @@
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/Frameworks/**";
 				INFOPLIST_FILE = FMOscillator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "nfa.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -496,6 +461,7 @@
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/Frameworks/**";
 				INFOPLIST_FILE = FMOscillator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "nfa.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";

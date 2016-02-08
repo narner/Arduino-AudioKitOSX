@@ -1,6 +1,3 @@
 [submodule "FMOscillator/Frameworks/AudioKit"]
 	path =  FMOscillator/Frameworks/AudioKit
 	url = https://github.com/audiokit/AudioKit/tree/develop.git
-[submodule "FMOscillator/ThirdParty/AudioKit"]
-	path = FMOscillator/ThirdParty/AudioKit
-	url = https://github.com/audiokit/AudioKit.git
