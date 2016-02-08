@@ -1,0 +1,542 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		102B013EB63D141968FFC9A57467B5AA /* ORSSerialPortManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 031B20BC2606C8462039FE39B3378FAA /* ORSSerialPortManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		38267DB484490AABDE8C92C04738A30C /* ORSSerialPacketDescriptor.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A3697B43F61E7278C0908786599ADFE /* ORSSerialPacketDescriptor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3A563F446E8A85049551BFD52F0A60CE /* ORSSerialPort.h in Headers */ = {isa = PBXBuildFile; fileRef = A4053808D8CE2792F9484CE6ED2328DD /* ORSSerialPort.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		41BC8B2264E5536622291662E49C8991 /* Pods-FMOscillator-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E68D1B2E1F9F4D0405A25A5F2D560B3F /* Pods-FMOscillator-dummy.m */; };
+		4AF772F8DE194171B81A0294E34EE817 /* ORSSerialBuffer.m in Sources */ = {isa = PBXBuildFile; fileRef = FF21C51896CC4A53C273BAF2F36F755A /* ORSSerialBuffer.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		5EE3B781663AF2F94556AC03B85EDDD7 /* ORSSerialPort-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = AFA96416C38F051C1193FBE3E66537A6 /* ORSSerialPort-dummy.m */; };
+		5FF5C43278619FF0140CB707E392DCDA /* ORSSerialRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = F6EDA07A216C8565A6E38B6D1A65A7C5 /* ORSSerialRequest.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		691943E18AC02739ECAA20ADB9206BDE /* ORSSerialPortManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 042857051A21A240EC773D1AB392B165 /* ORSSerialPortManager.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		80A8C99161962638C61F102DDC28DC06 /* ORSSerialPort.m in Sources */ = {isa = PBXBuildFile; fileRef = 354217764CABBCF9C9598CFD2985D39D /* ORSSerialPort.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		988D1F6F783A27BADC0F2BC6913ADF38 /* ORSSerialPort-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B38E699155F00CD8812F5EADE9554DE5 /* ORSSerialPort-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A07415078BC042CC9787BA07222798A9 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB476D0E09C42355437D9E75E4D0112B /* IOKit.framework */; };
+		B210DB9DD0955064E214D20315E79E64 /* Pods-FMOscillator-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A53E015ACD77EAD3EC8B8A111E1BA1E /* Pods-FMOscillator-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5B61648F6FC0E4779B8CBDFC8833152 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29D109C92943EBFDF6442AB80830C3A0 /* Cocoa.framework */; };
+		B729959759FC0CFD0AF8A6456C7C3785 /* ORSSerialBuffer.h in Headers */ = {isa = PBXBuildFile; fileRef = 34BB19A2E20F95638A591FB0C99AD51D /* ORSSerialBuffer.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		C3AA182FC7C15278CF57CFD5C8E2E7D5 /* ORSSerialRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 8635A95A20C52A16038076A3BABEF202 /* ORSSerialRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		ED95F7F0CB887DC9F57939086685418B /* ORSSerialPacketDescriptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0497C8AA6800AE35769408572F51F15C /* ORSSerialPacketDescriptor.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		F772EDE466ABBE850ABBD59FB9B6868E /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29D109C92943EBFDF6442AB80830C3A0 /* Cocoa.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		838F136528FB0994C834288E3771E5D5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8014B05F53580D73640542F0BF2A215F;
+			remoteInfo = ORSSerialPort;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		031B20BC2606C8462039FE39B3378FAA /* ORSSerialPortManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ORSSerialPortManager.h; path = Source/ORSSerialPortManager.h; sourceTree = "<group>"; };
+		042857051A21A240EC773D1AB392B165 /* ORSSerialPortManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ORSSerialPortManager.m; path = Source/ORSSerialPortManager.m; sourceTree = "<group>"; };
+		0497C8AA6800AE35769408572F51F15C /* ORSSerialPacketDescriptor.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ORSSerialPacketDescriptor.m; path = Source/ORSSerialPacketDescriptor.m; sourceTree = "<group>"; };
+		0798F20DD45DF6F5B63248D5F2564BE3 /* Pods_FMOscillator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FMOscillator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		29D109C92943EBFDF6442AB80830C3A0 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
+		2D9092458BC57B64C65D2091075B5480 /* Pods-FMOscillator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FMOscillator.debug.xcconfig"; sourceTree = "<group>"; };
+		347165A2CA9A7667BF5BDE30BE0057C0 /* ORSSerial.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ORSSerial.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		34BB19A2E20F95638A591FB0C99AD51D /* ORSSerialBuffer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ORSSerialBuffer.h; path = Source/ORSSerialBuffer.h; sourceTree = "<group>"; };
+		354217764CABBCF9C9598CFD2985D39D /* ORSSerialPort.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ORSSerialPort.m; path = Source/ORSSerialPort.m; sourceTree = "<group>"; };
+		4AE90E7C06C110BE6BFC26939A0D0DBB /* Pods-FMOscillator.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-FMOscillator.modulemap"; sourceTree = "<group>"; };
+		5F8BA3B74D84065F6607DDD060708D0B /* Pods-FMOscillator-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-FMOscillator-acknowledgements.markdown"; sourceTree = "<group>"; };
+		8635A95A20C52A16038076A3BABEF202 /* ORSSerialRequest.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ORSSerialRequest.h; path = Source/ORSSerialRequest.h; sourceTree = "<group>"; };
+		969EA5557BDBC59A685ADB89C9E582B6 /* Pods-FMOscillator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FMOscillator.release.xcconfig"; sourceTree = "<group>"; };
+		9770F2A7EB0781FE90FA222E1B1A854C /* ORSSerialPort.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = ORSSerialPort.modulemap; sourceTree = "<group>"; };
+		9A3697B43F61E7278C0908786599ADFE /* ORSSerialPacketDescriptor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ORSSerialPacketDescriptor.h; path = Source/ORSSerialPacketDescriptor.h; sourceTree = "<group>"; };
+		9A53E015ACD77EAD3EC8B8A111E1BA1E /* Pods-FMOscillator-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-FMOscillator-umbrella.h"; sourceTree = "<group>"; };
+		A4053808D8CE2792F9484CE6ED2328DD /* ORSSerialPort.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ORSSerialPort.h; path = Source/ORSSerialPort.h; sourceTree = "<group>"; };
+		AFA96416C38F051C1193FBE3E66537A6 /* ORSSerialPort-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ORSSerialPort-dummy.m"; sourceTree = "<group>"; };
+		B38E699155F00CD8812F5EADE9554DE5 /* ORSSerialPort-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ORSSerialPort-umbrella.h"; sourceTree = "<group>"; };
+		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		CBB489EC7EBFCA370274185A2EC24353 /* ORSSerialPort.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ORSSerialPort.xcconfig; sourceTree = "<group>"; };
+		D95053421EB920B651A6F94EC4159F8E /* ORSSerialPort-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ORSSerialPort-prefix.pch"; sourceTree = "<group>"; };
+		DCBAA274851F852F5E40DAA5FD1D13AB /* Pods-FMOscillator-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-FMOscillator-acknowledgements.plist"; sourceTree = "<group>"; };
+		E68D1B2E1F9F4D0405A25A5F2D560B3F /* Pods-FMOscillator-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-FMOscillator-dummy.m"; sourceTree = "<group>"; };
+		EA5A371A1C911B303205D8462C69CBE2 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EA8F2E8DFE47BC844DB1A2B2671F3CA0 /* Pods-FMOscillator-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-FMOscillator-resources.sh"; sourceTree = "<group>"; };
+		EE6B16FDC168EB4C2E36C1D139256174 /* Pods-FMOscillator-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-FMOscillator-frameworks.sh"; sourceTree = "<group>"; };
+		F3B7E5E8B4F526B5EFE46FBEAE9BDAA4 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F6EDA07A216C8565A6E38B6D1A65A7C5 /* ORSSerialRequest.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ORSSerialRequest.m; path = Source/ORSSerialRequest.m; sourceTree = "<group>"; };
+		FB476D0E09C42355437D9E75E4D0112B /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/IOKit.framework; sourceTree = DEVELOPER_DIR; };
+		FF21C51896CC4A53C273BAF2F36F755A /* ORSSerialBuffer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ORSSerialBuffer.m; path = Source/ORSSerialBuffer.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		36C107935C34CC3C14FB87D13D29788D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F772EDE466ABBE850ABBD59FB9B6868E /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6F28179FD3EBD4FD95D8C89FB83815F8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5B61648F6FC0E4779B8CBDFC8833152 /* Cocoa.framework in Frameworks */,
+				A07415078BC042CC9787BA07222798A9 /* IOKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		05F48C4A9876BC6C914B6612A5A65D15 /* Pods-FMOscillator */ = {
+			isa = PBXGroup;
+			children = (
+				F3B7E5E8B4F526B5EFE46FBEAE9BDAA4 /* Info.plist */,
+				4AE90E7C06C110BE6BFC26939A0D0DBB /* Pods-FMOscillator.modulemap */,
+				5F8BA3B74D84065F6607DDD060708D0B /* Pods-FMOscillator-acknowledgements.markdown */,
+				DCBAA274851F852F5E40DAA5FD1D13AB /* Pods-FMOscillator-acknowledgements.plist */,
+				E68D1B2E1F9F4D0405A25A5F2D560B3F /* Pods-FMOscillator-dummy.m */,
+				EE6B16FDC168EB4C2E36C1D139256174 /* Pods-FMOscillator-frameworks.sh */,
+				EA8F2E8DFE47BC844DB1A2B2671F3CA0 /* Pods-FMOscillator-resources.sh */,
+				9A53E015ACD77EAD3EC8B8A111E1BA1E /* Pods-FMOscillator-umbrella.h */,
+				2D9092458BC57B64C65D2091075B5480 /* Pods-FMOscillator.debug.xcconfig */,
+				969EA5557BDBC59A685ADB89C9E582B6 /* Pods-FMOscillator.release.xcconfig */,
+			);
+			name = "Pods-FMOscillator";
+			path = "Target Support Files/Pods-FMOscillator";
+			sourceTree = "<group>";
+		};
+		30FF52A1D6BAFF40641B7EADF3563228 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				EA5A371A1C911B303205D8462C69CBE2 /* Info.plist */,
+				9770F2A7EB0781FE90FA222E1B1A854C /* ORSSerialPort.modulemap */,
+				CBB489EC7EBFCA370274185A2EC24353 /* ORSSerialPort.xcconfig */,
+				AFA96416C38F051C1193FBE3E66537A6 /* ORSSerialPort-dummy.m */,
+				D95053421EB920B651A6F94EC4159F8E /* ORSSerialPort-prefix.pch */,
+				B38E699155F00CD8812F5EADE9554DE5 /* ORSSerialPort-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/ORSSerialPort";
+			sourceTree = "<group>";
+		};
+		5AB97C76098502188B6C0CF235317F1E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E42C5317F65A050F1449D4B8E1789472 /* ORSSerialPort */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		62BD14F27CC6E7D1EF2C4F2E94985ABC /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				05F48C4A9876BC6C914B6612A5A65D15 /* Pods-FMOscillator */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */,
+				D648CE86F139C7CCFD55D5B8A03BE74B /* Frameworks */,
+				5AB97C76098502188B6C0CF235317F1E /* Pods */,
+				CBA480FC52331F6E0D8532C25A45742A /* Products */,
+				62BD14F27CC6E7D1EF2C4F2E94985ABC /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		CBA480FC52331F6E0D8532C25A45742A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				347165A2CA9A7667BF5BDE30BE0057C0 /* ORSSerial.framework */,
+				0798F20DD45DF6F5B63248D5F2564BE3 /* Pods_FMOscillator.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D648CE86F139C7CCFD55D5B8A03BE74B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FFCB2FE4A13F242ECF8CBD22A4B2E6F3 /* OS X */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E42C5317F65A050F1449D4B8E1789472 /* ORSSerialPort */ = {
+			isa = PBXGroup;
+			children = (
+				34BB19A2E20F95638A591FB0C99AD51D /* ORSSerialBuffer.h */,
+				FF21C51896CC4A53C273BAF2F36F755A /* ORSSerialBuffer.m */,
+				9A3697B43F61E7278C0908786599ADFE /* ORSSerialPacketDescriptor.h */,
+				0497C8AA6800AE35769408572F51F15C /* ORSSerialPacketDescriptor.m */,
+				A4053808D8CE2792F9484CE6ED2328DD /* ORSSerialPort.h */,
+				354217764CABBCF9C9598CFD2985D39D /* ORSSerialPort.m */,
+				031B20BC2606C8462039FE39B3378FAA /* ORSSerialPortManager.h */,
+				042857051A21A240EC773D1AB392B165 /* ORSSerialPortManager.m */,
+				8635A95A20C52A16038076A3BABEF202 /* ORSSerialRequest.h */,
+				F6EDA07A216C8565A6E38B6D1A65A7C5 /* ORSSerialRequest.m */,
+				30FF52A1D6BAFF40641B7EADF3563228 /* Support Files */,
+			);
+			path = ORSSerialPort;
+			sourceTree = "<group>";
+		};
+		FFCB2FE4A13F242ECF8CBD22A4B2E6F3 /* OS X */ = {
+			isa = PBXGroup;
+			children = (
+				29D109C92943EBFDF6442AB80830C3A0 /* Cocoa.framework */,
+				FB476D0E09C42355437D9E75E4D0112B /* IOKit.framework */,
+			);
+			name = "OS X";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		0F40263FE17A0CAEF50BFD7A49D63476 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B729959759FC0CFD0AF8A6456C7C3785 /* ORSSerialBuffer.h in Headers */,
+				38267DB484490AABDE8C92C04738A30C /* ORSSerialPacketDescriptor.h in Headers */,
+				988D1F6F783A27BADC0F2BC6913ADF38 /* ORSSerialPort-umbrella.h in Headers */,
+				3A563F446E8A85049551BFD52F0A60CE /* ORSSerialPort.h in Headers */,
+				102B013EB63D141968FFC9A57467B5AA /* ORSSerialPortManager.h in Headers */,
+				C3AA182FC7C15278CF57CFD5C8E2E7D5 /* ORSSerialRequest.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2566484D21D614FD27E2178E948B8EE8 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B210DB9DD0955064E214D20315E79E64 /* Pods-FMOscillator-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		6EF889E974181C5694B8A2DF56AFEFD6 /* Pods-FMOscillator */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FED14CA0CA535ED27ABB160952A93716 /* Build configuration list for PBXNativeTarget "Pods-FMOscillator" */;
+			buildPhases = (
+				27E46B0FE465C760B447F1F73542D70E /* Sources */,
+				36C107935C34CC3C14FB87D13D29788D /* Frameworks */,
+				2566484D21D614FD27E2178E948B8EE8 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4A73E166D7710E196B96D3F58FBAE471 /* PBXTargetDependency */,
+			);
+			name = "Pods-FMOscillator";
+			productName = "Pods-FMOscillator";
+			productReference = 0798F20DD45DF6F5B63248D5F2564BE3 /* Pods_FMOscillator.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		8014B05F53580D73640542F0BF2A215F /* ORSSerialPort */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8BEF8F058DB3FA8338345EEDD2A31CDC /* Build configuration list for PBXNativeTarget "ORSSerialPort" */;
+			buildPhases = (
+				1E9036DF0C72DB825D4478C13096789A /* Sources */,
+				6F28179FD3EBD4FD95D8C89FB83815F8 /* Frameworks */,
+				0F40263FE17A0CAEF50BFD7A49D63476 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ORSSerialPort;
+			productName = ORSSerialPort;
+			productReference = 347165A2CA9A7667BF5BDE30BE0057C0 /* ORSSerial.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = CBA480FC52331F6E0D8532C25A45742A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8014B05F53580D73640542F0BF2A215F /* ORSSerialPort */,
+				6EF889E974181C5694B8A2DF56AFEFD6 /* Pods-FMOscillator */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1E9036DF0C72DB825D4478C13096789A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4AF772F8DE194171B81A0294E34EE817 /* ORSSerialBuffer.m in Sources */,
+				ED95F7F0CB887DC9F57939086685418B /* ORSSerialPacketDescriptor.m in Sources */,
+				5EE3B781663AF2F94556AC03B85EDDD7 /* ORSSerialPort-dummy.m in Sources */,
+				80A8C99161962638C61F102DDC28DC06 /* ORSSerialPort.m in Sources */,
+				691943E18AC02739ECAA20ADB9206BDE /* ORSSerialPortManager.m in Sources */,
+				5FF5C43278619FF0140CB707E392DCDA /* ORSSerialRequest.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		27E46B0FE465C760B447F1F73542D70E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				41BC8B2264E5536622291662E49C8991 /* Pods-FMOscillator-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4A73E166D7710E196B96D3F58FBAE471 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ORSSerialPort;
+			target = 8014B05F53580D73640542F0BF2A215F /* ORSSerialPort */;
+			targetProxy = 838F136528FB0994C834288E3771E5D5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1E621D6BF749EDCE77ACBE7C6D464E29 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				ONLY_ACTIVE_ARCH = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		425F180D2E7095216E077262BDB011C4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 969EA5557BDBC59A685ADB89C9E582B6 /* Pods-FMOscillator.release.xcconfig */;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "Target Support Files/Pods-FMOscillator/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MODULEMAP_FILE = "Target Support Files/Pods-FMOscillator/Pods-FMOscillator.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_FMOscillator;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		5577A3F22A37686E40DB6863D68D476C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AF61DC168FCC8EA4135716D8AB56E8C3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CBB489EC7EBFCA370274185A2EC24353 /* ORSSerialPort.xcconfig */;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_VERSION = A;
+				GCC_PREFIX_HEADER = "Target Support Files/ORSSerialPort/ORSSerialPort-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/ORSSerialPort/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MODULEMAP_FILE = "Target Support Files/ORSSerialPort/ORSSerialPort.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = ORSSerial;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		C540F3F51D28A70452C6CCEAD4E05083 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2D9092458BC57B64C65D2091075B5480 /* Pods-FMOscillator.debug.xcconfig */;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "Target Support Files/Pods-FMOscillator/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MODULEMAP_FILE = "Target Support Files/Pods-FMOscillator/Pods-FMOscillator.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_FMOscillator;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		F5E40D06C4B425AA0B9BDC20531BC4E1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CBB489EC7EBFCA370274185A2EC24353 /* ORSSerialPort.xcconfig */;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_VERSION = A;
+				GCC_PREFIX_HEADER = "Target Support Files/ORSSerialPort/ORSSerialPort-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/ORSSerialPort/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MODULEMAP_FILE = "Target Support Files/ORSSerialPort/ORSSerialPort.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = ORSSerial;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1E621D6BF749EDCE77ACBE7C6D464E29 /* Debug */,
+				5577A3F22A37686E40DB6863D68D476C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8BEF8F058DB3FA8338345EEDD2A31CDC /* Build configuration list for PBXNativeTarget "ORSSerialPort" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F5E40D06C4B425AA0B9BDC20531BC4E1 /* Debug */,
+				AF61DC168FCC8EA4135716D8AB56E8C3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FED14CA0CA535ED27ABB160952A93716 /* Build configuration list for PBXNativeTarget "Pods-FMOscillator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C540F3F51D28A70452C6CCEAD4E05083 /* Debug */,
+				425F180D2E7095216E077262BDB011C4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}

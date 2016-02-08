@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "D592CEA054C028F097EA3D3D8401D2A67A7962FD",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "D592CEA054C028F097EA3D3D8401D2A67A7962FD" : 0,
+    "5D7AE6F26A6D7E393D8CA002FDE5D0D8ABCDAE62" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "25D7AC4D-D8ED-4247-AF3F-FC56AECF6537",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "D592CEA054C028F097EA3D3D8401D2A67A7962FD" : "Arduino-AudioKitOSX\/",
+    "5D7AE6F26A6D7E393D8CA002FDE5D0D8ABCDAE62" : "Arduino-AudioKitOSX\/FMOscillator\/ThirdParty\/AudioKit\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "FMOscillator",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "FMOscillator\/FMOscillator.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/audiokit\/AudioKit.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "5D7AE6F26A6D7E393D8CA002FDE5D0D8ABCDAE62"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/narner\/Arduino-AudioKitOSX",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "D592CEA054C028F097EA3D3D8401D2A67A7962FD"
+    }
+  ]
+}

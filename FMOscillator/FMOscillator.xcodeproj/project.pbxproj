@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C79F4E4238E4B316CB015EC0 /* Pods_FMOscillator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC3C3D73C19E4794D27C7DE7 /* Pods_FMOscillator.framework */; };
 		E44720401BA3B9C0003CE1A4 /* AudioKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = E447203F1BA3B9C0003CE1A4 /* AudioKit.swift */; };
 		E45516AB1B35ED4F00558CF8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45516AA1B35ED4F00558CF8 /* AppDelegate.swift */; };
 		E45516AD1B35ED4F00558CF8 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45516AC1B35ED4F00558CF8 /* MainViewController.swift */; };
@@ -64,6 +65,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		43D917E7BA1759D0A6B013A6 /* Pods-FMOscillator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FMOscillator.release.xcconfig"; path = "Pods/Target Support Files/Pods-FMOscillator/Pods-FMOscillator.release.xcconfig"; sourceTree = "<group>"; };
+		B3B685CD1D1DD9C0EA476343 /* Pods-FMOscillator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FMOscillator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FMOscillator/Pods-FMOscillator.debug.xcconfig"; sourceTree = "<group>"; };
+		DC3C3D73C19E4794D27C7DE7 /* Pods_FMOscillator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FMOscillator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E447203F1BA3B9C0003CE1A4 /* AudioKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AudioKit.swift; path = ThirdParty/AudioKit/AudioKit/Platforms/Swift/AudioKit.swift; sourceTree = SOURCE_ROOT; };
 		E45516A51B35ED4F00558CF8 /* FMOscillator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FMOscillator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E45516A91B35ED4F00558CF8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -87,6 +91,7 @@
 			files = (
 				EA8CECCD1BA3BE3E00DD53F6 /* CsoundLib.framework in Frameworks */,
 				EA8CECCB1BA3BE1B00DD53F6 /* libAudioKit OS X.a in Frameworks */,
+				C79F4E4238E4B316CB015EC0 /* Pods_FMOscillator.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,8 +102,18 @@
 			isa = PBXGroup;
 			children = (
 				EA8CECCC1BA3BE3E00DD53F6 /* CsoundLib.framework */,
+				DC3C3D73C19E4794D27C7DE7 /* Pods_FMOscillator.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AF790582940EDD98412BCFAE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B3B685CD1D1DD9C0EA476343 /* Pods-FMOscillator.debug.xcconfig */,
+				43D917E7BA1759D0A6B013A6 /* Pods-FMOscillator.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		E455169C1B35ED4F00558CF8 = {
@@ -109,6 +124,7 @@
 				E45516BA1B35ED4F00558CF8 /* FMOscillatorTests */,
 				9D37A51C1B9C94E0006CAFD5 /* Frameworks */,
 				E45516A61B35ED4F00558CF8 /* Products */,
+				AF790582940EDD98412BCFAE /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -178,11 +194,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E45516C11B35ED4F00558CF8 /* Build configuration list for PBXNativeTarget "FMOscillator" */;
 			buildPhases = (
+				E993A66E6173314008CDFC06 /* Check Pods Manifest.lock */,
 				E45516A11B35ED4F00558CF8 /* Sources */,
 				E45516A21B35ED4F00558CF8 /* Frameworks */,
 				E45516A31B35ED4F00558CF8 /* Resources */,
 				E45516D81B35EF2E00558CF8 /* CopyFiles */,
 				E45516DA1B35EF5F00558CF8 /* ShellScript */,
+				DD3C19F926F71C75A15C2457 /* Embed Pods Frameworks */,
+				A6CC849609E83B26E5822F25 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -271,6 +290,36 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		A6CC849609E83B26E5822F25 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FMOscillator/Pods-FMOscillator-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DD3C19F926F71C75A15C2457 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FMOscillator/Pods-FMOscillator-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		E45516DA1B35EF5F00558CF8 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -283,6 +332,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/bash;
 			shellScript = "\"${SRCROOT}/ThirdParty/AudioKit/AudioKit/Platforms/OSX/run-script.sh\"";
+		};
+		E993A66E6173314008CDFC06 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -404,6 +468,7 @@
 		};
 		E45516C21B35ED4F00558CF8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B3B685CD1D1DD9C0EA476343 /* Pods-FMOscillator.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "";
@@ -422,6 +487,7 @@
 		};
 		E45516C31B35ED4F00558CF8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 43D917E7BA1759D0A6B013A6 /* Pods-FMOscillator.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "";

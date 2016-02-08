@@ -1,0 +1,8 @@
+framework module ORSSerial {
+  umbrella header "ORSSerialPort-umbrella.h"
+
+  export *
+  module * { export * }
+
+  private header "ORSSerialBuffer.h"
+}
