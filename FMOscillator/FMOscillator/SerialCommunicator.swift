@@ -6,7 +6,7 @@
 
 //  Based off of the `Request Response Demo` example in
 //  the ORSSerialPort library from Andrew Madsen
-//  (https://github.com/armadsen/ORSSerialPort/tree/master/Examples/RequestResponseDemo)
+//  https://github.com/armadsen/ORSSerialPort/tree/master/Examples/RequestResponseDemo
 
 import Foundation
 
