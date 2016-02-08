@@ -3,12 +3,6 @@
 **Overview**
 This project demonstrates how an OSX oscillator app created with <a href="https://github.com/audiokit/AudioKit">AudioKit</a> can be controlled by an Arduino via serial communication. A demo video <a href="https://vimeo.com/139079751">shows the project in action </a>.
 
-NOTE: Because this project uses `ORSSerialPort` and `AudioKit` as sub-modules, you'll need to recursively-clone the repository. Currently, `ORSSerialPort` is pointing to the "2.0" branch, and `AudioKit` is pointing to the "develop" branch. 
-
-```
-git clone --recursive https://github.com/narner/Arduino-AudioKitOSX
-```
-
 **Arduino Sketch**
 The schematic below shows the two potentiometers and SPDT switch used to control the OSX app:
 
