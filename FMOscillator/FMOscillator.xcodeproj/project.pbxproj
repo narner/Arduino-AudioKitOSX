@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		C79F4E4238E4B316CB015EC0 /* Pods_FMOscillator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC3C3D73C19E4794D27C7DE7 /* Pods_FMOscillator.framework */; };
-		E44720401BA3B9C0003CE1A4 /* AudioKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = E447203F1BA3B9C0003CE1A4 /* AudioKit.swift */; };
 		E45516AB1B35ED4F00558CF8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45516AA1B35ED4F00558CF8 /* AppDelegate.swift */; };
 		E45516AD1B35ED4F00558CF8 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45516AC1B35ED4F00558CF8 /* MainViewController.swift */; };
 		E45516AF1B35ED4F00558CF8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E45516AE1B35ED4F00558CF8 /* Images.xcassets */; };
@@ -45,7 +44,6 @@
 		43D917E7BA1759D0A6B013A6 /* Pods-FMOscillator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FMOscillator.release.xcconfig"; path = "Pods/Target Support Files/Pods-FMOscillator/Pods-FMOscillator.release.xcconfig"; sourceTree = "<group>"; };
 		B3B685CD1D1DD9C0EA476343 /* Pods-FMOscillator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FMOscillator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FMOscillator/Pods-FMOscillator.debug.xcconfig"; sourceTree = "<group>"; };
 		DC3C3D73C19E4794D27C7DE7 /* Pods_FMOscillator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FMOscillator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E447203F1BA3B9C0003CE1A4 /* AudioKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AudioKit.swift; path = ThirdParty/AudioKit/AudioKit/Platforms/Swift/AudioKit.swift; sourceTree = SOURCE_ROOT; };
 		E45516A51B35ED4F00558CF8 /* FMOscillator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FMOscillator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E45516A91B35ED4F00558CF8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E45516AA1B35ED4F00558CF8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -56,7 +54,6 @@
 		E45516BD1B35ED4F00558CF8 /* FMOscillatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMOscillatorTests.swift; sourceTree = "<group>"; };
 		E47E9E461B7AC73100F2C853 /* SerialCommunicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SerialCommunicator.swift; sourceTree = "<group>"; };
 		E4C74EBA1B9FBFCD0080DCE3 /* FMSynth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMSynth.swift; sourceTree = "<group>"; };
-		E4CBBB0E1B35F3E00029FC24 /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		EA8CECBD1BA3BDF300DD53F6 /* AudioKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AudioKit.xcodeproj; path = ThirdParty/AudioKit/AudioKit.xcodeproj; sourceTree = "<group>"; };
 		EA8CECCC1BA3BE3E00DD53F6 /* CsoundLib.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CsoundLib.framework; path = ThirdParty/AudioKit/AudioKit/Platforms/OSX/CsoundLib.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -126,11 +123,9 @@
 		E45516A81B35ED4F00558CF8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				E447203F1BA3B9C0003CE1A4 /* AudioKit.swift */,
 				E45516AA1B35ED4F00558CF8 /* AppDelegate.swift */,
 				E45516AE1B35ED4F00558CF8 /* Images.xcassets */,
 				E45516A91B35ED4F00558CF8 /* Info.plist */,
-				E4CBBB0E1B35F3E00029FC24 /* Bridging-Header.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -330,7 +325,6 @@
 				E47E9E471B7AC73100F2C853 /* SerialCommunicator.swift in Sources */,
 				E45516AD1B35ED4F00558CF8 /* MainViewController.swift in Sources */,
 				E4C74EBB1B9FBFCD0080DCE3 /* FMSynth.swift in Sources */,
-				E44720401BA3B9C0003CE1A4 /* AudioKit.swift in Sources */,
 				E45516AB1B35ED4F00558CF8 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -445,7 +439,6 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "nfa.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/FMOscillator/Bridging-Header.h";
 				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/ThirdParty/AudioKit/AudioKit/**";
 			};
 			name = Debug;
@@ -465,7 +458,6 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "nfa.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/FMOscillator/Bridging-Header.h";
 				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/ThirdParty/AudioKit/AudioKit/**";
 			};
 			name = Release;
