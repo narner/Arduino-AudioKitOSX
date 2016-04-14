@@ -6,35 +6,34 @@
 //  Copyright (c) 2015 Nicholas Arner. All rights reserved.
 //
 
-class FMSynth: AKInstrument {
+import AudioKit
+
+public class FMSynth: NSObject {
     
-    // INSTRUMENT CONTROLS =====================================================
-    
-    var frequency            = AKInstrumentProperty(value: 40, minimum: 20, maximum: 400    )
-    var amplitude            = AKInstrumentProperty(value: 0.2, minimum: 0,  maximum: 1)
-    var carrierMultiplier    = AKInstrumentProperty(value: 1,   minimum: 0,  maximum: 3)
-    var modulatingMultiplier = AKInstrumentProperty(value: 1,   minimum: 0,  maximum: 3)
-    var modulationIndex      = AKInstrumentProperty(value: 15,  minimum: 0,  maximum: 30)
+    let fmOscillator = AKFMOscillator(
+        waveform: AKTable(.Sine),
+        baseFrequency: 40,
+        carrierMultiplier: 1,
+        modulatingMultiplier: 1,
+        modulationIndex: 1,
+        amplitude: 0.2
+    )
     
     // INSTRUMENT DEFINITION ===================================================
     
     override init() {
         super.init()
-        
-        addProperty(frequency)
-        addProperty(amplitude)
-        addProperty(carrierMultiplier)
-        addProperty(modulatingMultiplier)
-        addProperty(modulationIndex)
-        
-        let fmOscillator = AKFMOscillator(
-            waveform: AKTable.standardSineWave(),
-            baseFrequency: frequency,
-            carrierMultiplier: carrierMultiplier,
-            modulatingMultiplier: modulatingMultiplier,
-            modulationIndex: modulationIndex,
-            amplitude: amplitude
-        )
-        setAudioOutput(fmOscillator)
+    
+        AudioKit.output = fmOscillator
+        AudioKit.start()
+    }
+    
+    
+    public func startSound() {
+        fmOscillator.start()
+    }
+    
+    public func stopSound(){
+        fmOscillator.stop()
     }
 }
