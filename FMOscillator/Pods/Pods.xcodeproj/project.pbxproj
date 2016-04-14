@@ -55,7 +55,6 @@
 		8EBD0B193EE55C85216D6E1D77AA6546 /* ORSSerialPort.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ORSSerialPort.xcconfig; sourceTree = "<group>"; };
 		969EA5557BDBC59A685ADB89C9E582B6 /* Pods-FMOscillator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FMOscillator.release.xcconfig"; sourceTree = "<group>"; };
 		9A53E015ACD77EAD3EC8B8A111E1BA1E /* Pods-FMOscillator-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-FMOscillator-umbrella.h"; sourceTree = "<group>"; };
-		9C2C1929F33FD9CDAB6654E7CBAF3ABC /* AudioKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioKit.framework; path = OSX/AudioKit.framework; sourceTree = "<group>"; };
 		9E03777C7BCEEBF89C5549276116C456 /* ORSSerialPort.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ORSSerialPort.m; path = Source/ORSSerialPort.m; sourceTree = "<group>"; };
 		AE876A34363C94B9A128EC7EFD4E9CB0 /* ORSSerialPort-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ORSSerialPort-prefix.pch"; sourceTree = "<group>"; };
 		B3EAC709E4B6FD8D803DDA6C427730A1 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -108,14 +107,6 @@
 			);
 			name = "Pods-FMOscillator";
 			path = "Target Support Files/Pods-FMOscillator";
-			sourceTree = "<group>";
-		};
-		1C42535F74A9E7041F8ECB02F2075A5C /* AudioKit */ = {
-			isa = PBXGroup;
-			children = (
-				F8F87AA091AF41E2DF3D90BAC77DB361 /* Frameworks */,
-			);
-			path = AudioKit;
 			sourceTree = "<group>";
 		};
 		23254E148D6EBDFA99EF7E31C9DB94A0 /* ORSSerialPort */ = {
@@ -181,7 +172,6 @@
 		CC3876708FA8BC9EC64F6D0CBBB2B2A2 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				1C42535F74A9E7041F8ECB02F2075A5C /* AudioKit */,
 				23254E148D6EBDFA99EF7E31C9DB94A0 /* ORSSerialPort */,
 			);
 			name = Pods;
@@ -191,14 +181,6 @@
 			isa = PBXGroup;
 			children = (
 				FFCB2FE4A13F242ECF8CBD22A4B2E6F3 /* OS X */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		F8F87AA091AF41E2DF3D90BAC77DB361 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				9C2C1929F33FD9CDAB6654E7CBAF3ABC /* AudioKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

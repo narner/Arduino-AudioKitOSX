@@ -5,6 +5,5 @@ use_frameworks!
 
 target 'FMOscillator' do
 	pod "ORSSerialPort"
-	pod 'AudioKit', '~> 3.0'
 end
 
