@@ -12,7 +12,7 @@ public class FMSynth: NSObject {
     
     let fmOscillator = AKFMOscillator(
         waveform: AKTable(.Sine),
-        baseFrequency: 40,
+        baseFrequency: 440,
         carrierMultiplier: 1,
         modulatingMultiplier: 1,
         modulationIndex: 1,
@@ -23,7 +23,6 @@ public class FMSynth: NSObject {
     
     override init() {
         super.init()
-    
         AudioKit.output = fmOscillator
         AudioKit.start()
     }

@@ -84,10 +84,8 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_framework "${PODS_ROOT}/AudioKit/OSX/AudioKit.framework"
   install_framework "Pods-FMOscillator/ORSSerial.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_framework "${PODS_ROOT}/AudioKit/OSX/AudioKit.framework"
   install_framework "Pods-FMOscillator/ORSSerial.framework"
 fi

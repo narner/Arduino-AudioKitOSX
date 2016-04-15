@@ -1,9 +1,7 @@
 CODE_SIGN_IDENTITY =
-FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/AudioKit/OSX"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/AudioKit"
 LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/../Frameworks' '@loader_path/Frameworks'
-OTHER_CFLAGS = $(inherited) -iquote "$CONFIGURATION_BUILD_DIR/ORSSerial.framework/Headers" -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/AudioKit"
-OTHER_LDFLAGS = $(inherited) -framework "AVFoundation" -framework "AudioKit" -framework "ORSSerial"
+OTHER_CFLAGS = $(inherited) -iquote "$CONFIGURATION_BUILD_DIR/ORSSerial.framework/Headers"
+OTHER_LDFLAGS = $(inherited) -framework "ORSSerial"
 PODS_FRAMEWORK_BUILD_PATH = $(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/Pods-FMOscillator
 PODS_ROOT = ${SRCROOT}/Pods

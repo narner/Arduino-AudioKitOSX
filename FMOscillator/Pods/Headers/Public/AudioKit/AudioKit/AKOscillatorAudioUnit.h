@@ -1,1 +1,0 @@
-../../../../AudioKit/OSX/AudioKit.framework/Versions/A/Headers/AKOscillatorAudioUnit.h

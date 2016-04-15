@@ -1,13 +1,10 @@
 PODS:
-  - AudioKit (3.0.1)
-  - ORSSerialPort (2.0.1)
+  - ORSSerialPort (2.0.2)
 
 DEPENDENCIES:
-  - AudioKit (~> 3.0)
   - ORSSerialPort
 
 SPEC CHECKSUMS:
-  AudioKit: 3dac9b64bc334ab84648f9755888c771e567b366
-  ORSSerialPort: 973a91bb2768acd855a8b90b84a137a6c184371b
+  ORSSerialPort: 3fb0d2404b7e8b99c4f1aa7e7314d63030cd54c3
 
 COCOAPODS: 0.39.0

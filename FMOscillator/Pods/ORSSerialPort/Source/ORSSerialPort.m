@@ -254,7 +254,7 @@ static __strong NSMutableArray *allSerialPorts;
 	if (self.isOpen) return;
 	
 	dispatch_queue_t mainQueue = dispatch_get_main_queue();
-	
+
 	int descriptor=0;
 	descriptor = open([self.path cStringUsingEncoding:NSASCIIStringEncoding], O_RDWR | O_NOCTTY | O_EXLOCK | O_NONBLOCK);
 	if (descriptor < 1)
@@ -274,24 +274,11 @@ static __strong NSMutableArray *allSerialPorts;
 	
 	self.fileDescriptor = descriptor;
 	
+
 	// Port opened successfully, set options
 	tcgetattr(descriptor, &originalPortAttributes); // Get original options so they can be reset later
 	[self setPortOptions];
-	
-	// Get status of RTS and DTR lines
-	int modemLines=0;
-	if (ioctl(self.fileDescriptor, TIOCMGET, &modemLines) < 0)
-	{
-		LOG_SERIAL_PORT_ERROR(@"Error reading modem lines status");
-		[self notifyDelegateOfPosixError];
-	}
-	
-	BOOL desiredRTS = self.RTS;
-	BOOL desiredDTR = self.DTR;
-	self.RTS = modemLines & TIOCM_RTS;
-	self.DTR = modemLines & TIOCM_DTR;
-	self.RTS = desiredRTS;
-	self.DTR = desiredDTR;
+	[self updateModemLines];
 	
 	if ([self.delegate respondsToSelector:@selector(serialPortWasOpened:)])
 	{
@@ -488,17 +475,6 @@ static __strong NSMutableArray *allSerialPorts;
 #pragma mark - Private Methods
 
 // Must only be called on requestHandlingQueue (ie. wrap call to this method in dispatch())
-- (NSData *)packetMatchingDescriptor:(ORSSerialPacketDescriptor *)descriptor atEndOfBuffer:(NSData *)buffer
-{
-	for (NSUInteger i=1; i<=[buffer length]; i++)
-	{
-		NSData *window = [buffer subdataWithRange:NSMakeRange([buffer length]-i, i)];
-		if ([descriptor dataIsValidPacket:window]) return window;
-	}
-	return nil;
-}
-
-// Must only be called on requestHandlingQueue (ie. wrap call to this method in dispatch())
 - (BOOL)reallySendRequest:(ORSSerialRequest *)request
 {
 	if (!self.pendingRequest)
@@ -571,7 +547,7 @@ static __strong NSMutableArray *allSerialPorts;
 	}
 	
 	[self.requestResponseReceiveBuffer appendData:byte];
-	NSData *responseData = [self packetMatchingDescriptor:packetDescriptor atEndOfBuffer:self.requestResponseReceiveBuffer.data];
+	NSData *responseData = [packetDescriptor packetMatchingAtEndOfBuffer:self.requestResponseReceiveBuffer.data];
 	if (!responseData) return;
 	
 	self.pendingRequestTimeoutTimer = nil;
@@ -613,7 +589,7 @@ static __strong NSMutableArray *allSerialPorts;
 				[buffer appendData:byte];
 				
 				// Check for complete packet
-				NSData *completePacket = [self packetMatchingDescriptor:descriptor atEndOfBuffer:buffer.data];
+				NSData *completePacket = [descriptor packetMatchingAtEndOfBuffer:buffer.data];
 				if (![completePacket length]) continue;
 				
 				// Complete packet received, so notify delegate then clear buffer
@@ -946,22 +922,27 @@ static __strong NSMutableArray *allSerialPorts;
 	}
 }
 
+- (void)updateModemLines
+{
+	if (![self isOpen]) return;
+
+	int bits;
+	ioctl( self.fileDescriptor, TIOCMGET, &bits ) ;
+	bits = self.RTS ? bits | TIOCM_RTS : bits & ~TIOCM_RTS;
+	bits = self.DTR ? bits | TIOCM_DTR : bits & ~TIOCM_DTR;
+	if (ioctl( self.fileDescriptor, TIOCMSET, &bits ) < 0)
+	{
+		LOG_SERIAL_PORT_ERROR(@"Error in %s", __PRETTY_FUNCTION__);
+		[self notifyDelegateOfPosixError];
+	}
+}
+
 - (void)setRTS:(BOOL)flag
 {
 	if (flag != _RTS)
 	{
 		_RTS = flag;
-		
-		if (![self isOpen]) return;
-		
-		int bits;
-		ioctl( self.fileDescriptor, TIOCMGET, &bits ) ;
-		bits = _RTS ? bits | TIOCM_RTS : bits & ~TIOCM_RTS;
-		if (ioctl( self.fileDescriptor, TIOCMSET, &bits ) < 0)
-		{
-			LOG_SERIAL_PORT_ERROR(@"Error in %s", __PRETTY_FUNCTION__);
-			[self notifyDelegateOfPosixError];
-		}
+		[self updateModemLines];
 	}
 }
 
@@ -970,17 +951,7 @@ static __strong NSMutableArray *allSerialPorts;
 	if (flag != _DTR)
 	{
 		_DTR = flag;
-		
-		if (![self isOpen]) return;
-		
-		int bits;
-		ioctl( self.fileDescriptor, TIOCMGET, &bits ) ;
-		bits = _DTR ? bits | TIOCM_DTR : bits & ~TIOCM_DTR;
-		if (ioctl( self.fileDescriptor, TIOCMSET, &bits ) < 0)
-		{
-			LOG_SERIAL_PORT_ERROR(@"Error in %s", __PRETTY_FUNCTION__);
-			[self notifyDelegateOfPosixError];
-		}
+		[self updateModemLines];
 	}
 }
 

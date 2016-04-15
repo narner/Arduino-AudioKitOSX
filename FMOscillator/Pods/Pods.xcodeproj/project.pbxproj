@@ -1,542 +1,1415 @@
-// !$*UTF8*$!
-{
-	archiveVersion = 1;
-	classes = {
-	};
-	objectVersion = 46;
-	objects = {
-
-/* Begin PBXBuildFile section */
-		102B013EB63D141968FFC9A57467B5AA /* ORSSerialPortManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 13DCBBD3DBFAC64A73F86E1A5C85E26D /* ORSSerialPortManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		38267DB484490AABDE8C92C04738A30C /* ORSSerialPacketDescriptor.h in Headers */ = {isa = PBXBuildFile; fileRef = E2F0A1C75FABC7B5D779D76333FF531D /* ORSSerialPacketDescriptor.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3A563F446E8A85049551BFD52F0A60CE /* ORSSerialPort.h in Headers */ = {isa = PBXBuildFile; fileRef = 35AB378995C6B720991254A54701B853 /* ORSSerialPort.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		41BC8B2264E5536622291662E49C8991 /* Pods-FMOscillator-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E68D1B2E1F9F4D0405A25A5F2D560B3F /* Pods-FMOscillator-dummy.m */; };
-		4AF772F8DE194171B81A0294E34EE817 /* ORSSerialBuffer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6161EB2656BFDD0219A4BCA8D697CC5E /* ORSSerialBuffer.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		5EE3B781663AF2F94556AC03B85EDDD7 /* ORSSerialPort-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 15C3EDE947EF0520EDC36C825A4EB65B /* ORSSerialPort-dummy.m */; };
-		5FF5C43278619FF0140CB707E392DCDA /* ORSSerialRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = FBF5F01F136FA29F28104BFAC93F3ABD /* ORSSerialRequest.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		691943E18AC02739ECAA20ADB9206BDE /* ORSSerialPortManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2839D4CBC5B941019CC260B97B6FFC65 /* ORSSerialPortManager.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		80A8C99161962638C61F102DDC28DC06 /* ORSSerialPort.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E03777C7BCEEBF89C5549276116C456 /* ORSSerialPort.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		988D1F6F783A27BADC0F2BC6913ADF38 /* ORSSerialPort-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6EE6EEA17DA0C4C527A5FD50C3CBDDD8 /* ORSSerialPort-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A07415078BC042CC9787BA07222798A9 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB476D0E09C42355437D9E75E4D0112B /* IOKit.framework */; };
-		B210DB9DD0955064E214D20315E79E64 /* Pods-FMOscillator-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A53E015ACD77EAD3EC8B8A111E1BA1E /* Pods-FMOscillator-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B5B61648F6FC0E4779B8CBDFC8833152 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29D109C92943EBFDF6442AB80830C3A0 /* Cocoa.framework */; };
-		B729959759FC0CFD0AF8A6456C7C3785 /* ORSSerialBuffer.h in Headers */ = {isa = PBXBuildFile; fileRef = 819E2BA4E878CA6962EC3C8A67FD2551 /* ORSSerialBuffer.h */; settings = {ATTRIBUTES = (Private, ); }; };
-		C3AA182FC7C15278CF57CFD5C8E2E7D5 /* ORSSerialRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 264E44DFC88B51661D2FAEC85BFAB00D /* ORSSerialRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		ED95F7F0CB887DC9F57939086685418B /* ORSSerialPacketDescriptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 89ABC3B97D0CA3265A26C79DFDF13BCD /* ORSSerialPacketDescriptor.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		F772EDE466ABBE850ABBD59FB9B6868E /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29D109C92943EBFDF6442AB80830C3A0 /* Cocoa.framework */; };
-/* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		838F136528FB0994C834288E3771E5D5 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 8014B05F53580D73640542F0BF2A215F;
-			remoteInfo = ORSSerialPort;
-		};
-/* End PBXContainerItemProxy section */
-
-/* Begin PBXFileReference section */
-		0798F20DD45DF6F5B63248D5F2564BE3 /* Pods_FMOscillator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FMOscillator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		13DCBBD3DBFAC64A73F86E1A5C85E26D /* ORSSerialPortManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ORSSerialPortManager.h; path = Source/ORSSerialPortManager.h; sourceTree = "<group>"; };
-		15C3EDE947EF0520EDC36C825A4EB65B /* ORSSerialPort-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ORSSerialPort-dummy.m"; sourceTree = "<group>"; };
-		264E44DFC88B51661D2FAEC85BFAB00D /* ORSSerialRequest.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ORSSerialRequest.h; path = Source/ORSSerialRequest.h; sourceTree = "<group>"; };
-		2839D4CBC5B941019CC260B97B6FFC65 /* ORSSerialPortManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ORSSerialPortManager.m; path = Source/ORSSerialPortManager.m; sourceTree = "<group>"; };
-		29D109C92943EBFDF6442AB80830C3A0 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
-		2D9092458BC57B64C65D2091075B5480 /* Pods-FMOscillator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FMOscillator.debug.xcconfig"; sourceTree = "<group>"; };
-		347165A2CA9A7667BF5BDE30BE0057C0 /* ORSSerial.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ORSSerial.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		35AB378995C6B720991254A54701B853 /* ORSSerialPort.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ORSSerialPort.h; path = Source/ORSSerialPort.h; sourceTree = "<group>"; };
-		4AE90E7C06C110BE6BFC26939A0D0DBB /* Pods-FMOscillator.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-FMOscillator.modulemap"; sourceTree = "<group>"; };
-		5F8BA3B74D84065F6607DDD060708D0B /* Pods-FMOscillator-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-FMOscillator-acknowledgements.markdown"; sourceTree = "<group>"; };
-		6161EB2656BFDD0219A4BCA8D697CC5E /* ORSSerialBuffer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ORSSerialBuffer.m; path = Source/ORSSerialBuffer.m; sourceTree = "<group>"; };
-		6EE6EEA17DA0C4C527A5FD50C3CBDDD8 /* ORSSerialPort-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ORSSerialPort-umbrella.h"; sourceTree = "<group>"; };
-		819E2BA4E878CA6962EC3C8A67FD2551 /* ORSSerialBuffer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ORSSerialBuffer.h; path = Source/ORSSerialBuffer.h; sourceTree = "<group>"; };
-		89ABC3B97D0CA3265A26C79DFDF13BCD /* ORSSerialPacketDescriptor.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ORSSerialPacketDescriptor.m; path = Source/ORSSerialPacketDescriptor.m; sourceTree = "<group>"; };
-		8EBD0B193EE55C85216D6E1D77AA6546 /* ORSSerialPort.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ORSSerialPort.xcconfig; sourceTree = "<group>"; };
-		969EA5557BDBC59A685ADB89C9E582B6 /* Pods-FMOscillator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FMOscillator.release.xcconfig"; sourceTree = "<group>"; };
-		9A53E015ACD77EAD3EC8B8A111E1BA1E /* Pods-FMOscillator-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-FMOscillator-umbrella.h"; sourceTree = "<group>"; };
-		9E03777C7BCEEBF89C5549276116C456 /* ORSSerialPort.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ORSSerialPort.m; path = Source/ORSSerialPort.m; sourceTree = "<group>"; };
-		AE876A34363C94B9A128EC7EFD4E9CB0 /* ORSSerialPort-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ORSSerialPort-prefix.pch"; sourceTree = "<group>"; };
-		B3EAC709E4B6FD8D803DDA6C427730A1 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		C78CED0D6435D0CA90D50F7495EF6DF6 /* ORSSerialPort.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = ORSSerialPort.modulemap; sourceTree = "<group>"; };
-		DCBAA274851F852F5E40DAA5FD1D13AB /* Pods-FMOscillator-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-FMOscillator-acknowledgements.plist"; sourceTree = "<group>"; };
-		E2F0A1C75FABC7B5D779D76333FF531D /* ORSSerialPacketDescriptor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ORSSerialPacketDescriptor.h; path = Source/ORSSerialPacketDescriptor.h; sourceTree = "<group>"; };
-		E68D1B2E1F9F4D0405A25A5F2D560B3F /* Pods-FMOscillator-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-FMOscillator-dummy.m"; sourceTree = "<group>"; };
-		EA8F2E8DFE47BC844DB1A2B2671F3CA0 /* Pods-FMOscillator-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-FMOscillator-resources.sh"; sourceTree = "<group>"; };
-		EE6B16FDC168EB4C2E36C1D139256174 /* Pods-FMOscillator-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-FMOscillator-frameworks.sh"; sourceTree = "<group>"; };
-		F3B7E5E8B4F526B5EFE46FBEAE9BDAA4 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FB476D0E09C42355437D9E75E4D0112B /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/IOKit.framework; sourceTree = DEVELOPER_DIR; };
-		FBF5F01F136FA29F28104BFAC93F3ABD /* ORSSerialRequest.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ORSSerialRequest.m; path = Source/ORSSerialRequest.m; sourceTree = "<group>"; };
-/* End PBXFileReference section */
-
-/* Begin PBXFrameworksBuildPhase section */
-		36C107935C34CC3C14FB87D13D29788D /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F772EDE466ABBE850ABBD59FB9B6868E /* Cocoa.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		6F28179FD3EBD4FD95D8C89FB83815F8 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B5B61648F6FC0E4779B8CBDFC8833152 /* Cocoa.framework in Frameworks */,
-				A07415078BC042CC9787BA07222798A9 /* IOKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXFrameworksBuildPhase section */
-
-/* Begin PBXGroup section */
-		05F48C4A9876BC6C914B6612A5A65D15 /* Pods-FMOscillator */ = {
-			isa = PBXGroup;
-			children = (
-				F3B7E5E8B4F526B5EFE46FBEAE9BDAA4 /* Info.plist */,
-				4AE90E7C06C110BE6BFC26939A0D0DBB /* Pods-FMOscillator.modulemap */,
-				5F8BA3B74D84065F6607DDD060708D0B /* Pods-FMOscillator-acknowledgements.markdown */,
-				DCBAA274851F852F5E40DAA5FD1D13AB /* Pods-FMOscillator-acknowledgements.plist */,
-				E68D1B2E1F9F4D0405A25A5F2D560B3F /* Pods-FMOscillator-dummy.m */,
-				EE6B16FDC168EB4C2E36C1D139256174 /* Pods-FMOscillator-frameworks.sh */,
-				EA8F2E8DFE47BC844DB1A2B2671F3CA0 /* Pods-FMOscillator-resources.sh */,
-				9A53E015ACD77EAD3EC8B8A111E1BA1E /* Pods-FMOscillator-umbrella.h */,
-				2D9092458BC57B64C65D2091075B5480 /* Pods-FMOscillator.debug.xcconfig */,
-				969EA5557BDBC59A685ADB89C9E582B6 /* Pods-FMOscillator.release.xcconfig */,
-			);
-			name = "Pods-FMOscillator";
-			path = "Target Support Files/Pods-FMOscillator";
-			sourceTree = "<group>";
-		};
-		23254E148D6EBDFA99EF7E31C9DB94A0 /* ORSSerialPort */ = {
-			isa = PBXGroup;
-			children = (
-				819E2BA4E878CA6962EC3C8A67FD2551 /* ORSSerialBuffer.h */,
-				6161EB2656BFDD0219A4BCA8D697CC5E /* ORSSerialBuffer.m */,
-				E2F0A1C75FABC7B5D779D76333FF531D /* ORSSerialPacketDescriptor.h */,
-				89ABC3B97D0CA3265A26C79DFDF13BCD /* ORSSerialPacketDescriptor.m */,
-				35AB378995C6B720991254A54701B853 /* ORSSerialPort.h */,
-				9E03777C7BCEEBF89C5549276116C456 /* ORSSerialPort.m */,
-				13DCBBD3DBFAC64A73F86E1A5C85E26D /* ORSSerialPortManager.h */,
-				2839D4CBC5B941019CC260B97B6FFC65 /* ORSSerialPortManager.m */,
-				264E44DFC88B51661D2FAEC85BFAB00D /* ORSSerialRequest.h */,
-				FBF5F01F136FA29F28104BFAC93F3ABD /* ORSSerialRequest.m */,
-				74709ADBDB7BA35CB33C319FB501A6F9 /* Support Files */,
-			);
-			path = ORSSerialPort;
-			sourceTree = "<group>";
-		};
-		62BD14F27CC6E7D1EF2C4F2E94985ABC /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				05F48C4A9876BC6C914B6612A5A65D15 /* Pods-FMOscillator */,
-			);
-			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
-		74709ADBDB7BA35CB33C319FB501A6F9 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				B3EAC709E4B6FD8D803DDA6C427730A1 /* Info.plist */,
-				C78CED0D6435D0CA90D50F7495EF6DF6 /* ORSSerialPort.modulemap */,
-				8EBD0B193EE55C85216D6E1D77AA6546 /* ORSSerialPort.xcconfig */,
-				15C3EDE947EF0520EDC36C825A4EB65B /* ORSSerialPort-dummy.m */,
-				AE876A34363C94B9A128EC7EFD4E9CB0 /* ORSSerialPort-prefix.pch */,
-				6EE6EEA17DA0C4C527A5FD50C3CBDDD8 /* ORSSerialPort-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/ORSSerialPort";
-			sourceTree = "<group>";
-		};
-		7DB346D0F39D3F0E887471402A8071AB = {
-			isa = PBXGroup;
-			children = (
-				BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */,
-				D648CE86F139C7CCFD55D5B8A03BE74B /* Frameworks */,
-				CC3876708FA8BC9EC64F6D0CBBB2B2A2 /* Pods */,
-				CBA480FC52331F6E0D8532C25A45742A /* Products */,
-				62BD14F27CC6E7D1EF2C4F2E94985ABC /* Targets Support Files */,
-			);
-			sourceTree = "<group>";
-		};
-		CBA480FC52331F6E0D8532C25A45742A /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				347165A2CA9A7667BF5BDE30BE0057C0 /* ORSSerial.framework */,
-				0798F20DD45DF6F5B63248D5F2564BE3 /* Pods_FMOscillator.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		CC3876708FA8BC9EC64F6D0CBBB2B2A2 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				23254E148D6EBDFA99EF7E31C9DB94A0 /* ORSSerialPort */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		D648CE86F139C7CCFD55D5B8A03BE74B /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				FFCB2FE4A13F242ECF8CBD22A4B2E6F3 /* OS X */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		FFCB2FE4A13F242ECF8CBD22A4B2E6F3 /* OS X */ = {
-			isa = PBXGroup;
-			children = (
-				29D109C92943EBFDF6442AB80830C3A0 /* Cocoa.framework */,
-				FB476D0E09C42355437D9E75E4D0112B /* IOKit.framework */,
-			);
-			name = "OS X";
-			sourceTree = "<group>";
-		};
-/* End PBXGroup section */
-
-/* Begin PBXHeadersBuildPhase section */
-		0F40263FE17A0CAEF50BFD7A49D63476 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B729959759FC0CFD0AF8A6456C7C3785 /* ORSSerialBuffer.h in Headers */,
-				38267DB484490AABDE8C92C04738A30C /* ORSSerialPacketDescriptor.h in Headers */,
-				988D1F6F783A27BADC0F2BC6913ADF38 /* ORSSerialPort-umbrella.h in Headers */,
-				3A563F446E8A85049551BFD52F0A60CE /* ORSSerialPort.h in Headers */,
-				102B013EB63D141968FFC9A57467B5AA /* ORSSerialPortManager.h in Headers */,
-				C3AA182FC7C15278CF57CFD5C8E2E7D5 /* ORSSerialRequest.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2566484D21D614FD27E2178E948B8EE8 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B210DB9DD0955064E214D20315E79E64 /* Pods-FMOscillator-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXHeadersBuildPhase section */
-
-/* Begin PBXNativeTarget section */
-		6EF889E974181C5694B8A2DF56AFEFD6 /* Pods-FMOscillator */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = FED14CA0CA535ED27ABB160952A93716 /* Build configuration list for PBXNativeTarget "Pods-FMOscillator" */;
-			buildPhases = (
-				27E46B0FE465C760B447F1F73542D70E /* Sources */,
-				36C107935C34CC3C14FB87D13D29788D /* Frameworks */,
-				2566484D21D614FD27E2178E948B8EE8 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				4A73E166D7710E196B96D3F58FBAE471 /* PBXTargetDependency */,
-			);
-			name = "Pods-FMOscillator";
-			productName = "Pods-FMOscillator";
-			productReference = 0798F20DD45DF6F5B63248D5F2564BE3 /* Pods_FMOscillator.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		8014B05F53580D73640542F0BF2A215F /* ORSSerialPort */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 8BEF8F058DB3FA8338345EEDD2A31CDC /* Build configuration list for PBXNativeTarget "ORSSerialPort" */;
-			buildPhases = (
-				1E9036DF0C72DB825D4478C13096789A /* Sources */,
-				6F28179FD3EBD4FD95D8C89FB83815F8 /* Frameworks */,
-				0F40263FE17A0CAEF50BFD7A49D63476 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = ORSSerialPort;
-			productName = ORSSerialPort;
-			productReference = 347165A2CA9A7667BF5BDE30BE0057C0 /* ORSSerial.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-/* End PBXNativeTarget section */
-
-/* Begin PBXProject section */
-		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
-			isa = PBXProject;
-			attributes = {
-				LastSwiftUpdateCheck = 0700;
-				LastUpgradeCheck = 0700;
-			};
-			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
-			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
-			hasScannedForEncodings = 0;
-			knownRegions = (
-				en,
-			);
-			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = CBA480FC52331F6E0D8532C25A45742A /* Products */;
-			projectDirPath = "";
-			projectRoot = "";
-			targets = (
-				8014B05F53580D73640542F0BF2A215F /* ORSSerialPort */,
-				6EF889E974181C5694B8A2DF56AFEFD6 /* Pods-FMOscillator */,
-			);
-		};
-/* End PBXProject section */
-
-/* Begin PBXSourcesBuildPhase section */
-		1E9036DF0C72DB825D4478C13096789A /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4AF772F8DE194171B81A0294E34EE817 /* ORSSerialBuffer.m in Sources */,
-				ED95F7F0CB887DC9F57939086685418B /* ORSSerialPacketDescriptor.m in Sources */,
-				5EE3B781663AF2F94556AC03B85EDDD7 /* ORSSerialPort-dummy.m in Sources */,
-				80A8C99161962638C61F102DDC28DC06 /* ORSSerialPort.m in Sources */,
-				691943E18AC02739ECAA20ADB9206BDE /* ORSSerialPortManager.m in Sources */,
-				5FF5C43278619FF0140CB707E392DCDA /* ORSSerialRequest.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		27E46B0FE465C760B447F1F73542D70E /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				41BC8B2264E5536622291662E49C8991 /* Pods-FMOscillator-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		4A73E166D7710E196B96D3F58FBAE471 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = ORSSerialPort;
-			target = 8014B05F53580D73640542F0BF2A215F /* ORSSerialPort */;
-			targetProxy = 838F136528FB0994C834288E3771E5D5 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
-/* Begin XCBuildConfiguration section */
-		10B2EE21B5D67EE2C819831CCC43832B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				ONLY_ACTIVE_ARCH = YES;
-				STRIP_INSTALLED_PRODUCT = NO;
-				SYMROOT = "${SRCROOT}/../build";
-			};
-			name = Debug;
-		};
-		21D397DA83DEAEBD97A39A57498BC4F1 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 969EA5557BDBC59A685ADB89C9E582B6 /* Pods-FMOscillator.release.xcconfig */;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				FRAMEWORK_VERSION = A;
-				INFOPLIST_FILE = "Target Support Files/Pods-FMOscillator/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				MODULEMAP_FILE = "Target Support Files/Pods-FMOscillator/Pods-FMOscillator.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = Pods_FMOscillator;
-				SDKROOT = macosx;
-				SKIP_INSTALL = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		701406C363DE3B824D64A36F6E3EE5C2 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8EBD0B193EE55C85216D6E1D77AA6546 /* ORSSerialPort.xcconfig */;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				FRAMEWORK_VERSION = A;
-				GCC_PREFIX_HEADER = "Target Support Files/ORSSerialPort/ORSSerialPort-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/ORSSerialPort/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				MODULEMAP_FILE = "Target Support Files/ORSSerialPort/ORSSerialPort.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = ORSSerial;
-				SDKROOT = macosx;
-				SKIP_INSTALL = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		7C07D96CC7C445E83983A6C6420BC692 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = YES;
-				ENABLE_NS_ASSERTIONS = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				STRIP_INSTALLED_PRODUCT = NO;
-				SYMROOT = "${SRCROOT}/../build";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		AE60F0D001AD92E9260F63B8E050CCB2 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2D9092458BC57B64C65D2091075B5480 /* Pods-FMOscillator.debug.xcconfig */;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				FRAMEWORK_VERSION = A;
-				INFOPLIST_FILE = "Target Support Files/Pods-FMOscillator/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				MODULEMAP_FILE = "Target Support Files/Pods-FMOscillator/Pods-FMOscillator.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = Pods_FMOscillator;
-				SDKROOT = macosx;
-				SKIP_INSTALL = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		F6D55931E2AA0D32DC1ACA5412AD4317 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8EBD0B193EE55C85216D6E1D77AA6546 /* ORSSerialPort.xcconfig */;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				FRAMEWORK_VERSION = A;
-				GCC_PREFIX_HEADER = "Target Support Files/ORSSerialPort/ORSSerialPort-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/ORSSerialPort/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				MODULEMAP_FILE = "Target Support Files/ORSSerialPort/ORSSerialPort.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = ORSSerial;
-				SDKROOT = macosx;
-				SKIP_INSTALL = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-/* End XCBuildConfiguration section */
-
-/* Begin XCConfigurationList section */
-		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				10B2EE21B5D67EE2C819831CCC43832B /* Debug */,
-				7C07D96CC7C445E83983A6C6420BC692 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		8BEF8F058DB3FA8338345EEDD2A31CDC /* Build configuration list for PBXNativeTarget "ORSSerialPort" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				F6D55931E2AA0D32DC1ACA5412AD4317 /* Debug */,
-				701406C363DE3B824D64A36F6E3EE5C2 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		FED14CA0CA535ED27ABB160952A93716 /* Build configuration list for PBXNativeTarget "Pods-FMOscillator" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				AE60F0D001AD92E9260F63B8E050CCB2 /* Debug */,
-				21D397DA83DEAEBD97A39A57498BC4F1 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-/* End XCConfigurationList section */
-	};
-	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-}
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>archiveVersion</key>
+	<string>1</string>
+	<key>classes</key>
+	<dict/>
+	<key>objectVersion</key>
+	<string>46</string>
+	<key>objects</key>
+	<dict>
+		<key>031B20BC2606C8462039FE39B3378FAA</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>ORSSerialPortManager.h</string>
+			<key>path</key>
+			<string>Source/ORSSerialPortManager.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>042857051A21A240EC773D1AB392B165</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>ORSSerialPortManager.m</string>
+			<key>path</key>
+			<string>Source/ORSSerialPortManager.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>0497C8AA6800AE35769408572F51F15C</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>ORSSerialPacketDescriptor.m</string>
+			<key>path</key>
+			<string>Source/ORSSerialPacketDescriptor.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>05F48C4A9876BC6C914B6612A5A65D15</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>F3B7E5E8B4F526B5EFE46FBEAE9BDAA4</string>
+				<string>4AE90E7C06C110BE6BFC26939A0D0DBB</string>
+				<string>5F8BA3B74D84065F6607DDD060708D0B</string>
+				<string>DCBAA274851F852F5E40DAA5FD1D13AB</string>
+				<string>E68D1B2E1F9F4D0405A25A5F2D560B3F</string>
+				<string>EE6B16FDC168EB4C2E36C1D139256174</string>
+				<string>EA8F2E8DFE47BC844DB1A2B2671F3CA0</string>
+				<string>9A53E015ACD77EAD3EC8B8A111E1BA1E</string>
+				<string>2D9092458BC57B64C65D2091075B5480</string>
+				<string>969EA5557BDBC59A685ADB89C9E582B6</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Pods-FMOscillator</string>
+			<key>path</key>
+			<string>Target Support Files/Pods-FMOscillator</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>0798F20DD45DF6F5B63248D5F2564BE3</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.framework</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>Pods_FMOscillator.framework</string>
+			<key>path</key>
+			<string>Pods_FMOscillator.framework</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>0F40263FE17A0CAEF50BFD7A49D63476</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>B729959759FC0CFD0AF8A6456C7C3785</string>
+				<string>38267DB484490AABDE8C92C04738A30C</string>
+				<string>988D1F6F783A27BADC0F2BC6913ADF38</string>
+				<string>3A563F446E8A85049551BFD52F0A60CE</string>
+				<string>102B013EB63D141968FFC9A57467B5AA</string>
+				<string>C3AA182FC7C15278CF57CFD5C8E2E7D5</string>
+			</array>
+			<key>isa</key>
+			<string>PBXHeadersBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>102B013EB63D141968FFC9A57467B5AA</key>
+		<dict>
+			<key>fileRef</key>
+			<string>031B20BC2606C8462039FE39B3378FAA</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>10B2EE21B5D67EE2C819831CCC43832B</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
+				<string>gnu++0x</string>
+				<key>CLANG_CXX_LIBRARY</key>
+				<string>libc++</string>
+				<key>CLANG_ENABLE_MODULES</key>
+				<string>YES</string>
+				<key>CLANG_ENABLE_OBJC_ARC</key>
+				<string>YES</string>
+				<key>CLANG_WARN_BOOL_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
+				<string>YES</string>
+				<key>CLANG_WARN_EMPTY_BODY</key>
+				<string>YES</string>
+				<key>CLANG_WARN_ENUM_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_INT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
+				<string>YES</string>
+				<key>CLANG_WARN_UNREACHABLE_CODE</key>
+				<string>YES</string>
+				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
+				<string>YES</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>NO</string>
+				<key>GCC_C_LANGUAGE_STANDARD</key>
+				<string>gnu99</string>
+				<key>GCC_DYNAMIC_NO_PIC</key>
+				<string>NO</string>
+				<key>GCC_OPTIMIZATION_LEVEL</key>
+				<string>0</string>
+				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
+				<array>
+					<string>DEBUG=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>GCC_SYMBOLS_PRIVATE_EXTERN</key>
+				<string>NO</string>
+				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
+				<string>YES</string>
+				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_FUNCTION</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_VARIABLE</key>
+				<string>YES</string>
+				<key>MACOSX_DEPLOYMENT_TARGET</key>
+				<string>10.11</string>
+				<key>ONLY_ACTIVE_ARCH</key>
+				<string>YES</string>
+				<key>STRIP_INSTALLED_PRODUCT</key>
+				<string>NO</string>
+				<key>SYMROOT</key>
+				<string>${SRCROOT}/../build</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>1E9036DF0C72DB825D4478C13096789A</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>4AF772F8DE194171B81A0294E34EE817</string>
+				<string>ED95F7F0CB887DC9F57939086685418B</string>
+				<string>5EE3B781663AF2F94556AC03B85EDDD7</string>
+				<string>80A8C99161962638C61F102DDC28DC06</string>
+				<string>691943E18AC02739ECAA20ADB9206BDE</string>
+				<string>5FF5C43278619FF0140CB707E392DCDA</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>21D397DA83DEAEBD97A39A57498BC4F1</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>969EA5557BDBC59A685ADB89C9E582B6</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>COMBINE_HIDPI_IMAGES</key>
+				<string>YES</string>
+				<key>CURRENT_PROJECT_VERSION</key>
+				<string>1</string>
+				<key>DEBUG_INFORMATION_FORMAT</key>
+				<string>dwarf-with-dsym</string>
+				<key>DEFINES_MODULE</key>
+				<string>YES</string>
+				<key>DYLIB_COMPATIBILITY_VERSION</key>
+				<string>1</string>
+				<key>DYLIB_CURRENT_VERSION</key>
+				<string>1</string>
+				<key>DYLIB_INSTALL_NAME_BASE</key>
+				<string>@rpath</string>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>FRAMEWORK_VERSION</key>
+				<string>A</string>
+				<key>INFOPLIST_FILE</key>
+				<string>Target Support Files/Pods-FMOscillator/Info.plist</string>
+				<key>INSTALL_PATH</key>
+				<string>$(LOCAL_LIBRARY_DIR)/Frameworks</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<array>
+					<string>$(inherited)</string>
+					<string>@executable_path/../Frameworks</string>
+					<string>@loader_path/Frameworks</string>
+				</array>
+				<key>MACH_O_TYPE</key>
+				<string>staticlib</string>
+				<key>MACOSX_DEPLOYMENT_TARGET</key>
+				<string>10.11</string>
+				<key>MODULEMAP_FILE</key>
+				<string>Target Support Files/Pods-FMOscillator/Pods-FMOscillator.modulemap</string>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>NO</string>
+				<key>OTHER_LDFLAGS</key>
+				<string></string>
+				<key>OTHER_LIBTOOLFLAGS</key>
+				<string></string>
+				<key>PODS_ROOT</key>
+				<string>$(SRCROOT)</string>
+				<key>PRODUCT_NAME</key>
+				<string>Pods_FMOscillator</string>
+				<key>SDKROOT</key>
+				<string>macosx</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+				<key>VERSIONING_SYSTEM</key>
+				<string>apple-generic</string>
+				<key>VERSION_INFO_PREFIX</key>
+				<string></string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>2566484D21D614FD27E2178E948B8EE8</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>B210DB9DD0955064E214D20315E79E64</string>
+			</array>
+			<key>isa</key>
+			<string>PBXHeadersBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>27E46B0FE465C760B447F1F73542D70E</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>41BC8B2264E5536622291662E49C8991</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>29D109C92943EBFDF6442AB80830C3A0</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>Cocoa.framework</string>
+			<key>path</key>
+			<string>Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/Cocoa.framework</string>
+			<key>sourceTree</key>
+			<string>DEVELOPER_DIR</string>
+		</dict>
+		<key>2D8E8EC45A3A1A1D94AE762CB5028504</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>10B2EE21B5D67EE2C819831CCC43832B</string>
+				<string>7C07D96CC7C445E83983A6C6420BC692</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>2D9092458BC57B64C65D2091075B5480</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>path</key>
+			<string>Pods-FMOscillator.debug.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>30FF52A1D6BAFF40641B7EADF3563228</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>EA5A371A1C911B303205D8462C69CBE2</string>
+				<string>9770F2A7EB0781FE90FA222E1B1A854C</string>
+				<string>CBB489EC7EBFCA370274185A2EC24353</string>
+				<string>AFA96416C38F051C1193FBE3E66537A6</string>
+				<string>D95053421EB920B651A6F94EC4159F8E</string>
+				<string>B38E699155F00CD8812F5EADE9554DE5</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Support Files</string>
+			<key>path</key>
+			<string>../Target Support Files/ORSSerialPort</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>347165A2CA9A7667BF5BDE30BE0057C0</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.framework</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>ORSSerial.framework</string>
+			<key>path</key>
+			<string>ORSSerial.framework</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>34BB19A2E20F95638A591FB0C99AD51D</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>ORSSerialBuffer.h</string>
+			<key>path</key>
+			<string>Source/ORSSerialBuffer.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>354217764CABBCF9C9598CFD2985D39D</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>ORSSerialPort.m</string>
+			<key>path</key>
+			<string>Source/ORSSerialPort.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>36C107935C34CC3C14FB87D13D29788D</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>F772EDE466ABBE850ABBD59FB9B6868E</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>38267DB484490AABDE8C92C04738A30C</key>
+		<dict>
+			<key>fileRef</key>
+			<string>9A3697B43F61E7278C0908786599ADFE</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>3A563F446E8A85049551BFD52F0A60CE</key>
+		<dict>
+			<key>fileRef</key>
+			<string>A4053808D8CE2792F9484CE6ED2328DD</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>41BC8B2264E5536622291662E49C8991</key>
+		<dict>
+			<key>fileRef</key>
+			<string>E68D1B2E1F9F4D0405A25A5F2D560B3F</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>4A73E166D7710E196B96D3F58FBAE471</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXTargetDependency</string>
+			<key>name</key>
+			<string>ORSSerialPort</string>
+			<key>target</key>
+			<string>8014B05F53580D73640542F0BF2A215F</string>
+			<key>targetProxy</key>
+			<string>838F136528FB0994C834288E3771E5D5</string>
+		</dict>
+		<key>4AE90E7C06C110BE6BFC26939A0D0DBB</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>Pods-FMOscillator.modulemap</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4AF772F8DE194171B81A0294E34EE817</key>
+		<dict>
+			<key>fileRef</key>
+			<string>FF21C51896CC4A53C273BAF2F36F755A</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-DOS_OBJECT_USE_OBJC=0</string>
+			</dict>
+		</dict>
+		<key>5AB97C76098502188B6C0CF235317F1E</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>E42C5317F65A050F1449D4B8E1789472</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Pods</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>5EE3B781663AF2F94556AC03B85EDDD7</key>
+		<dict>
+			<key>fileRef</key>
+			<string>AFA96416C38F051C1193FBE3E66537A6</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>5F8BA3B74D84065F6607DDD060708D0B</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text</string>
+			<key>path</key>
+			<string>Pods-FMOscillator-acknowledgements.markdown</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>5FF5C43278619FF0140CB707E392DCDA</key>
+		<dict>
+			<key>fileRef</key>
+			<string>F6EDA07A216C8565A6E38B6D1A65A7C5</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-DOS_OBJECT_USE_OBJC=0</string>
+			</dict>
+		</dict>
+		<key>62BD14F27CC6E7D1EF2C4F2E94985ABC</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>05F48C4A9876BC6C914B6612A5A65D15</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Targets Support Files</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>691943E18AC02739ECAA20ADB9206BDE</key>
+		<dict>
+			<key>fileRef</key>
+			<string>042857051A21A240EC773D1AB392B165</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-DOS_OBJECT_USE_OBJC=0</string>
+			</dict>
+		</dict>
+		<key>6EF889E974181C5694B8A2DF56AFEFD6</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>FED14CA0CA535ED27ABB160952A93716</string>
+			<key>buildPhases</key>
+			<array>
+				<string>27E46B0FE465C760B447F1F73542D70E</string>
+				<string>36C107935C34CC3C14FB87D13D29788D</string>
+				<string>2566484D21D614FD27E2178E948B8EE8</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array>
+				<string>4A73E166D7710E196B96D3F58FBAE471</string>
+			</array>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>Pods-FMOscillator</string>
+			<key>productName</key>
+			<string>Pods-FMOscillator</string>
+			<key>productReference</key>
+			<string>0798F20DD45DF6F5B63248D5F2564BE3</string>
+			<key>productType</key>
+			<string>com.apple.product-type.framework</string>
+		</dict>
+		<key>6F28179FD3EBD4FD95D8C89FB83815F8</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>B5B61648F6FC0E4779B8CBDFC8833152</string>
+				<string>A07415078BC042CC9787BA07222798A9</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>701406C363DE3B824D64A36F6E3EE5C2</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>CBB489EC7EBFCA370274185A2EC24353</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>COMBINE_HIDPI_IMAGES</key>
+				<string>YES</string>
+				<key>CURRENT_PROJECT_VERSION</key>
+				<string>1</string>
+				<key>DEBUG_INFORMATION_FORMAT</key>
+				<string>dwarf-with-dsym</string>
+				<key>DEFINES_MODULE</key>
+				<string>YES</string>
+				<key>DYLIB_COMPATIBILITY_VERSION</key>
+				<string>1</string>
+				<key>DYLIB_CURRENT_VERSION</key>
+				<string>1</string>
+				<key>DYLIB_INSTALL_NAME_BASE</key>
+				<string>@rpath</string>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>FRAMEWORK_VERSION</key>
+				<string>A</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>Target Support Files/ORSSerialPort/ORSSerialPort-prefix.pch</string>
+				<key>INFOPLIST_FILE</key>
+				<string>Target Support Files/ORSSerialPort/Info.plist</string>
+				<key>INSTALL_PATH</key>
+				<string>$(LOCAL_LIBRARY_DIR)/Frameworks</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<array>
+					<string>$(inherited)</string>
+					<string>@executable_path/../Frameworks</string>
+					<string>@loader_path/Frameworks</string>
+				</array>
+				<key>MACOSX_DEPLOYMENT_TARGET</key>
+				<string>10.11</string>
+				<key>MODULEMAP_FILE</key>
+				<string>Target Support Files/ORSSerialPort/ORSSerialPort.modulemap</string>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>NO</string>
+				<key>PRODUCT_NAME</key>
+				<string>ORSSerial</string>
+				<key>SDKROOT</key>
+				<string>macosx</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+				<key>VERSIONING_SYSTEM</key>
+				<string>apple-generic</string>
+				<key>VERSION_INFO_PREFIX</key>
+				<string></string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>7C07D96CC7C445E83983A6C6420BC692</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
+				<string>gnu++0x</string>
+				<key>CLANG_CXX_LIBRARY</key>
+				<string>libc++</string>
+				<key>CLANG_ENABLE_MODULES</key>
+				<string>YES</string>
+				<key>CLANG_ENABLE_OBJC_ARC</key>
+				<string>YES</string>
+				<key>CLANG_WARN_BOOL_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
+				<string>YES</string>
+				<key>CLANG_WARN_EMPTY_BODY</key>
+				<string>YES</string>
+				<key>CLANG_WARN_ENUM_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_INT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
+				<string>YES</string>
+				<key>CLANG_WARN_UNREACHABLE_CODE</key>
+				<string>YES</string>
+				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
+				<string>YES</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>YES</string>
+				<key>ENABLE_NS_ASSERTIONS</key>
+				<string>NO</string>
+				<key>GCC_C_LANGUAGE_STANDARD</key>
+				<string>gnu99</string>
+				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
+				<array>
+					<string>RELEASE=1</string>
+				</array>
+				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
+				<string>YES</string>
+				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_FUNCTION</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_VARIABLE</key>
+				<string>YES</string>
+				<key>MACOSX_DEPLOYMENT_TARGET</key>
+				<string>10.11</string>
+				<key>STRIP_INSTALLED_PRODUCT</key>
+				<string>NO</string>
+				<key>SYMROOT</key>
+				<string>${SRCROOT}/../build</string>
+				<key>VALIDATE_PRODUCT</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>7DB346D0F39D3F0E887471402A8071AB</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>BA6428E9F66FD5A23C0A2E06ED26CD2F</string>
+				<string>D648CE86F139C7CCFD55D5B8A03BE74B</string>
+				<string>5AB97C76098502188B6C0CF235317F1E</string>
+				<string>CBA480FC52331F6E0D8532C25A45742A</string>
+				<string>62BD14F27CC6E7D1EF2C4F2E94985ABC</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>8014B05F53580D73640542F0BF2A215F</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>8BEF8F058DB3FA8338345EEDD2A31CDC</string>
+			<key>buildPhases</key>
+			<array>
+				<string>1E9036DF0C72DB825D4478C13096789A</string>
+				<string>6F28179FD3EBD4FD95D8C89FB83815F8</string>
+				<string>0F40263FE17A0CAEF50BFD7A49D63476</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>ORSSerialPort</string>
+			<key>productName</key>
+			<string>ORSSerialPort</string>
+			<key>productReference</key>
+			<string>347165A2CA9A7667BF5BDE30BE0057C0</string>
+			<key>productType</key>
+			<string>com.apple.product-type.framework</string>
+		</dict>
+		<key>80A8C99161962638C61F102DDC28DC06</key>
+		<dict>
+			<key>fileRef</key>
+			<string>354217764CABBCF9C9598CFD2985D39D</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-DOS_OBJECT_USE_OBJC=0</string>
+			</dict>
+		</dict>
+		<key>838F136528FB0994C834288E3771E5D5</key>
+		<dict>
+			<key>containerPortal</key>
+			<string>D41D8CD98F00B204E9800998ECF8427E</string>
+			<key>isa</key>
+			<string>PBXContainerItemProxy</string>
+			<key>proxyType</key>
+			<string>1</string>
+			<key>remoteGlobalIDString</key>
+			<string>8014B05F53580D73640542F0BF2A215F</string>
+			<key>remoteInfo</key>
+			<string>ORSSerialPort</string>
+		</dict>
+		<key>8635A95A20C52A16038076A3BABEF202</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>ORSSerialRequest.h</string>
+			<key>path</key>
+			<string>Source/ORSSerialRequest.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>8BEF8F058DB3FA8338345EEDD2A31CDC</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>F6D55931E2AA0D32DC1ACA5412AD4317</string>
+				<string>701406C363DE3B824D64A36F6E3EE5C2</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>969EA5557BDBC59A685ADB89C9E582B6</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>path</key>
+			<string>Pods-FMOscillator.release.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>9770F2A7EB0781FE90FA222E1B1A854C</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>ORSSerialPort.modulemap</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>988D1F6F783A27BADC0F2BC6913ADF38</key>
+		<dict>
+			<key>fileRef</key>
+			<string>B38E699155F00CD8812F5EADE9554DE5</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>9A3697B43F61E7278C0908786599ADFE</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>ORSSerialPacketDescriptor.h</string>
+			<key>path</key>
+			<string>Source/ORSSerialPacketDescriptor.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>9A53E015ACD77EAD3EC8B8A111E1BA1E</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>Pods-FMOscillator-umbrella.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>A07415078BC042CC9787BA07222798A9</key>
+		<dict>
+			<key>fileRef</key>
+			<string>FB476D0E09C42355437D9E75E4D0112B</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>A4053808D8CE2792F9484CE6ED2328DD</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>ORSSerialPort.h</string>
+			<key>path</key>
+			<string>Source/ORSSerialPort.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>AE60F0D001AD92E9260F63B8E050CCB2</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>2D9092458BC57B64C65D2091075B5480</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>COMBINE_HIDPI_IMAGES</key>
+				<string>YES</string>
+				<key>CURRENT_PROJECT_VERSION</key>
+				<string>1</string>
+				<key>DEFINES_MODULE</key>
+				<string>YES</string>
+				<key>DYLIB_COMPATIBILITY_VERSION</key>
+				<string>1</string>
+				<key>DYLIB_CURRENT_VERSION</key>
+				<string>1</string>
+				<key>DYLIB_INSTALL_NAME_BASE</key>
+				<string>@rpath</string>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>FRAMEWORK_VERSION</key>
+				<string>A</string>
+				<key>INFOPLIST_FILE</key>
+				<string>Target Support Files/Pods-FMOscillator/Info.plist</string>
+				<key>INSTALL_PATH</key>
+				<string>$(LOCAL_LIBRARY_DIR)/Frameworks</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<array>
+					<string>$(inherited)</string>
+					<string>@executable_path/../Frameworks</string>
+					<string>@loader_path/Frameworks</string>
+				</array>
+				<key>MACH_O_TYPE</key>
+				<string>staticlib</string>
+				<key>MACOSX_DEPLOYMENT_TARGET</key>
+				<string>10.11</string>
+				<key>MODULEMAP_FILE</key>
+				<string>Target Support Files/Pods-FMOscillator/Pods-FMOscillator.modulemap</string>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>YES</string>
+				<key>OTHER_LDFLAGS</key>
+				<string></string>
+				<key>OTHER_LIBTOOLFLAGS</key>
+				<string></string>
+				<key>PODS_ROOT</key>
+				<string>$(SRCROOT)</string>
+				<key>PRODUCT_NAME</key>
+				<string>Pods_FMOscillator</string>
+				<key>SDKROOT</key>
+				<string>macosx</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+				<key>VERSIONING_SYSTEM</key>
+				<string>apple-generic</string>
+				<key>VERSION_INFO_PREFIX</key>
+				<string></string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>AFA96416C38F051C1193FBE3E66537A6</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>ORSSerialPort-dummy.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>B210DB9DD0955064E214D20315E79E64</key>
+		<dict>
+			<key>fileRef</key>
+			<string>9A53E015ACD77EAD3EC8B8A111E1BA1E</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>B38E699155F00CD8812F5EADE9554DE5</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>ORSSerialPort-umbrella.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>B5B61648F6FC0E4779B8CBDFC8833152</key>
+		<dict>
+			<key>fileRef</key>
+			<string>29D109C92943EBFDF6442AB80830C3A0</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>B729959759FC0CFD0AF8A6456C7C3785</key>
+		<dict>
+			<key>fileRef</key>
+			<string>34BB19A2E20F95638A591FB0C99AD51D</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Private</string>
+				</array>
+			</dict>
+		</dict>
+		<key>BA6428E9F66FD5A23C0A2E06ED26CD2F</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text</string>
+			<key>name</key>
+			<string>Podfile</string>
+			<key>path</key>
+			<string>../Podfile</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+			<key>xcLanguageSpecificationIdentifier</key>
+			<string>xcode.lang.ruby</string>
+		</dict>
+		<key>C3AA182FC7C15278CF57CFD5C8E2E7D5</key>
+		<dict>
+			<key>fileRef</key>
+			<string>8635A95A20C52A16038076A3BABEF202</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>CBA480FC52331F6E0D8532C25A45742A</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>347165A2CA9A7667BF5BDE30BE0057C0</string>
+				<string>0798F20DD45DF6F5B63248D5F2564BE3</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Products</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>CBB489EC7EBFCA370274185A2EC24353</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>path</key>
+			<string>ORSSerialPort.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>D41D8CD98F00B204E9800998ECF8427E</key>
+		<dict>
+			<key>attributes</key>
+			<dict>
+				<key>LastSwiftUpdateCheck</key>
+				<string>0700</string>
+				<key>LastUpgradeCheck</key>
+				<string>0700</string>
+			</dict>
+			<key>buildConfigurationList</key>
+			<string>2D8E8EC45A3A1A1D94AE762CB5028504</string>
+			<key>compatibilityVersion</key>
+			<string>Xcode 3.2</string>
+			<key>developmentRegion</key>
+			<string>English</string>
+			<key>hasScannedForEncodings</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXProject</string>
+			<key>knownRegions</key>
+			<array>
+				<string>en</string>
+			</array>
+			<key>mainGroup</key>
+			<string>7DB346D0F39D3F0E887471402A8071AB</string>
+			<key>productRefGroup</key>
+			<string>CBA480FC52331F6E0D8532C25A45742A</string>
+			<key>projectDirPath</key>
+			<string></string>
+			<key>projectReferences</key>
+			<array/>
+			<key>projectRoot</key>
+			<string></string>
+			<key>targets</key>
+			<array>
+				<string>8014B05F53580D73640542F0BF2A215F</string>
+				<string>6EF889E974181C5694B8A2DF56AFEFD6</string>
+			</array>
+		</dict>
+		<key>D648CE86F139C7CCFD55D5B8A03BE74B</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>FFCB2FE4A13F242ECF8CBD22A4B2E6F3</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Frameworks</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>D95053421EB920B651A6F94EC4159F8E</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>ORSSerialPort-prefix.pch</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>DCBAA274851F852F5E40DAA5FD1D13AB</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>path</key>
+			<string>Pods-FMOscillator-acknowledgements.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>E42C5317F65A050F1449D4B8E1789472</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>34BB19A2E20F95638A591FB0C99AD51D</string>
+				<string>FF21C51896CC4A53C273BAF2F36F755A</string>
+				<string>9A3697B43F61E7278C0908786599ADFE</string>
+				<string>0497C8AA6800AE35769408572F51F15C</string>
+				<string>A4053808D8CE2792F9484CE6ED2328DD</string>
+				<string>354217764CABBCF9C9598CFD2985D39D</string>
+				<string>031B20BC2606C8462039FE39B3378FAA</string>
+				<string>042857051A21A240EC773D1AB392B165</string>
+				<string>8635A95A20C52A16038076A3BABEF202</string>
+				<string>F6EDA07A216C8565A6E38B6D1A65A7C5</string>
+				<string>30FF52A1D6BAFF40641B7EADF3563228</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>ORSSerialPort</string>
+			<key>path</key>
+			<string>ORSSerialPort</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>E68D1B2E1F9F4D0405A25A5F2D560B3F</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>Pods-FMOscillator-dummy.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>EA5A371A1C911B303205D8462C69CBE2</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>path</key>
+			<string>Info.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>EA8F2E8DFE47BC844DB1A2B2671F3CA0</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.script.sh</string>
+			<key>path</key>
+			<string>Pods-FMOscillator-resources.sh</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>ED95F7F0CB887DC9F57939086685418B</key>
+		<dict>
+			<key>fileRef</key>
+			<string>0497C8AA6800AE35769408572F51F15C</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-DOS_OBJECT_USE_OBJC=0</string>
+			</dict>
+		</dict>
+		<key>EE6B16FDC168EB4C2E36C1D139256174</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.script.sh</string>
+			<key>path</key>
+			<string>Pods-FMOscillator-frameworks.sh</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>F3B7E5E8B4F526B5EFE46FBEAE9BDAA4</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>path</key>
+			<string>Info.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>F6D55931E2AA0D32DC1ACA5412AD4317</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>CBB489EC7EBFCA370274185A2EC24353</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>COMBINE_HIDPI_IMAGES</key>
+				<string>YES</string>
+				<key>CURRENT_PROJECT_VERSION</key>
+				<string>1</string>
+				<key>DEFINES_MODULE</key>
+				<string>YES</string>
+				<key>DYLIB_COMPATIBILITY_VERSION</key>
+				<string>1</string>
+				<key>DYLIB_CURRENT_VERSION</key>
+				<string>1</string>
+				<key>DYLIB_INSTALL_NAME_BASE</key>
+				<string>@rpath</string>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>FRAMEWORK_VERSION</key>
+				<string>A</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>Target Support Files/ORSSerialPort/ORSSerialPort-prefix.pch</string>
+				<key>INFOPLIST_FILE</key>
+				<string>Target Support Files/ORSSerialPort/Info.plist</string>
+				<key>INSTALL_PATH</key>
+				<string>$(LOCAL_LIBRARY_DIR)/Frameworks</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<array>
+					<string>$(inherited)</string>
+					<string>@executable_path/../Frameworks</string>
+					<string>@loader_path/Frameworks</string>
+				</array>
+				<key>MACOSX_DEPLOYMENT_TARGET</key>
+				<string>10.11</string>
+				<key>MODULEMAP_FILE</key>
+				<string>Target Support Files/ORSSerialPort/ORSSerialPort.modulemap</string>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>YES</string>
+				<key>PRODUCT_NAME</key>
+				<string>ORSSerial</string>
+				<key>SDKROOT</key>
+				<string>macosx</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+				<key>VERSIONING_SYSTEM</key>
+				<string>apple-generic</string>
+				<key>VERSION_INFO_PREFIX</key>
+				<string></string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>F6EDA07A216C8565A6E38B6D1A65A7C5</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>ORSSerialRequest.m</string>
+			<key>path</key>
+			<string>Source/ORSSerialRequest.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>F772EDE466ABBE850ABBD59FB9B6868E</key>
+		<dict>
+			<key>fileRef</key>
+			<string>29D109C92943EBFDF6442AB80830C3A0</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>FB476D0E09C42355437D9E75E4D0112B</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>IOKit.framework</string>
+			<key>path</key>
+			<string>Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/IOKit.framework</string>
+			<key>sourceTree</key>
+			<string>DEVELOPER_DIR</string>
+		</dict>
+		<key>FED14CA0CA535ED27ABB160952A93716</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>AE60F0D001AD92E9260F63B8E050CCB2</string>
+				<string>21D397DA83DEAEBD97A39A57498BC4F1</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>FF21C51896CC4A53C273BAF2F36F755A</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>ORSSerialBuffer.m</string>
+			<key>path</key>
+			<string>Source/ORSSerialBuffer.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FFCB2FE4A13F242ECF8CBD22A4B2E6F3</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>29D109C92943EBFDF6442AB80830C3A0</string>
+				<string>FB476D0E09C42355437D9E75E4D0112B</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>OS X</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+	</dict>
+	<key>rootObject</key>
+	<string>D41D8CD98F00B204E9800998ECF8427E</string>
+</dict>
+</plist>

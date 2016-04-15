@@ -22,10 +22,12 @@ class ViewController: NSViewController {
     @IBOutlet var frequencySlider: NSSlider!
     @IBOutlet var modulationIndexSlider: NSSlider!
     
-    let fmSynth = FMSynth()
+    var fmSynth: FMSynth!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        fmSynth = FMSynth()
+        fmSynth.fmOscillator.start()
         // Do any additional setup after loading the view, typically from a nib.
         
         let availablePorts = ORSSerialPortManager.sharedSerialPortManager().availablePorts
@@ -60,10 +62,10 @@ class ViewController: NSViewController {
     
     func switchStateChanged(notification: NSNotification){
         if serialCommunicator.switchState == true {
-            fmSynth.startSound()
+//            fmSynth.startSound()
             self.statusLabel.stringValue = "Stop"
         } else {
-            fmSynth.stopSound()
+//            fmSynth.stopSound()
             self.statusLabel.stringValue = "Play Sound"
         }
     }

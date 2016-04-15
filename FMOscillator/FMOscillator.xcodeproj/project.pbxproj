@@ -8,12 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		C79F4E4238E4B316CB015EC0 /* Pods_FMOscillator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC3C3D73C19E4794D27C7DE7 /* Pods_FMOscillator.framework */; };
-		E44DC3E51CBF25A90046DAC2 /* AudioKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E44DC3E31CBF25960046DAC2 /* AudioKit.framework */; };
-		E44DC3E61CBF25A90046DAC2 /* AudioKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E44DC3E31CBF25960046DAC2 /* AudioKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E45516AB1B35ED4F00558CF8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45516AA1B35ED4F00558CF8 /* AppDelegate.swift */; };
 		E45516AD1B35ED4F00558CF8 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45516AC1B35ED4F00558CF8 /* MainViewController.swift */; };
 		E45516AF1B35ED4F00558CF8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E45516AE1B35ED4F00558CF8 /* Images.xcassets */; };
 		E45516B21B35ED4F00558CF8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E45516B01B35ED4F00558CF8 /* Main.storyboard */; };
+		E4677FFB1CC06D0000A7BA9D /* AudioKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4677FF91CC06CE600A7BA9D /* AudioKit.framework */; };
+		E4677FFC1CC06D0000A7BA9D /* AudioKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E4677FF91CC06CE600A7BA9D /* AudioKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E47E9E471B7AC73100F2C853 /* SerialCommunicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47E9E461B7AC73100F2C853 /* SerialCommunicator.swift */; };
 		E4C74EBB1B9FBFCD0080DCE3 /* FMSynth.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C74EBA1B9FBFCD0080DCE3 /* FMSynth.swift */; };
 /* End PBXBuildFile section */
@@ -25,7 +25,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				E44DC3E61CBF25A90046DAC2 /* AudioKit.framework in Embed Frameworks */,
+				E4677FFC1CC06D0000A7BA9D /* AudioKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -36,7 +36,6 @@
 		43D917E7BA1759D0A6B013A6 /* Pods-FMOscillator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FMOscillator.release.xcconfig"; path = "Pods/Target Support Files/Pods-FMOscillator/Pods-FMOscillator.release.xcconfig"; sourceTree = "<group>"; };
 		B3B685CD1D1DD9C0EA476343 /* Pods-FMOscillator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FMOscillator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FMOscillator/Pods-FMOscillator.debug.xcconfig"; sourceTree = "<group>"; };
 		DC3C3D73C19E4794D27C7DE7 /* Pods_FMOscillator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FMOscillator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E44DC3E31CBF25960046DAC2 /* AudioKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AudioKit.framework; sourceTree = "<group>"; };
 		E45516A51B35ED4F00558CF8 /* FMOscillator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FMOscillator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E45516A91B35ED4F00558CF8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E45516AA1B35ED4F00558CF8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -45,6 +44,7 @@
 		E45516B11B35ED4F00558CF8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E45516BC1B35ED4F00558CF8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E45516BD1B35ED4F00558CF8 /* FMOscillatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMOscillatorTests.swift; sourceTree = "<group>"; };
+		E4677FF91CC06CE600A7BA9D /* AudioKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AudioKit.framework; sourceTree = "<group>"; };
 		E47E9E461B7AC73100F2C853 /* SerialCommunicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SerialCommunicator.swift; sourceTree = "<group>"; };
 		E4C74EBA1B9FBFCD0080DCE3 /* FMSynth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMSynth.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -54,7 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E44DC3E51CBF25A90046DAC2 /* AudioKit.framework in Frameworks */,
+				E4677FFB1CC06D0000A7BA9D /* AudioKit.framework in Frameworks */,
 				C79F4E4238E4B316CB015EC0 /* Pods_FMOscillator.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -65,7 +65,7 @@
 		9D37A51C1B9C94E0006CAFD5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E44DC3E31CBF25960046DAC2 /* AudioKit.framework */,
+				E4677FF91CC06CE600A7BA9D /* AudioKit.framework */,
 				DC3C3D73C19E4794D27C7DE7 /* Pods_FMOscillator.framework */,
 			);
 			name = Frameworks;
@@ -149,9 +149,7 @@
 				E45516A11B35ED4F00558CF8 /* Sources */,
 				E45516A21B35ED4F00558CF8 /* Frameworks */,
 				E45516A31B35ED4F00558CF8 /* Resources */,
-				E45516DA1B35EF5F00558CF8 /* ShellScript */,
 				DD3C19F926F71C75A15C2457 /* Embed Pods Frameworks */,
-				A6CC849609E83B26E5822F25 /* Copy Pods Resources */,
 				E44DC3E71CBF25A90046DAC2 /* Embed Frameworks */,
 			);
 			buildRules = (
@@ -210,21 +208,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		A6CC849609E83B26E5822F25 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FMOscillator/Pods-FMOscillator-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		DD3C19F926F71C75A15C2457 /* Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -239,18 +222,6 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FMOscillator/Pods-FMOscillator-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
-		};
-		E45516DA1B35EF5F00558CF8 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellScript = "";
 		};
 		E993A66E6173314008CDFC06 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -383,7 +354,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(PROJECT_DIR)",
+					"/Users/nicholasarner/Development/AudioKit/Frameworks/AudioKit-OSX/",
+				);
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/Frameworks/**";
 				INFOPLIST_FILE = FMOscillator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
@@ -402,7 +376,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(PROJECT_DIR)",
+					"/Users/nicholasarner/Development/AudioKit/Frameworks/AudioKit-OSX/",
+				);
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/Frameworks/**";
 				INFOPLIST_FILE = FMOscillator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
