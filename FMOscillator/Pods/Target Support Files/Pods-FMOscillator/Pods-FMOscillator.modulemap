@@ -1,0 +1,6 @@
+framework module Pods_FMOscillator {
+  umbrella header "Pods-FMOscillator-umbrella.h"
+
+  export *
+  module * { export * }
+}

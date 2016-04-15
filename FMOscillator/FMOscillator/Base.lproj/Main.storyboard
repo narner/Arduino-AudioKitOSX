@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D131" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="7702"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10116"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -673,7 +674,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="zt2-Ta-2MG">
-                                <rect key="frame" x="203" y="209" width="75" height="17"/>
+                                <rect key="frame" x="205" y="209" width="72" height="17"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Play Sound" placeholderString="" id="pXU-Oj-hCR">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -681,14 +682,14 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="HLT-WA-fZa">
-                                <rect key="frame" x="344" y="168" width="111" height="17"/>
+                                <rect key="frame" x="347" y="168" width="108" height="17"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Modulation Index" id="UGu-c8-I8X">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="b8J-me-QJo" customClass="AKPropertyLabel">
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="b8J-me-QJo">
                                 <rect key="frame" x="52" y="85" width="38" height="17"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="34" id="5mO-xE-2Pk"/>
@@ -700,23 +701,23 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="DlJ-Pg-I4b">
-                                <rect key="frame" x="37" y="168" width="69" height="17"/>
+                                <rect key="frame" x="37" y="168" width="68" height="17"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Frequency" id="DpY-uO-ehc">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <slider horizontalHuggingPriority="750" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="V6b-Gc-2jV" customClass="AKPropertySlider">
+                            <slider horizontalHuggingPriority="750" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="V6b-Gc-2jV">
                                 <rect key="frame" x="54" y="120" width="28" height="30"/>
-                                <sliderCell key="cell" alignment="left" minValue="4" maxValue="296" doubleValue="4" tickMarkPosition="left" allowsTickMarkValuesOnly="YES" sliderType="circular" id="Nrq-bc-Pfh"/>
+                                <sliderCell key="cell" alignment="left" minValue="4" maxValue="296" doubleValue="4" allowsTickMarkValuesOnly="YES" sliderType="circular" id="Nrq-bc-Pfh"/>
                             </slider>
-                            <slider horizontalHuggingPriority="750" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Cxv-jh-PiR" customClass="AKPropertySlider">
-                                <rect key="frame" x="383" y="120" width="28" height="30"/>
-                                <sliderCell key="cell" alignment="left" maxValue="24" doubleValue="24" tickMarkPosition="left" allowsTickMarkValuesOnly="YES" sliderType="circular" id="ITU-gl-qIA"/>
+                            <slider horizontalHuggingPriority="750" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Cxv-jh-PiR">
+                                <rect key="frame" x="385" y="120" width="28" height="30"/>
+                                <sliderCell key="cell" alignment="left" maxValue="24" doubleValue="24" allowsTickMarkValuesOnly="YES" sliderType="circular" id="ITU-gl-qIA"/>
                             </slider>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="cNZ-6w-qGs" customClass="AKPropertyLabel">
-                                <rect key="frame" x="378" y="85" width="38" height="17"/>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="cNZ-6w-qGs">
+                                <rect key="frame" x="381" y="85" width="35" height="17"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" id="q8T-1Y-xiA">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -732,7 +733,7 @@
                             <constraint firstItem="zt2-Ta-2MG" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="44" id="FEu-NG-AbS"/>
                             <constraint firstItem="V6b-Gc-2jV" firstAttribute="centerY" secondItem="m2S-Jp-Qdl" secondAttribute="centerY" id="HVt-m3-Mh2"/>
                             <constraint firstAttribute="trailing" secondItem="cNZ-6w-qGs" secondAttribute="trailing" constant="66" id="IZ3-6w-grk"/>
-                            <constraint firstItem="zt2-Ta-2MG" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="Vri-E1-2al"/>
+                            <constraint firstItem="zt2-Ta-2MG" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" constant="1" id="Vri-E1-2al"/>
                             <constraint firstItem="V6b-Gc-2jV" firstAttribute="centerX" secondItem="b8J-me-QJo" secondAttribute="centerX" constant="-3" id="fv4-L3-HU0"/>
                             <constraint firstItem="b8J-me-QJo" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="54" id="lcx-xg-W6k"/>
                             <constraint firstAttribute="trailing" secondItem="HLT-WA-fZa" secondAttribute="trailing" constant="27" id="oDM-Ls-X44"/>
@@ -743,9 +744,9 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="frequencyLabel" destination="b8J-me-QJo" id="dJQ-5E-hK7"/>
+                        <outlet property="frequencyLabel" destination="b8J-me-QJo" id="97y-xu-2J9"/>
                         <outlet property="frequencySlider" destination="V6b-Gc-2jV" id="wzH-4D-neE"/>
-                        <outlet property="modulationIndexLabel" destination="cNZ-6w-qGs" id="f5n-Wa-r5n"/>
+                        <outlet property="modulationIndexLabel" destination="cNZ-6w-qGs" id="IMc-hE-rpf"/>
                         <outlet property="modulationIndexSlider" destination="Cxv-jh-PiR" id="BaH-H0-Sx1"/>
                         <outlet property="statusLabel" destination="zt2-Ta-2MG" id="IEs-cn-NAR"/>
                     </connections>
