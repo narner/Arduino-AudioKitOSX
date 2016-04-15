@@ -89,43 +89,27 @@ let fmSynth = FMSynth()
 The `FMSynth` class specifies the values of the properties that we want to use for our oscillator `AKFMOscillator`has five properties that can be modified:
 
 ```swift
-var frequency            = AKInstrumentProperty(value: 40, minimum: 20, maximum: 400)
-var amplitude            = AKInstrumentProperty(value: 0.2, minimum: 0,  maximum: 1)
-var carrierMultiplier    = AKInstrumentProperty(value: 1,   minimum: 0,  maximum: 3)
-var modulatingMultiplier = AKInstrumentProperty(value: 1,   minimum: 0,  maximum: 3)
-var modulationIndex      = AKInstrumentProperty(value: 15,  minimum: 0,  maximum: 30)
+    let fmOscillator = AKFMOscillator(
+        waveform: AKTable(.Sine),
+        baseFrequency: 440,
+        carrierMultiplier: 1,
+        modulatingMultiplier: 1,
+        modulationIndex: 1,
+        amplitude: 0.2
+    )
 ```
 
 These properties are then added to our instrument, and assigned to the instance variables of `AKFMOscillator`:
 
 ```swift
-override init() {
-     super.init()
-        
-     addProperty(frequency)
-     addProperty(amplitude)
-     addProperty(carrierMultiplier)
-     addProperty(modulatingMultiplier)
-     addProperty(modulationIndex)
-        
-     let fmOscillator = AKFMOscillator(
-         waveform: AKTable.standardSineWave(),
-         baseFrequency: frequency,
-         carrierMultiplier: carrierMultiplier,
-         modulatingMultiplier: modulatingMultiplier,
-         modulationIndex: modulationIndex,
-         amplitude: amplitude
-     )
-     setAudioOutput(fmOscillator)
-}
+    override init() {
+        super.init()
+        AudioKit.output = fmOscillator
+        AudioKit.start()
+    }
 ```
 
-For this project though, we're just going to control the `frequency` and `modulationIndex` properties. Inside our `viewDidLoad` method of our `ViewController` class, we add the instrument to the orchestra and then start it:
-
-```swift
-AKOrchestra.addInstrument(instrument)
-AKOrchestra.start()
-```
+For this project though, we're just going to control the `frequency` and `modulationIndex` properties.
 
 The `Serial Communicator` calss conforms to the `ORSSerialPortDelegate`. When `serialPortWasOpened` is called, three instances of`ORSSerialPacketDescriptor` are created: one descriptor for each potentiometer, and one descriptor for the switch state. These descriptors specify that we should be listening for a packet that starts with the string values we logged in our Arduino sketch:
 
@@ -184,15 +168,17 @@ NSNotificationCenter.defaultCenter().addObserver(self, selector: "switchStateCha
 Whenever a notification is received for a potentiometer value change, one of the two methods below are called: 
 
 ```swift
-func potOneValueChanged(notification: NSNotification){
-  self.frequencyLabel.property = fmSynth.frequency
-  fmSynth.frequency.setValue(Float(serialCommunicator.potentiometerOneValue * 4))
-}
- 
-func potTwoValueChanged(notification: NSNotification){
-  self.modulationIndexLabel.property = fmSynth.modulationIndex
-  fmSynth.modulationIndex.setValue(Float(serialCommunicator.potentiometerTwoValue / 4))
-}
+    func potOneValueChanged(notification: NSNotification){
+        fmSynth.fmOscillator.baseFrequency = Double(serialCommunicator.potentiometerOneValue * 4)
+        self.frequencyLabel.stringValue = "\(fmSynth.fmOscillator.baseFrequency)"
+        self.frequencySlider.floatValue = Float(fmSynth.fmOscillator.baseFrequency)
+    }
+    
+    func potTwoValueChanged(notification: NSNotification){
+        fmSynth.fmOscillator.modulationIndex = Double(serialCommunicator.potentiometerTwoValue / 4)
+        self.modulationIndexLabel.stringValue = "\(fmSynth.fmOscillator.modulationIndex)"
+        self.modulationIndexSlider.floatValue = Float(fmSynth.fmOscillator.modulationIndex)
+    }
 ```
 
 Those methods set the value of the oscillator's frequency and modulation parameters, as well as display the values in two labels in the user-interface. 
@@ -200,15 +186,15 @@ Those methods set the value of the oscillator's frequency and modulation paramet
 If a notification is received that the switch-state has changed, the method below is called:
 
 ```swift
-func switchStateChanged(notification: NSNotification){
-  if serialCommunicator.switchState == true {
-  fmSynth.play()
-  self.statusLabel.stringValue = "Stop"
-} else {
-  fmSynth.stop()
-  self.statusLabel.stringValue = "Play Sound"
-  }
-}
+    func switchStateChanged(notification: NSNotification){
+        if serialCommunicator.switchState == true {
+            fmSynth.startSound()
+            self.statusLabel.stringValue = "Stop"
+        } else {
+            fmSynth.stopSound()
+            self.statusLabel.stringValue = "Play Sound"
+        }
+    }
 ```
 
 If the switch is in an "On" state, then the oscillator's note is played, and text is updated in 
