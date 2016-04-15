@@ -1,7 +1,8 @@
 #Arduino-AudioKitOSX Demo Project
 
 ##Overview
-This project demonstrates how an OSX oscillator app created with <a href="https://github.com/audiokit/AudioKit">AudioKit</a> can be controlled by an Arduino via serial communication. A demo video <a href="https://vimeo.com/139079751">shows the project in action </a>.
+This project demonstrates how an OSX oscillator app created with <a href="https://github.com/audiokit/AudioKit">AudioKit</a> can be 
+controlled by an Arduino via serial communication. A demo video <a href="https://vimeo.com/139079751">shows the project in action </a>.
 
 ##Arduino Sketch
 The schematic below shows the two potentiometers and SPDT (single pole - double throw) switch used to control the OSX app:
@@ -14,7 +15,7 @@ The assembled circuit:
 
 The Arduino sketch is found in the `SerialInputReading` folder. The data from the potentiometers 
 and the SPDT switch is read by the `readAndSendPotentiometerDataIfChanged` method. This method is 
-called in the `void loop()`, so that the method is exectued as long as the Arduino sketch is running. 
+called in the `void loop()`, so that the potentiometer values are checked exectued as long as the Arduino sketch is running. 
 
 First, a variable is created that reads the the input value for the analog pin that the 
 potentiometer is connected to. The first potentiometer's data is read on Analog Input 0 (A0), and 
@@ -48,7 +49,9 @@ The switch's state (whether it's `HIGH` or `LOW`) is determined by using the `di
 function, which, according to the
 <a href="https://www.arduino.cc/en/Reference/DigitalRead">Arduino documentation</a>, "Reads the value from a specified pin, either `HIGH` or `LOW`". 
 
-A series of checks are then performed. If the state of `switchState` is different from the value of `lastSwitchState`, then we'll check the current state of `switchState`. If the current state is `HIGH`, then the switch went from "Off" to "On". The following output would then be written to the serial log:
+A series of checks are then performed. If the state of `switchState` is different from the value of `lastSwitchState`, then we'll check 
+the current state of `switchState`. If the current state is `HIGH`, then the switch went from "Off" to "On". The following output would 
+then be written to the serial log:
 
 ```
 Serial.print("!state");
@@ -56,7 +59,8 @@ Serial.print("1");
 Serial.print(";");
 ```
 
-Otherwise, the switch state is `LOW`, and the switch went from "On" to "Off". The following output would then be written to the serial log:
+Otherwise, the switch state is `LOW`, and the switch went from "On" to "Off". The following output would then be written to the serial 
+log:
 
 ```
 Serial.print("!state");
@@ -64,7 +68,7 @@ Serial.print("0");
 Serial.print(";");
 ```
 
-A delay of 50 milliseconds is added to prevent bouncing. Effectively we're checking the state of 
+A delay of 50 milliseconds is added to prevent bouncing. Effectively, we're checking the state of 
 the input twice in a short time to make sure the button is "definitely pressed" (<a href="https://www.arduino.cc/en/Tutorial/Debounce">Arduino documentation</a>).
 
 Finally, at the end of the method, we save the `lastSwitchState` value as that of the current `
@@ -72,7 +76,10 @@ switchState`.
 
 ##Xcode Project
 
-There are three classes in the Xcode project, the `Serial Communicator`, `FMSynth`, and the `View 
+NOTE: Xcode 7.3 is required to run this project. Because it uses CocoaPods, make sure to open the `.xcworkspace` file, and not the 
+`.xcodeproj` file.
+
+There are three classes in the app; the `Serial Communicator`, `FMSynth`, and the `View 
 Controller`. The `View Controller` is responsible both for opening the serial port so communication 
 can occur: 
 
@@ -86,7 +93,8 @@ and, for creating an instance of `FMSynth`:
 ```
 let fmSynth = FMSynth()
 ```
-The `FMSynth` class specifies the values of the properties that we want to use for our oscillator `AKFMOscillator`has five properties that can be modified:
+The `FMSynth` class specifies the values of the properties that we want to use for our oscillator. `AKFMOscillator`has six properties 
+that can be modified:
 
 ```swift
     let fmOscillator = AKFMOscillator(
@@ -111,7 +119,9 @@ These properties are then added to our instrument, and assigned to the instance 
 
 For this project though, we're just going to control the `frequency` and `modulationIndex` properties.
 
-The `Serial Communicator` calss conforms to the `ORSSerialPortDelegate`. When `serialPortWasOpened` is called, three instances of`ORSSerialPacketDescriptor` are created: one descriptor for each potentiometer, and one descriptor for the switch state. These descriptors specify that we should be listening for a packet that starts with the string values we logged in our Arduino sketch:
+The `Serial Communicator` calss conforms to the `ORSSerialPortDelegate`. When `serialPortWasOpened` is called, three instances 
+of`ORSSerialPacketDescriptor` are created: one descriptor for each potentiometer, and one descriptor for the switch state. These 
+descriptors specify that we should be listening for a packet that starts with the string values we logged in our Arduino sketch:
 
 ```swift
 let descriptorPotOne = ORSSerialPacketDescriptor(prefixString: "!pos1",
@@ -128,10 +138,6 @@ let descriptorState = ORSSerialPacketDescriptor(prefixString: "!state",
   userInfo: SerialPortPacketType.State.rawValue)
 ```
 The app then begins "listening" for packets that match the correct description:
-```
-
-The app then begins "listening" for each packets that match the correct description:
-
 ```swift
 serialPort.startListeningForPacketsMatchingDescriptor(descriptorPotOne)
 serialPort.startListeningForPacketsMatchingDescriptor(descriptorPotTwo)
@@ -165,7 +171,7 @@ NSNotificationCenter.defaultCenter().addObserver(self, selector: "potTwoValueCha
 NSNotificationCenter.defaultCenter().addObserver(self, selector: "switchStateChanged:", name:"SwitchStateChanged", object: nil)
 ```
 
-Whenever a notification is received for a potentiometer value change, one of the two methods below are called: 
+Depending on which potentiometer value has changed, one of the two methods below are called: 
 
 ```swift
     func potOneValueChanged(notification: NSNotification){
@@ -181,7 +187,8 @@ Whenever a notification is received for a potentiometer value change, one of the
     }
 ```
 
-Those methods set the value of the oscillator's frequency and modulation parameters, as well as display the values in two labels in the user-interface. 
+Those methods set the value of the oscillator's frequency and modulation parameters, as well as display the values in two labels in the 
+user-interface. 
 
 If a notification is received that the switch-state has changed, the method below is called:
 
@@ -225,5 +232,3 @@ Email: nicholasarner (at) gmail.com
 Website: www.nickarner.com
 
 Twitter: <a href="https://twitter.com/nickarner">@nickarner</a>
-
-
