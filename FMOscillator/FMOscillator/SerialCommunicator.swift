@@ -20,72 +20,72 @@ class SerialCommunicator: NSObject, ORSSerialPortDelegate {
 	
 	enum SerialPortPacketType: Int {
 		
-		case PotentiometerOne = 1;
-		case PotentiometerTwo = 2;
-		case State = 3;
+		case potentiometerOne = 1;
+		case potentiometerTwo = 2;
+		case state = 3;
 	}
 	
     // MARK: - Properties
     
-    dynamic private(set) var potentiometerOneValue: Int = 0
-    dynamic private(set) var potentiometerTwoValue: Int = 0
-    dynamic private(set) var switchState: Bool = false
+    dynamic fileprivate(set) var potentiometerOneValue: Int = 0
+    dynamic fileprivate(set) var potentiometerTwoValue: Int = 0
+    dynamic fileprivate(set) var switchState: Bool = false
 
 	// MARK - ORSSerialPortDelegate
 	
-	func serialPortWasRemovedFromSystem(serialPort: ORSSerialPort) {
+	func serialPortWasRemoved(fromSystem serialPort: ORSSerialPort) {
 		self.serialPort = nil
 	}
 	
-	func serialPort(serialPort: ORSSerialPort, didEncounterError error: NSError) {
+	func serialPort(_ serialPort: ORSSerialPort, didEncounterError error: Error) {
 		print("Serial port \(serialPort) encountered an error: \(error)")
 	}
 	
     //When the serial port is opened, listen for the correct descriptors 
-	func serialPortWasOpened(serialPort: ORSSerialPort) {
+	func serialPortWasOpened(_ serialPort: ORSSerialPort) {
 		let descriptorPotOne = ORSSerialPacketDescriptor(prefixString: "!pos1",
 			suffixString: ";",
 			maximumPacketLength:9,
-			userInfo: SerialPortPacketType.PotentiometerOne.rawValue)
+			userInfo: SerialPortPacketType.potentiometerOne.rawValue)
 		let descriptorPotTwo = ORSSerialPacketDescriptor(prefixString: "!pos2",
 			suffixString: ";",
 			maximumPacketLength:9,
-			userInfo: SerialPortPacketType.PotentiometerTwo.rawValue)
+			userInfo: SerialPortPacketType.potentiometerTwo.rawValue)
 		let descriptorState = ORSSerialPacketDescriptor(prefixString: "!state",
 			suffixString: ";",
 			maximumPacketLength:9,
-			userInfo: SerialPortPacketType.State.rawValue)
+			userInfo: SerialPortPacketType.state.rawValue)
 		
-		serialPort.startListeningForPacketsMatchingDescriptor(descriptorPotOne)
-		serialPort.startListeningForPacketsMatchingDescriptor(descriptorPotTwo)
-		serialPort.startListeningForPacketsMatchingDescriptor(descriptorState)
+		serialPort.startListeningForPackets(matching: descriptorPotOne)
+		serialPort.startListeningForPackets(matching: descriptorPotTwo)
+		serialPort.startListeningForPackets(matching: descriptorState)
 	}
 	
-	private func potentiometerFromResponsePacket(data: NSData) -> Int {
-		let dataAsString = NSString(data: data, encoding: NSASCIIStringEncoding)!
-		let potentiometerString = dataAsString.substringWithRange(NSRange(location: 5, length: dataAsString.length-6))
+	fileprivate func potentiometerFromResponsePacket(_ data: Data) -> Int {
+		let dataAsString = NSString(data: data, encoding: String.Encoding.ascii.rawValue)!
+		let potentiometerString = dataAsString.substring(with: NSRange(location: 5, length: dataAsString.length-6))
 		return Int(potentiometerString)!
 	}
 	
-	private func switchStateFromResponsePacket(data: NSData) -> Bool {
-		let dataAsString = NSString(data: data, encoding: NSASCIIStringEncoding)!
-		let switchState = dataAsString.substringWithRange(NSRange(location: 6, length: dataAsString.length-7))
+	fileprivate func switchStateFromResponsePacket(_ data: Data) -> Bool {
+		let dataAsString = NSString(data: data, encoding: String.Encoding.ascii.rawValue)!
+		let switchState = dataAsString.substring(with: NSRange(location: 6, length: dataAsString.length-7))
 		return Int(switchState)! != 0
 	}
 	
     //Post a notification whenever the potentiometer values or switch state changes
-	func serialPort(serialPort: ORSSerialPort, didReceivePacket packetData: NSData, matchingDescriptor descriptor: ORSSerialPacketDescriptor) {
+	func serialPort(_ serialPort: ORSSerialPort, didReceivePacket packetData: Data, matching descriptor: ORSSerialPacketDescriptor) {
 		let packetType = SerialPortPacketType(rawValue: descriptor.userInfo as! Int)!
 		switch packetType {
-		case .PotentiometerOne:
+		case .potentiometerOne:
 			self.potentiometerOneValue = self.potentiometerFromResponsePacket(packetData)
-            NSNotificationCenter.defaultCenter().postNotificationName("PotentiometerOneChanged", object: self.potentiometerOneValue)
-		case .PotentiometerTwo:
+            NotificationCenter.default.post(name: Notification.Name(rawValue: "PotentiometerOneChanged"), object: self.potentiometerOneValue)
+		case .potentiometerTwo:
 			self.potentiometerTwoValue = self.potentiometerFromResponsePacket(packetData)
-            NSNotificationCenter.defaultCenter().postNotificationName("PotentiometerTwoChanged", object: self.potentiometerTwoValue)
-		case .State:
+            NotificationCenter.default.post(name: Notification.Name(rawValue: "PotentiometerTwoChanged"), object: self.potentiometerTwoValue)
+		case .state:
 			self.switchState = self.switchStateFromResponsePacket(packetData)
-            NSNotificationCenter.defaultCenter().postNotificationName("SwitchStateChanged", object: self.switchState)
+            NotificationCenter.default.post(name: Notification.Name(rawValue: "SwitchStateChanged"), object: self.switchState)
 		}
 	}
 	
