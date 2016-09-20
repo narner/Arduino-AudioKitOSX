@@ -8,10 +8,10 @@
 
 import AudioKit
 
-public class FMSynth: NSObject {
+open class FMSynth: NSObject {
     
     let fmOscillator = AKFMOscillator(
-        waveform: AKTable(.Sine),
+        waveform: AKTable(.sine),
         baseFrequency: 440,
         carrierMultiplier: 1,
         modulatingMultiplier: 1,
@@ -28,11 +28,11 @@ public class FMSynth: NSObject {
     }
     
     
-    public func startSound() {
+    open func startSound() {
         fmOscillator.start()
     }
     
-    public func stopSound(){
+    open func stopSound(){
         fmOscillator.stop()
     }
 }

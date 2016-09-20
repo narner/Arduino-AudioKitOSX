@@ -12,7 +12,7 @@ import ORSSerial
 
 class ViewController: NSViewController {
     
-    let serialPortManager = ORSSerialPortManager.sharedSerialPortManager()
+    let serialPortManager = ORSSerialPortManager.shared()
     let serialCommunicator = SerialCommunicator()
     
     @IBOutlet var statusLabel: NSTextField!
@@ -29,7 +29,7 @@ class ViewController: NSViewController {
         fmSynth = FMSynth()
         // Do any additional setup after loading the view, typically from a nib.
         
-        let availablePorts = ORSSerialPortManager.sharedSerialPortManager().availablePorts
+        let availablePorts = ORSSerialPortManager.shared().availablePorts
         if availablePorts.count == 0 {
             print("No connected serial ports found. Please connect your Arduino or turn on Bluetooth..\n")
             exit(EXIT_SUCCESS)
@@ -40,26 +40,26 @@ class ViewController: NSViewController {
         serialCommunicator.serialPort = serialPort
         
         //Receive notifications, and update potentiometer values and switch state
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.potOneValueChanged(_:)), name:"PotentiometerOneChanged", object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.potOneValueChanged(_:)), name:NSNotification.Name(rawValue: "PotentiometerOneChanged"), object: nil)
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.potTwoValueChanged(_:)), name:"PotentiometerTwoChanged", object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.potTwoValueChanged(_:)), name:NSNotification.Name(rawValue: "PotentiometerTwoChanged"), object: nil)
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.switchStateChanged(_:)), name:"SwitchStateChanged", object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.switchStateChanged(_:)), name:NSNotification.Name(rawValue: "SwitchStateChanged"), object: nil)
     }
     
-    func potOneValueChanged(notification: NSNotification){
+    func potOneValueChanged(_ notification: Notification){
         fmSynth.fmOscillator.baseFrequency = Double(serialCommunicator.potentiometerOneValue * 4)
         self.frequencyLabel.stringValue = "\(fmSynth.fmOscillator.baseFrequency)"
         self.frequencySlider.floatValue = Float(fmSynth.fmOscillator.baseFrequency)
     }
     
-    func potTwoValueChanged(notification: NSNotification){
+    func potTwoValueChanged(_ notification: Notification){
         fmSynth.fmOscillator.modulationIndex = Double(serialCommunicator.potentiometerTwoValue / 4)
         self.modulationIndexLabel.stringValue = "\(fmSynth.fmOscillator.modulationIndex)"
         self.modulationIndexSlider.floatValue = Float(fmSynth.fmOscillator.modulationIndex)
     }
     
-    func switchStateChanged(notification: NSNotification){
+    func switchStateChanged(_ notification: Notification){
         if serialCommunicator.switchState == true {
             fmSynth.startSound()
             self.statusLabel.stringValue = "Stop"
@@ -73,7 +73,7 @@ class ViewController: NSViewController {
         super.viewWillDisappear()
         
         //Get rid of notification observers
-        NSNotificationCenter.defaultCenter().removeObserver(self)
+        NotificationCenter.default.removeObserver(self)
     }
     
     override func viewDidDisappear() {
