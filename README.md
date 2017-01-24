@@ -223,7 +223,7 @@ The UI is shown below:
 **Attribution**
 The sound synthesis is implemented through <a href="http://audiokit.io">AudioKit</a>, an open-
 source audio analysis, synthesis, and processing library for iOS and OS X. This project uses 
-<a href="https://github.com/audiokit/AudioKit">AudioKit 3.4.1</a>. 
+<a href="https://github.com/audiokit/AudioKit">AudioKit 3.5</a>. 
 
 The OS X app makes use of the <a href="https://github.com/armadsen/ORSSerialPort">ORSSerialPort library</a>.
 
