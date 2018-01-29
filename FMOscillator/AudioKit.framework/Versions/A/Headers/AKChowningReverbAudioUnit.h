@@ -3,12 +3,13 @@
 //  AudioKit
 //
 //  Created by Aurelius Prochazka, revision history on Github.
-//  Copyright (c) 2016 Aurelius Prochazka. All rights reserved.
+//  Copyright © 2017 Aurelius Prochazka. All rights reserved.
 //
 
 #pragma once
 
-#import "AKAudioUnit.h"
+#import "AK4AudioUnitBase.h"
 
-@interface AKChowningReverbAudioUnit : AKAudioUnit
+@interface AKChowningReverbAudioUnit : AK4AudioUnitBase
+
 @end

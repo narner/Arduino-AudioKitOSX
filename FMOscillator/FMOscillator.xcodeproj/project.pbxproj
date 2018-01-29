@@ -12,10 +12,10 @@
 		E45516AD1B35ED4F00558CF8 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45516AC1B35ED4F00558CF8 /* MainViewController.swift */; };
 		E45516AF1B35ED4F00558CF8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E45516AE1B35ED4F00558CF8 /* Images.xcassets */; };
 		E45516B21B35ED4F00558CF8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E45516B01B35ED4F00558CF8 /* Main.storyboard */; };
-		E45945361E37808A001A734B /* AudioKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E45945341E378070001A734B /* AudioKit.framework */; };
-		E45945371E37808A001A734B /* AudioKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E45945341E378070001A734B /* AudioKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E47E9E471B7AC73100F2C853 /* SerialCommunicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47E9E461B7AC73100F2C853 /* SerialCommunicator.swift */; };
 		E4C74EBB1B9FBFCD0080DCE3 /* FMSynth.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C74EBA1B9FBFCD0080DCE3 /* FMSynth.swift */; };
+		E4F22DC7201F9215004F14F8 /* AudioKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4F22DC5201F91FC004F14F8 /* AudioKit.framework */; };
+		E4F22DC8201F9215004F14F8 /* AudioKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E4F22DC5201F91FC004F14F8 /* AudioKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,7 +25,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				E45945371E37808A001A734B /* AudioKit.framework in Embed Frameworks */,
+				E4F22DC8201F9215004F14F8 /* AudioKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -44,9 +44,9 @@
 		E45516B11B35ED4F00558CF8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E45516BC1B35ED4F00558CF8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E45516BD1B35ED4F00558CF8 /* FMOscillatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMOscillatorTests.swift; sourceTree = "<group>"; };
-		E45945341E378070001A734B /* AudioKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AudioKit.framework; sourceTree = "<group>"; };
 		E47E9E461B7AC73100F2C853 /* SerialCommunicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SerialCommunicator.swift; sourceTree = "<group>"; };
 		E4C74EBA1B9FBFCD0080DCE3 /* FMSynth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMSynth.swift; sourceTree = "<group>"; };
+		E4F22DC5201F91FC004F14F8 /* AudioKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AudioKit.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,7 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E45945361E37808A001A734B /* AudioKit.framework in Frameworks */,
+				E4F22DC7201F9215004F14F8 /* AudioKit.framework in Frameworks */,
 				C79F4E4238E4B316CB015EC0 /* Pods_FMOscillator.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -65,7 +65,7 @@
 		9D37A51C1B9C94E0006CAFD5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E45945341E378070001A734B /* AudioKit.framework */,
+				E4F22DC5201F91FC004F14F8 /* AudioKit.framework */,
 				DC3C3D73C19E4794D27C7DE7 /* Pods_FMOscillator.framework */,
 			);
 			name = Frameworks;
