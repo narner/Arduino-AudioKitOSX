@@ -1,10 +1,10 @@
-#Arduino-AudioKitOSX Demo Project
+# Arduino-AudioKitOSX Demo Project
 
-##Overview
+## Overview
 This project demonstrates how an OSX oscillator app created with <a href="https://github.com/audiokit/AudioKit">AudioKit</a> can be 
 controlled by an Arduino via serial communication. A demo video <a href="https://vimeo.com/139079751">shows the project in action </a>.
 
-##Arduino Sketch
+## Arduino Sketch
 The schematic below shows the two potentiometers and SPDT (single pole - double throw) switch used to control the OSX app:
 
 ![Alt Text](https://github.com/narner/Arduino-AudioKitOSX/raw/master/Schematic Files/InputCircuit.png)
@@ -74,7 +74,7 @@ the input twice in a short time to make sure the button is "definitely pressed" 
 Finally, at the end of the method, we save the `lastSwitchState` value as that of the current `
 switchState`. 
 
-##Xcode Project
+## Xcode Project
 
 NOTE: Xcode 7.3 is required to run this project. Because it uses CocoaPods, make sure to open the `.xcworkspace` file, and not the 
 `.xcodeproj` file.
