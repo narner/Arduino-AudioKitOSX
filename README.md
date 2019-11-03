@@ -7,11 +7,11 @@ controlled by an Arduino via serial communication. A demo video <a href="https:/
 ## Arduino Sketch
 The schematic below shows the two potentiometers and SPDT (single pole - double throw) switch used to control the OSX app:
 
-![Alt Text](https://github.com/narner/Arduino-AudioKitOSX/raw/master/Schematic Files/InputCircuit.png)
+![Alt Text](https://github.com/narner/Arduino-AudioKitOSX/raw/master/Schematic%20Files/InputCircuit.png)
 
 The assembled circuit:
 
-![Alt Text](https://github.com/narner/Arduino-AudioKitOSX/raw/master/Schematic Files/AssembledCircuit.png)
+![Alt Text](https://github.com/narner/Arduino-AudioKitOSX/raw/master/Schematic%20Files/AssembledCircuit.png)
 
 The Arduino sketch is found in the `SerialInputReading` folder. The data from the potentiometers 
 and the SPDT switch is read by the `readAndSendPotentiometerDataIfChanged` method. This method is 
