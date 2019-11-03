@@ -225,7 +225,7 @@ regarding the library.
 
 This project is licensed under the MIT License. 
 
-##Contact Info
+## Contact Info
 
 Email: nicholasarner (at) gmail.com
 
